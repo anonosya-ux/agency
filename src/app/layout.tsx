@@ -13,20 +13,41 @@ const inter = Inter({ subsets: ["latin", "cyrillic"], variable: "--font-inter" }
 const playfair = Playfair_Display({ subsets: ["latin", "cyrillic"], variable: "--font-playfair" });
 
 export const metadata: Metadata = {
-  title: "Фатюхин и Ко | Агентство Недвижимости в Москве",
-  description: "Премиальное агентство недвижимости. Покупка, продажа, срочный выкуп и 100% юридическая гарантия чистоты сделки. Ваш капитал в безопасности.",
+  metadataBase: new URL('https://fatukhin.ru'),
+  title: "Фатюхин и Ко | Элитное Агентство Недвижимости Москва-Сити",
+  description: "Покупка, срочный выкуп и продажа элитной недвижимости в Москве и Дубае. Квартиры, пентхаусы, особняки. Private Banking технологии в real estate. Инвестиции с AI.",
+  keywords: ["элитная недвижимость", "агентство недвижимости", "Фатюхин и Ко", "купить квартиру Москва-Сити", "премиум недвижимость", "срочный выкуп квартир", "инвестиции в недвижимость", "загородная недвижимость"],
   openGraph: {
-    title: "Фатюхин и Ко | Агентство Недвижимости",
-    description: "Надежные сделки с элитной и коммерческой недвижимостью в Москве. Оплата за результат.",
+    title: "Фатюхин и Ко | Элитная Недвижимость",
+    description: "Надежные сделки с элитной и коммерческой недвижимостью в Москве. Оценка ИИ.",
     url: "https://fatukhin.ru",
     siteName: "Фатюхин и Ко",
+    images: [
+      {
+        url: "/renders/hero_skyscraper.png",
+        width: 1200,
+        height: 630,
+        alt: "Фатюхин и Ко",
+      },
+    ],
     locale: "ru_RU",
     type: "website",
   },
   robots: {
     index: true,
     follow: true,
-  }
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
+  },
+  twitter: {
+    title: "Фатюхин и Ко",
+    card: "summary_large_image",
+  },
 };
 
 export default function RootLayout({
