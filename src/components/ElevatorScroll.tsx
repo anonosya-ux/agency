@@ -4,7 +4,6 @@ import { motion, useScroll, useTransform, useSpring } from "framer-motion";
 import { useRef } from "react";
 import { ArrowDown } from "lucide-react";
 import Image from "next/image";
-import Spline from '@splinetool/react-spline';
 
 export function ElevatorScroll() {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -42,12 +41,6 @@ export function ElevatorScroll() {
     <div ref={containerRef} className="relative h-[400vh] bg-white">
       <div className="sticky top-0 h-screen w-full overflow-hidden text-[#1A1A1A] flex items-center justify-center">
         
-        {/* Interactive 3D Spline Layer (R4X Bot or similar 3D Object) */}
-        <div className="absolute inset-0 z-0 opacity-40 mix-blend-multiply pointer-events-auto">
-          {/* Note: Replace this URL with the EXACT Export URL from your Spline file export panel */}
-          <Spline scene="https://prod.spline.design/6Wq1Q7YGyM-iab9i/scene.splinecode" />
-        </div>
-
         {/* Cinematic Backdrop */}
         <motion.div 
           className="absolute inset-0 w-full h-[140%] -top-[20%] -z-10"
