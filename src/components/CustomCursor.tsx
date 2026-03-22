@@ -1,26 +1,30 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { motion, useSpring } from "framer-motion";
+import { motion, useSpring, useMotionValue } from "framer-motion";
 
 export function CustomCursor() {
-  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
   const [isHovered, setIsHovered] = useState(false);
+  const [isVisible, setIsVisible] = useState(false);
+
+  // Use motion values for better performance and correct spring updates
+  const cursorX = useMotionValue(-100);
+  const cursorY = useMotionValue(-100);
 
   // Smooth springs for cursor movement
-  const cursorX = useSpring(mousePosition.x, { stiffness: 500, damping: 28 });
-  const cursorY = useSpring(mousePosition.y, { stiffness: 500, damping: 28 });
+  const springX = useSpring(cursorX, { stiffness: 500, damping: 28 });
+  const springY = useSpring(cursorY, { stiffness: 500, damping: 28 });
 
   useEffect(() => {
-    // Ensure we only run this code in browser (client-side)
     if (typeof window === "undefined") return;
 
-    // Detect if device supports hover (ignores touch screens)
     const isTouchDevice = window.matchMedia("(pointer: coarse)").matches;
-    if (isTouchDevice) return; // Disable custom cursor on mobile/touch
+    if (isTouchDevice) return;
 
     const mouseMove = (e: MouseEvent) => {
-      setMousePosition({ x: e.clientX, y: e.clientY });
+      cursorX.set(e.clientX);
+      cursorY.set(e.clientY);
+      if (!isVisible) setIsVisible(true);
     };
 
     const handleMouseOver = (e: MouseEvent) => {
@@ -57,14 +61,13 @@ export function CustomCursor() {
         }
       `}} />
       <motion.div
-        className="fixed top-0 left-0 w-4 h-4 rounded-full bg-white mix-blend-difference pointer-events-none z-[9999] hidden md:block flex items-center justify-center transform -translate-x-1/2 -translate-y-1/2"
+        className={`fixed top-0 left-0 w-4 h-4 rounded-full bg-white mix-blend-difference pointer-events-none z-[9999] hidden md:flex items-center justify-center transform -translate-x-1/2 -translate-y-1/2 ${!isVisible ? 'opacity-0' : 'opacity-100'}`}
         style={{
-          x: cursorX,
-          y: cursorY,
+          x: springX,
+          y: springY,
         }}
         animate={{
           scale: isHovered ? 4 : 1,
-          opacity: 1
         }}
         transition={{ duration: 0.2, ease: "easeOut" }}
       >
