@@ -94,10 +94,10 @@ export function ElevatorScroll() {
             </span>
             <h2 className="font-serif text-[8vw] md:text-7xl leading-[0.9] tracking-tighter mb-8">Новостройки<br/>Бизнес-класса</h2>
             <p className="text-[#1A1A1A]/70 font-light text-xl mb-10 max-w-md">Современные жилые комплексы в развитых районах. Удобные планировки, паркинги и инфраструктура для комфортной жизни.</p>
-            <button data-magnetic="true" className="group relative overflow-hidden border border-[#1A1A1A] text-[#1A1A1A] px-10 py-5 uppercase tracking-widest text-xs font-medium transition-colors">
+            <a href="#catalog" data-magnetic="true" className="group relative overflow-hidden border border-[#1A1A1A] text-[#1A1A1A] px-10 py-5 uppercase tracking-widest text-xs font-medium transition-colors inline-block">
               <span className="relative z-10 group-hover:text-white transition-colors duration-500">Смотреть лоты</span>
               <div className="absolute inset-0 bg-[#1A1A1A] transform scale-x-0 origin-left group-hover:scale-x-100 transition-transform duration-500 ease-[0.76,0,0.24,1]" />
-            </button>
+            </a>
           </motion.div>
           <div className="w-full md:w-1/2 aspect-[3/4] md:aspect-[4/5] relative overflow-hidden">
             <motion.div style={{ y: useTransform(smoothProgress, [0.2, 0.4], ["-20%", "20%"]) }} className="absolute inset-[-20%]">
@@ -118,10 +118,10 @@ export function ElevatorScroll() {
             <h2 className="font-serif text-[8vw] md:text-7xl leading-[0.9] tracking-tighter mb-8 md:text-right">Загородные<br/>Дома</h2>
             <p className="text-[#1A1A1A]/70 font-light text-xl mb-10 max-w-md md:ml-auto md:text-right">Коттеджи и таунхаусы в экологически чистых направлениях Подмосковья для всей семьи.</p>
             <div className="flex md:justify-end">
-              <button data-magnetic="true" className="group relative overflow-hidden border border-[#1A1A1A] text-[#1A1A1A] px-10 py-5 uppercase tracking-widest text-xs font-medium transition-colors">
+              <a href="#catalog" data-magnetic="true" className="group relative overflow-hidden border border-[#1A1A1A] text-[#1A1A1A] px-10 py-5 uppercase tracking-widest text-xs font-medium transition-colors inline-block">
                 <span className="relative z-10 group-hover:text-white transition-colors duration-500">Изучить проекты</span>
                 <div className="absolute inset-0 bg-[#1A1A1A] transform scale-x-0 origin-right group-hover:scale-x-100 transition-transform duration-500 ease-[0.76,0,0.24,1]" />
-              </button>
+              </a>
             </div>
           </motion.div>
           <div className="w-full md:w-1/2 aspect-[3/4] md:aspect-[4/5] relative overflow-hidden">
@@ -143,9 +143,9 @@ export function ElevatorScroll() {
           <p className="text-white/80 font-light text-xl mb-12 max-w-xl mx-auto">
             Мы решаем сложные задачи: от срочного выкупа до расселения коммерции. Берем на себя юридическую проверку каждого объекта и гарантируем безопасность расчетов.
           </p>
-          <button data-magnetic="true" className="group relative overflow-hidden bg-white text-[#1A1A1A] px-12 py-6 uppercase tracking-[0.3em] text-xs font-bold shadow-2xl transition-transform hover:scale-105 duration-500">
+          <a href="#contacts" data-magnetic="true" className="group relative overflow-hidden bg-white text-[#1A1A1A] px-12 py-6 uppercase tracking-[0.3em] text-xs font-bold shadow-2xl transition-transform hover:scale-105 duration-500 inline-block">
             <span className="relative z-10">Обсудить задачу</span>
-          </button>
+          </a>
         </motion.div>
 
         {/* Progress Bar (Elevator shaft indicator) */}

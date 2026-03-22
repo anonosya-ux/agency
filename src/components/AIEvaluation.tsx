@@ -1,127 +1,296 @@
 "use client";
 
-import { motion } from "framer-motion";
-import { useState } from "react";
-import { Loader2 } from "lucide-react";
+import { motion, AnimatePresence } from "framer-motion";
+import { useState, useRef, useEffect } from "react";
+import { ArrowRight, Sparkles, TrendingUp, Shield, Zap } from "lucide-react";
+
+interface Message {
+  role: "user" | "ai";
+  text: string;
+}
+
+const FEATURES = [
+  { icon: TrendingUp, label: "Рыночный анализ" },
+  { icon: Shield, label: "Юридический контроль" },
+  { icon: Zap, label: "Результат за 15 сек" },
+];
+
+const HINTS = [
+  "120 м², Москва-Сити, Башня Федерация, чистовая отделка",
+  "Пентхаус 280 м², ЖК Ritz Carlton, panoramic view",
+  "3-комнатная, Хамовники, ЦАО, сталинка, 95 м²",
+];
 
 export function AIEvaluation() {
   const [input, setInput] = useState("");
   const [loading, setLoading] = useState(false);
-  const [result, setResult] = useState<string | null>(null);
+  const [messages, setMessages] = useState<Message[]>([]);
+  const [hintIdx, setHintIdx] = useState(0);
+  const inputRef = useRef<HTMLInputElement>(null);
+  const chatRef = useRef<HTMLDivElement>(null);
+
+  // Rotate placeholder hints
+  useEffect(() => {
+    const t = setInterval(() => setHintIdx((i) => (i + 1) % HINTS.length), 3500);
+    return () => clearInterval(t);
+  }, []);
+
+  // Auto-scroll chat
+  useEffect(() => {
+    if (chatRef.current) {
+      chatRef.current.scrollTop = chatRef.current.scrollHeight;
+    }
+  }, [messages, loading]);
 
   const handleEvaluate = async (e: React.FormEvent) => {
     e.preventDefault();
-    if (!input.trim()) return;
+    const trimmed = input.trim();
+    if (!trimmed || loading) return;
 
+    const userMsg: Message = { role: "user", text: trimmed };
+    setMessages((prev) => [...prev, userMsg]);
+    setInput("");
     setLoading(true);
-    setResult(null);
 
     try {
       const res = await fetch("/api/evaluate", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ propertyDetails: input }),
+        body: JSON.stringify({ propertyDetails: trimmed }),
       });
       const data = await res.json();
-      if (data.report) {
-        setResult(data.report);
-      } else {
-        setResult("Ошибка связи с R4X Core. Попробуйте снова.");
-      }
-    } catch (err) {
-      setResult("Ошибка сети. Алгоритм недоступен.");
+      const aiText = data.report || "Не удалось получить оценку. Проверьте параметры объекта.";
+      setMessages((prev) => [...prev, { role: "ai", text: aiText }]);
+    } catch {
+      setMessages((prev) => [
+        ...prev,
+        { role: "ai", text: "Сеть недоступна. Повторите запрос." },
+      ]);
     } finally {
       setLoading(false);
     }
   };
 
+  const handleHintClick = (hint: string) => {
+    setInput(hint);
+    inputRef.current?.focus();
+  };
+
   return (
-    <section className="py-32 px-4 bg-[#1A1A1A] text-white relative flex flex-col items-center">
-      <div className="absolute inset-0 z-0 opacity-20 pointer-events-none" style={{ backgroundImage: "radial-gradient(circle at 50% 50%, #C5A059 0%, transparent 50%)" }} />
-      
-      <div className="max-w-6xl mx-auto w-full grid grid-cols-1 lg:grid-cols-2 gap-16 items-center relative z-10">
-        
-        {/* Left: Copywriting */}
-        <motion.div 
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.8 }}
-        >
-          <span className="text-xs uppercase tracking-[0.2em] font-medium text-[#C5A059] mb-6 block flex items-center gap-4">
-            <span className="w-8 h-[1px] bg-[#C5A059]" /> Точечная Аналитика
-          </span>
-          <h2 className="font-serif text-5xl md:text-6xl lg:text-7xl leading-[1.1] mb-8">
-            Оценка <br /> без случайностей.
-          </h2>
-          <p className="text-gray-400 font-light text-lg mb-10 max-w-md">
-            Мы используем большие данные и закрытые реестры сделок для мгновенного преданализа вашего актива. Интеллектуальный расчет рыночной стоимости с учетом скрытых факторов.
-          </p>
-          <div className="flex flex-col gap-6">
-            <div className="flex items-center gap-4">
-              <div className="w-2 h-2 rounded-full bg-[#C5A059]" />
-              <span className="text-sm font-medium tracking-widest uppercase text-gray-300">Точность до 1%</span>
-            </div>
-            <div className="flex items-center gap-4">
-              <div className="w-2 h-2 rounded-full bg-[#C5A059]" />
-              <span className="text-sm font-medium tracking-widest uppercase text-gray-300">Мгновенный результат</span>
-            </div>
-          </div>
-        </motion.div>
+    <section id="ai-valuation" className="relative py-32 px-4 bg-[#0D0D0D] overflow-hidden">
+      {/* Background glow */}
+      <div
+        className="pointer-events-none absolute inset-0"
+        style={{
+          background:
+            "radial-gradient(ellipse 60% 50% at 70% 50%, rgba(197,160,89,0.08) 0%, transparent 70%)",
+        }}
+      />
+      {/* Top gold line */}
+      <div className="absolute top-0 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-[#C5A059]/40 to-transparent" />
 
-        {/* Right: Working React AI Terminal */}
-        <motion.div 
-          initial={{ opacity: 0, scale: 0.95 }}
-          whileInView={{ opacity: 1, scale: 1 }}
-          viewport={{ once: true }}
-          transition={{ duration: 1, delay: 0.2 }}
-          className="w-full bg-black border border-white/10 rounded-xl p-8 shadow-2xl relative overflow-hidden flex flex-col h-[450px]"
-        >
-          {/* Terminal Header */}
-          <div className="flex items-center gap-2 mb-8 border-b border-white/10 pb-4">
-            <div className="flex gap-1.5">
-              <div className="w-3 h-3 rounded-full bg-white/20" />
-              <div className="w-3 h-3 rounded-full bg-white/20" />
-              <div className="w-3 h-3 rounded-full bg-white/20" />
-            </div>
-            <span className="ml-4 text-[10px] tracking-widest text-[#C5A059] uppercase font-mono">Fatukhin // Smart Valuation</span>
-          </div>
+      <div className="max-w-7xl mx-auto relative z-10">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
 
-          <div className="flex-1 overflow-y-auto font-mono text-sm text-gray-300 mb-6 flex flex-col gap-4">
-            <div className="bg-white/5 p-4 rounded border border-white/5">
-              Опишите базовые параметры объекта для получения расчетной стоимости (площадь, класс, расположение, состояние).
+          {/* ── Left Column ── */}
+          <motion.div
+            initial={{ opacity: 0, x: -30 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.9 }}
+            className="lg:pt-8"
+          >
+            {/* Badge */}
+            <div className="inline-flex items-center gap-3 mb-10">
+              <span className="w-8 h-[1px] bg-[#C5A059]" />
+              <span className="text-[10px] uppercase tracking-[0.28em] text-[#C5A059] font-medium">
+                AI Аналитика
+              </span>
             </div>
 
-            {result && (
-              <motion.div initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} className="bg-white/10 border border-white/20 text-white p-4 rounded font-medium leading-relaxed">
-                {result}
-              </motion.div>
-            )}
-            
-            {loading && (
-              <div className="flex items-center gap-3 text-[#C5A059]">
-                <Loader2 className="w-4 h-4 animate-spin" />
-                <span>Анализ рынка...</span>
+            <h2 className="font-serif text-5xl md:text-6xl xl:text-7xl leading-[1.05] text-white mb-8">
+              Умная<br />
+              оценка<br />
+              актива.
+            </h2>
+
+            <p className="text-white/50 font-light text-lg leading-relaxed mb-14 max-w-sm">
+              Опишите объект — и в течение секунды получите расчёт рыночной стоимости от AI-аналитика, обученного на закрытых реестрах сделок Москвы и Дубая.
+            </p>
+
+            {/* Feature list */}
+            <div className="flex flex-col gap-5">
+              {FEATURES.map(({ icon: Icon, label }) => (
+                <div key={label} className="flex items-center gap-4">
+                  <div className="w-8 h-8 rounded-full border border-[#C5A059]/20 flex items-center justify-center shrink-0">
+                    <Icon className="w-3.5 h-3.5 text-[#C5A059]" />
+                  </div>
+                  <span className="text-sm text-white/60 uppercase tracking-[0.15em] font-medium">
+                    {label}
+                  </span>
+                </div>
+              ))}
+            </div>
+
+            {/* Disclaimer */}
+            <p className="mt-14 text-white/20 text-xs font-light leading-relaxed max-w-xs">
+              * Предварительная оценка. Для точного расчёта свяжитесь с аналитиком.
+            </p>
+          </motion.div>
+
+          {/* ── Right Column — AI Widget ── */}
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.9, delay: 0.2 }}
+          >
+            {/* Card */}
+            <div className="relative rounded-2xl border border-white/[0.07] bg-[#141414] shadow-[0_0_80px_rgba(197,160,89,0.06)] overflow-hidden">
+
+              {/* Card top bar */}
+              <div className="flex items-center justify-between px-6 py-4 border-b border-white/[0.06]">
+                <div className="flex items-center gap-2.5">
+                  <div className="flex gap-1.5">
+                    {["bg-red-500/40", "bg-yellow-500/40", "bg-green-500/40"].map((c, i) => (
+                      <div key={i} className={`w-2.5 h-2.5 rounded-full ${c}`} />
+                    ))}
+                  </div>
+                  <span className="text-[9px] text-white/25 uppercase tracking-[0.25em] font-mono ml-2">
+                    fatukhin.ai / smart-valuation
+                  </span>
+                </div>
+                <div className="flex items-center gap-2">
+                  <div className="w-1.5 h-1.5 rounded-full bg-[#C5A059] animate-pulse" />
+                  <span className="text-[9px] text-[#C5A059] uppercase tracking-[0.2em] font-mono">Online</span>
+                </div>
               </div>
-            )}
-          </div>
 
-          <form onSubmit={handleEvaluate} className="relative mt-auto">
-            <input 
-              type="text" 
-              value={input}
-              onChange={(e) => setInput(e.target.value)}
-              disabled={loading}
-              placeholder="Ex: 120м2, Москва-Сити, Башня Федерация, черновая отделка..." 
-              className="w-full bg-white/5 border border-white/10 p-4 pr-16 text-white font-mono text-sm focus:outline-none focus:border-[#C5A059] transition-colors disabled:opacity-50"
-            />
-            <button disabled={loading} type="submit" className="absolute right-0 top-0 bottom-0 px-4 text-[#C5A059] hover:bg-[#C5A059] hover:text-black transition-colors font-bold disabled:opacity-50">
-              GO
-            </button>
-          </form>
+              {/* Chat area */}
+              <div
+                ref={chatRef}
+                className="px-6 py-6 min-h-[280px] max-h-[340px] overflow-y-auto flex flex-col gap-4 scroll-smooth"
+              >
+                {messages.length === 0 && (
+                  <motion.div
+                    initial={{ opacity: 0, y: 8 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    className="flex items-start gap-3"
+                  >
+                    <div className="w-6 h-6 rounded-full bg-[#C5A059]/10 border border-[#C5A059]/20 flex items-center justify-center shrink-0 mt-0.5">
+                      <Sparkles className="w-3 h-3 text-[#C5A059]" />
+                    </div>
+                    <div className="bg-white/[0.04] border border-white/[0.06] rounded-xl rounded-tl-none px-4 py-3 max-w-[85%]">
+                      <p className="text-white/70 text-sm font-light leading-relaxed">
+                        Здравствуйте. Укажите параметры объекта — площадь, класс, район, состояние — и я мгновенно подготовлю предварительный расчёт стоимости.
+                      </p>
+                    </div>
+                  </motion.div>
+                )}
 
-        </motion.div>
+                <AnimatePresence initial={false}>
+                  {messages.map((msg, i) => (
+                    <motion.div
+                      key={i}
+                      initial={{ opacity: 0, y: 10 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      exit={{ opacity: 0 }}
+                      transition={{ duration: 0.4 }}
+                      className={`flex items-start gap-3 ${msg.role === "user" ? "flex-row-reverse" : ""}`}
+                    >
+                      {msg.role === "ai" && (
+                        <div className="w-6 h-6 rounded-full bg-[#C5A059]/10 border border-[#C5A059]/20 flex items-center justify-center shrink-0 mt-0.5">
+                          <Sparkles className="w-3 h-3 text-[#C5A059]" />
+                        </div>
+                      )}
+                      <div
+                        className={`rounded-xl px-4 py-3 max-w-[85%] text-sm leading-relaxed ${
+                          msg.role === "user"
+                            ? "bg-[#C5A059]/10 border border-[#C5A059]/20 text-white/90 rounded-tr-none ml-auto"
+                            : "bg-white/[0.04] border border-white/[0.06] text-white/80 font-light rounded-tl-none"
+                        }`}
+                      >
+                        {msg.text}
+                      </div>
+                    </motion.div>
+                  ))}
+                </AnimatePresence>
 
+                {loading && (
+                  <motion.div
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    className="flex items-center gap-3"
+                  >
+                    <div className="w-6 h-6 rounded-full bg-[#C5A059]/10 border border-[#C5A059]/20 flex items-center justify-center shrink-0">
+                      <Sparkles className="w-3 h-3 text-[#C5A059]" />
+                    </div>
+                    <div className="bg-white/[0.04] border border-white/[0.06] rounded-xl rounded-tl-none px-4 py-3">
+                      <div className="flex gap-1 items-center h-4">
+                        {[0, 1, 2].map((i) => (
+                          <motion.div
+                            key={i}
+                            className="w-1.5 h-1.5 rounded-full bg-[#C5A059]/60"
+                            animate={{ scale: [1, 1.4, 1], opacity: [0.4, 1, 0.4] }}
+                            transition={{ duration: 0.9, repeat: Infinity, delay: i * 0.2 }}
+                          />
+                        ))}
+                      </div>
+                    </div>
+                  </motion.div>
+                )}
+              </div>
+
+              {/* Quick hints */}
+              <div className="px-6 pb-3 flex flex-wrap gap-2">
+                {HINTS.map((hint, i) => (
+                  <button
+                    key={i}
+                    onClick={() => handleHintClick(hint)}
+                    className="text-[10px] text-white/30 border border-white/[0.07] rounded-full px-3 py-1 hover:text-[#C5A059] hover:border-[#C5A059]/30 transition-colors duration-200 font-light"
+                  >
+                    {hint.length > 30 ? hint.slice(0, 28) + "…" : hint}
+                  </button>
+                ))}
+              </div>
+
+              {/* Input */}
+              <div className="px-6 pb-6">
+                <form onSubmit={handleEvaluate} className="relative">
+                  <div className="flex items-center gap-3 bg-white/[0.03] border border-white/[0.07] rounded-xl px-4 py-3 focus-within:border-[#C5A059]/40 transition-colors duration-300">
+                    <input
+                      ref={inputRef}
+                      type="text"
+                      value={input}
+                      onChange={(e) => setInput(e.target.value)}
+                      disabled={loading}
+                      placeholder={HINTS[hintIdx]}
+                      className="flex-1 bg-transparent text-white/80 text-sm font-light placeholder:text-white/20 outline-none disabled:opacity-40 transition-all"
+                    />
+                    <button
+                      type="submit"
+                      disabled={loading || !input.trim()}
+                      className="w-8 h-8 rounded-lg bg-[#C5A059] flex items-center justify-center shrink-0 hover:bg-[#d4b06a] disabled:opacity-30 transition-all duration-200 hover:scale-105 active:scale-95"
+                    >
+                      <ArrowRight className="w-4 h-4 text-[#0D0D0D]" />
+                    </button>
+                  </div>
+                </form>
+              </div>
+
+              {/* Bottom disclaimer */}
+              <div className="px-6 pb-5 flex items-center gap-2">
+                <div className="w-3 h-3 rounded border border-[#C5A059]/30 flex items-center justify-center">
+                  <div className="w-1 h-1 rounded-full bg-[#C5A059]/60" />
+                </div>
+                <span className="text-[9px] text-white/20 uppercase tracking-[0.2em]">
+                  Данные защищены · Анализ на основе 50 000+ сделок
+                </span>
+              </div>
+
+            </div>
+          </motion.div>
+        </div>
       </div>
     </section>
   );

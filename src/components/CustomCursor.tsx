@@ -71,7 +71,7 @@ export function CustomCursor() {
         }}
         transition={{ duration: 0.2, ease: "easeOut" }}
       >
-        {isHovered && <span className="text-[3px] text-black mix-blend-normal uppercase tracking-tighter">View</span>}
+      
       </motion.div>
     </>
   );

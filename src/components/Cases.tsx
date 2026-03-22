@@ -41,9 +41,9 @@ export function Cases() {
               Мы не продаем стены. Мы решаем задачи капитала.
             </h2>
           </div>
-          <button className="flex items-center gap-2 text-xs uppercase tracking-widest font-medium text-[#1A1A1A] hover:text-[#C5A059] transition-colors whitespace-nowrap">
+          <a href="#contacts" className="flex items-center gap-2 text-xs uppercase tracking-widest font-medium text-[#1A1A1A] hover:text-[#C5A059] transition-colors whitespace-nowrap">
             Все кейсы <ArrowUpRight className="w-4 h-4" />
-          </button>
+          </a>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
