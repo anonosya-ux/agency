@@ -5,6 +5,9 @@ import { AIConcierge } from "@/components/AIConcierge";
 import { StickyCTA } from "@/components/StickyCTA";
 import { PageTransition } from "@/components/PageTransition";
 import { StructuredData } from "@/components/StructuredData";
+import { Preloader } from "@/components/Preloader";
+import { CustomCursor } from "@/components/CustomCursor";
+import { SmoothScroll } from "@/components/SmoothScroll";
 
 const inter = Inter({ subsets: ["latin", "cyrillic"], variable: "--font-inter" });
 const playfair = Playfair_Display({ subsets: ["latin", "cyrillic"], variable: "--font-playfair" });
@@ -32,14 +35,18 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="ru" className={`${inter.variable} ${playfair.variable} scroll-smooth`}>
+    <html lang="ru" className={`${inter.variable} ${playfair.variable}`}>
       <body className="antialiased bg-[#F8F8F8] text-[#1A1A1A] font-sans selection:bg-[#C5A059] selection:text-white flex flex-col min-h-screen">
         <StructuredData />
-        <PageTransition>
-          {children}
-        </PageTransition>
-        <AIConcierge />
-        <StickyCTA />
+        <Preloader />
+        <CustomCursor />
+        <SmoothScroll>
+          <PageTransition>
+            {children}
+          </PageTransition>
+          <AIConcierge />
+          <StickyCTA />
+        </SmoothScroll>
       </body>
     </html>
   );
