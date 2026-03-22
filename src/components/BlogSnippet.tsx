@@ -39,7 +39,7 @@ export function BlogSnippet() {
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {ARTICLES.map((article) => (
-            <Link key={article.id} href="/blog" className="group block">
+            <Link key={article.id} href={`/blog/${article.id}`} className="group block">
               <div className="relative aspect-[4/3] mb-6 overflow-hidden bg-gray-100">
                 <Image 
                   src={article.image} 

@@ -78,15 +78,15 @@ export function ElevatorScroll() {
           style={{ opacity: s1Opacity, y: s1Y, scale: s1Scale }}
           className="absolute inset-0 flex flex-col items-center justify-center px-4 text-center z-10"
         >
-          <p className="text-xs uppercase tracking-[0.3em] mb-6 text-[#C5A059]">Фатюхин и Ко</p>
+          <p className="text-xs uppercase tracking-[0.3em] mb-6 text-[#C5A059] font-semibold tracking-widest">Фатюхин и Ко • AI Real Estate</p>
           <h1 className="font-serif text-5xl md:text-7xl lg:text-8xl leading-[1.1] mb-8">
-            Стремление <br/> к совершенству.
+            Новая эра <br/> элитной недвижимости.
           </h1>
-          <p className="max-w-xl text-lg font-light opacity-80 mb-12">
-            Скролльте вниз, чтобы погрузиться в архитектурный процесс и эксклюзивную недвижимость.
+          <p className="max-w-xl text-lg font-light text-gray-500 mb-12">
+            Искусственный интеллект и глубокая аналитика для покупки и продажи off-market объектов с максимальной доходностью.
           </p>
-          <div className="flex flex-col items-center gap-4 opacity-50 animate-bounce">
-            <span className="text-[10px] uppercase tracking-widest">Скролл вниз</span>
+          <div className="flex flex-col items-center gap-4 text-gray-400 animate-bounce">
+            <span className="text-[10px] uppercase tracking-widest">Лифт вниз</span>
             <ArrowDown className="w-4 h-4" />
           </div>
         </motion.div>
@@ -138,11 +138,11 @@ export function ElevatorScroll() {
           style={{ opacity: s4Opacity, y: s4Y, scale: s4Scale, pointerEvents: s4Opacity.get() === 0 ? "none" : "auto" }}
           className="absolute inset-0 flex flex-col items-center justify-center text-center px-4 z-40 bg-gradient-to-t from-white via-transparent to-transparent"
         >
-          <span className="text-xs uppercase tracking-[0.2em] mb-4 text-[#C5A059]">Уровень 1</span>
-          <h2 className="font-serif text-5xl md:text-7xl mb-6">Ваша сделка <br/>начинается здесь.</h2>
-          <p className="text-gray-500 font-light text-lg mb-10 max-w-lg">Продажа, покупка, коммерция или срочный выкуп.</p>
-          <button className="bg-[#1A1A1A] text-white px-10 py-5 uppercase tracking-widest text-xs font-semibold hover:bg-[#C5A059] transition-colors">
-            Выбрать направление
+          <span className="text-xs uppercase tracking-[0.2em] mb-4 text-[#C5A059]">Private Banking в Недвижимости</span>
+          <h2 className="font-serif text-5xl md:text-7xl mb-6">Капитал. <br/>Статус. Приватность.</h2>
+          <p className="text-gray-500 font-light text-lg mb-10 max-w-lg">Оставим роботам аналитику, а людям — наслаждение жизнью. Оценим актив за 2 часа, выйдем на сделку за 3 дня.</p>
+          <button className="bg-[#1A1A1A] text-white px-10 py-5 uppercase tracking-widest text-xs font-semibold hover:bg-[#C5A059] transition-colors shadow-2xl">
+            Записаться на консультацию
           </button>
         </motion.div>
 
