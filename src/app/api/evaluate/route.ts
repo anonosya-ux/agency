@@ -25,7 +25,7 @@ export async function POST(req: Request) {
 
 Стиль: Private Banking. Сухо, факты, без лирики. Не более 200 слов.`;
 
-    const response = await fetch("https://api.openai.com/v1/chat/completions", {
+    const response = await fetch("https://api.proxyapi.ru/openai/v1/chat/completions", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
