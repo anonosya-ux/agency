@@ -1,5 +1,6 @@
 import { ElevatorScroll } from "@/components/ElevatorScroll";
 import { Gateway } from "@/components/Gateway";
+import { Founder } from "@/components/Founder";
 import { TrustBanner } from "@/components/TrustBanner";
 import { Catalog } from "@/components/Catalog";
 import { AIEvaluation } from "@/components/AIEvaluation";
@@ -14,6 +15,7 @@ export default function Home() {
       <div id="directions">
         <Gateway />
       </div>
+      <Founder />
       <TrustBanner />
       <Catalog />
       <AIEvaluation />

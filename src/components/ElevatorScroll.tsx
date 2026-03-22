@@ -65,20 +65,20 @@ export function ElevatorScroll() {
           className="absolute inset-0 flex flex-col items-center justify-center px-4 text-center z-10"
         >
           <div className="overflow-hidden">
-            <motion.p initial={{y: "100%"}} animate={{y: 0}} transition={{delay: 1, duration: 1}} className="text-xs uppercase tracking-[0.3em] mb-6 text-[#C5A059] font-semibold tracking-[0.4em]">Фатюхин и Ко • AI Real Estate</motion.p>
+            <motion.p initial={{y: "100%"}} animate={{y: 0}} transition={{delay: 1, duration: 1}} className="text-xs uppercase tracking-[0.3em] mb-6 text-[#C5A059] font-medium tracking-[0.3em]">Фатюхин и Ко • Агентство Недвижимости</motion.p>
           </div>
           <div className="overflow-hidden py-4">
-            <motion.h1 initial={{y: "100%"}} animate={{y: 0}} transition={{delay: 1.2, duration: 1.2, ease: [0.76, 0, 0.24, 1]}} className="font-serif text-[12vw] md:text-[8vw] leading-[0.9] tracking-tighter">
-              Новая эра <br/> элитной <br/> недвижимости.
+            <motion.h1 initial={{y: "100%"}} animate={{y: 0}} transition={{delay: 1.2, duration: 1.2, ease: [0.76, 0, 0.24, 1]}} className="font-serif text-[10vw] md:text-[7vw] leading-[0.9] tracking-tighter">
+              Спокойная экспертиза.<br/> Точные сделки.
             </motion.h1>
           </div>
           <div className="overflow-hidden mt-8">
-            <motion.p initial={{y: "100%"}} animate={{y: 0}} transition={{delay: 1.5, duration: 1}} className="max-w-xl text-lg font-light text-[#1A1A1A]/70 mix-blend-difference">
-              Искусственный интеллект и глубокая аналитика для покупки и продажи off-market объектов с максимальной доходностью.
+            <motion.p initial={{y: "100%"}} animate={{y: 0}} transition={{delay: 1.5, duration: 1}} className="max-w-2xl text-lg font-light text-[#1A1A1A]/80 mix-blend-difference">
+              Бутиковое агентство полного цикла. От глубокой оценки актива и одобрения сложной ипотеки до полностью безопасного сопровождения сделки под ключ.
             </motion.p>
           </div>
-          <motion.div initial={{opacity: 0}} animate={{opacity: 1}} transition={{delay: 2}} className="flex flex-col items-center gap-4 text-gray-400 mt-16 animate-pulse">
-            <span className="text-[10px] uppercase tracking-[0.3em]">Лифт вниз</span>
+          <motion.div initial={{opacity: 0}} animate={{opacity: 1}} transition={{delay: 2}} className="flex flex-col items-center gap-4 text-gray-500 mt-16 animate-pulse">
+            <span className="text-[10px] uppercase tracking-[0.3em] font-medium">Безопасно и под контролем</span>
             <ArrowDown className="w-4 h-4" />
           </motion.div>
         </motion.div>
@@ -136,15 +136,15 @@ export function ElevatorScroll() {
           style={{ clipPath: mask4, y: s4Y, pointerEvents: "auto" }}
           className="absolute inset-0 bg-[#C5A059] flex flex-col items-center justify-center text-center px-4 z-40 text-white"
         >
-          <span className="text-xs uppercase tracking-[0.2em] mb-6 font-medium text-white/70">Private Banking в Недвижимости</span>
+          <span className="text-xs uppercase tracking-[0.2em] mb-6 font-medium text-white/70">Приватность и Контроль</span>
           <h2 className="font-serif text-[10vw] md:text-[8vw] leading-[0.9] tracking-tighter mb-10">
-            Капитал. <br/>Статус. <br/>Приватность.
+            Безопасность.<br/>Опыт.<br/>Сделка.
           </h2>
-          <p className="text-white/80 font-light text-xl mb-12 max-w-xl">
-            Оставим роботам аналитику, а людям — наслаждение жизнью. Оценим актив за 2 часа, выйдем на сделку за 3 дня.
+          <p className="text-white/80 font-light text-xl mb-12 max-w-xl mx-auto">
+            Мы решаем сложные задачи: от срочного выкупа до расселения коммерции. Берем на себя юридическую проверку каждого объекта и гарантируем безопасность расчетов.
           </p>
           <button data-magnetic="true" className="group relative overflow-hidden bg-white text-[#1A1A1A] px-12 py-6 uppercase tracking-[0.3em] text-xs font-bold shadow-2xl transition-transform hover:scale-105 duration-500">
-            <span className="relative z-10">Записаться на консультацию</span>
+            <span className="relative z-10">Обсудить задачу</span>
           </button>
         </motion.div>
 

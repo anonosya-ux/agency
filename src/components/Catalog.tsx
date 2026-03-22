@@ -8,27 +8,27 @@ import Link from "next/link";
 const MOCK_PROPERTIES = [
   {
     id: 1,
-    title: "Пентхаус на Патриарших",
+    title: "Пентхаус (Скрытая продажа)",
     price: "150 000 000 ₽",
     area: "140 м²",
     img: "https://images.unsplash.com/photo-1600607687931-ce8e00280f55?q=80&w=2000&auto=format&fit=crop",
-    tags: ["Видовой", "С отделкой"]
+    tags: ["Off-market", "White Box"]
   },
   {
     id: 2,
-    title: "Резиденция в Хамовниках",
+    title: "Особняк в Хамовниках",
     price: "210 000 000 ₽",
     area: "210 м²",
     img: "https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?q=80&w=2000&auto=format&fit=crop",
-    tags: ["Клубный дом", "Терраса"]
+    tags: ["Сдан", "Клубный дом"]
   },
   {
     id: 3,
-    title: "Апартаменты Москва-Сити",
+    title: "Башня Федерация (ГАБ)",
     price: "95 000 000 ₽",
     area: "98 м²",
     img: "https://plus.unsplash.com/premium_photo-1661882269222-26edff7ad62d?q=80&w=2000&auto=format&fit=crop",
-    tags: ["High-Floor", "Инвестиция"]
+    tags: ["Готовый бизнес", "Арендатор"]
   }
 ];
 
@@ -38,8 +38,8 @@ export function Catalog() {
       <div className="max-w-7xl mx-auto">
         <div className="flex justify-between items-end mb-16">
           <div>
-            <span className="text-xs uppercase tracking-[0.2em] text-[#C5A059] block mb-4">Коллекция</span>
-            <h2 className="font-serif text-4xl lg:text-5xl text-[#1A1A1A]">Curated Selection</h2>
+            <span className="text-xs uppercase tracking-[0.2em] text-[#C5A059] block mb-4">Наши объекты</span>
+            <h2 className="font-serif text-4xl lg:text-5xl text-[#1A1A1A]">Закрытая база</h2>
           </div>
           <Link href="/catalog" className="hidden md:flex items-center gap-2 uppercase tracking-widest text-xs font-semibold hover:text-[#C5A059] transition-colors">
             Смотреть все <ArrowRight className="w-4 h-4" />

@@ -2,24 +2,27 @@ import { ArrowUpRight } from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";
 
-const ARTICLES = [
+const LATEST_ARTICLES = [
   {
-    id: 1,
-    title: "Налог при продаже недвижимости в 2024: Как законно сэкономить",
-    category: "Юридический отдел",
-    image: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?q=80&w=2000"
+    id: "sale-taxes-2026",
+    title: "Налоги при продаже недвижимости в 2026: как законно сэкономить до 15 млн рублей",
+    category: "Юридическая практика",
+    date: "12 Марта 2026",
+    image: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?q=80&w=1000&auto=format&fit=crop"
   },
   {
-    id: 2,
-    title: "Топ-5 ЖК бизнес-класса, которые сдаются в этом году",
+    id: "urgent-buyout-risks",
+    title: "Срочный выкуп: почему 90% предложений на рынке занижают реальную цену вашего актива",
     category: "Аналитика",
-    image: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=2000"
+    date: "05 Марта 2026",
+    image: "https://images.unsplash.com/photo-1560518883-ce09059eeffa?q=80&w=1000&auto=format&fit=crop"
   },
   {
-    id: 3,
-    title: "Почему квартира не продается? Ошибки самостоятельной продажи",
-    category: "Недвижимость",
-    image: "https://images.unsplash.com/photo-1560518883-ce09059eeffa?q=80&w=2000"
+    id: "mortgage-premium",
+    title: "Материнский капитал в премиум-сегменте: легальные схемы интеграции в ипотеку от 100 млн",
+    category: "Финансирование",
+    date: "28 Февраля 2026",
+    image: "https://images.unsplash.com/photo-1556761175-5973dc0f32b7?q=80&w=1000&auto=format&fit=crop"
   }
 ];
 
@@ -38,7 +41,7 @@ export function BlogSnippet() {
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          {ARTICLES.map((article) => (
+          {LATEST_ARTICLES.map((article) => (
             <Link key={article.id} href={`/blog/${article.id}`} className="group block">
               <div className="relative aspect-[4/3] mb-6 overflow-hidden bg-gray-100">
                 <Image 

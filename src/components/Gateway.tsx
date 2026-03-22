@@ -1,47 +1,70 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Building2, Key, ReceiptRussianRuble, Search } from "lucide-react";
+import { ArrowUpRight } from "lucide-react";
 import Link from "next/link";
 
-const categories = [
-  { id: 1, title: "Продать недвижимость", icon: Key, href: "/services/sell", detail: "Выгодная продажа на ваших условиях" },
-  { id: 2, title: "Купить квартиру", icon: Search, href: "/services/buy", detail: "Подбор на вторичном рынке" },
-  { id: 3, title: "Новостройки", icon: Building2, href: "/services/buy", detail: "Инвестиции и для жизни" },
-  { id: 4, title: "Срочный выкуп", icon: ReceiptRussianRuble, href: "/services/fast-buy", detail: "Деньги в течение 3 дней" },
-];
-
 export function Gateway() {
+  const directions = [
+    {
+      title: "Элитная недвижимость",
+      desc: "Квартиры, пентхаусы и особняки в Москве, Дубае и на Пхукете. Закрытые базы и off-market лоты.",
+      link: "/services/buy",
+      image: "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?q=80&w=2000"
+    },
+    {
+      title: "Коммерческая",
+      desc: "Офисы А-класса, стрит-ритейл, готовый арендный бизнес (ГАБ). Доходность под контролем.",
+      link: "/services/commercial",
+      image: "https://images.unsplash.com/photo-1497366216548-37526070297c?q=80&w=2000"
+    },
+    {
+      title: "Загородная",
+      desc: "Резиденции и участки на Рублево-Успенском и Новорижском шоссе. Абсолютная приватность.",
+      link: "/services/countryside",
+      image: "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?q=80&w=2000"
+    },
+    {
+      title: "Ипотека & Срочный выкуп",
+      desc: "Сложные одобрения, маткапитал в премиуме. Срочный выкуп дисконтных лотов за 3 дня за счет фонда.",
+      link: "/services/finance",
+      image: "https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?q=80&w=2000"
+    }
+  ];
+
   return (
-    <section className="py-24 px-4 bg-[#F8F8F8]">
+    <section className="py-24 px-4 bg-[#1A1A1A] text-white">
       <div className="max-w-7xl mx-auto">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-          {categories.map((cat, i) => (
-            <motion.div
-              key={cat.id}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-100px" }}
-              transition={{ duration: 0.7, delay: i * 0.1 }}
-            >
-              <Link href={cat.href} className="group block bg-white p-8 border border-[#EAEAEA] hover:border-[#1A1A1A] transition-colors duration-500 relative overflow-hidden">
-                <div className="absolute top-0 right-0 w-32 h-32 bg-gray-50 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2 group-hover:bg-[#C5A059]/10 transition-colors duration-700" />
-                
-                <cat.icon className="w-8 h-8 text-[#1A1A1A] mb-8 group-hover:scale-110 transition-transform duration-500 ease-out" />
-                
-                <h3 className="font-serif text-2xl mb-3 text-[#1A1A1A] group-hover:text-[#C5A059] transition-colors duration-300">
-                  {cat.title}
-                </h3>
-                
-                <p className="text-sm text-gray-500 font-light mb-8">
-                  {cat.detail}
+        <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-8">
+          <div>
+            <span className="text-xs uppercase tracking-[0.2em] font-medium text-[#C5A059] mb-4 block">Компетенции полного цикла</span>
+            <h2 className="font-serif text-4xl md:text-5xl lg:text-6xl max-w-2xl leading-[1.1]">
+              Управляем недвижимостью<br/>во всех секторах рынка.
+            </h2>
+          </div>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          {directions.map((dir, idx) => (
+            <Link key={idx} href={dir.link} className="group relative aspect-[16/9] md:aspect-square lg:aspect-[4/3] overflow-hidden bg-black flex flex-col justify-end p-8 border border-white/10 hover:border-[#C5A059]/50 transition-colors">
+              <div 
+                className="absolute inset-0 bg-cover bg-center opacity-40 group-hover:opacity-60 group-hover:scale-105 transition-all duration-700 ease-out"
+                style={{ backgroundImage: `url(${dir.image})` }}
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black via-black/50 to-transparent" />
+              
+              <div className="relative z-10">
+                <div className="flex justify-between items-center mb-4">
+                  <h3 className="font-serif text-3xl md:text-4xl">{dir.title}</h3>
+                  <div className="w-12 h-12 rounded-full border border-white/20 flex items-center justify-center group-hover:bg-[#C5A059] group-hover:border-[#C5A059] group-hover:text-black transition-all duration-500">
+                    <ArrowUpRight className="w-5 h-5" />
+                  </div>
+                </div>
+                <p className="text-white/70 font-light text-lg max-w-md line-clamp-2 group-hover:text-white transition-colors">
+                  {dir.desc}
                 </p>
-                
-                <span className="text-xs uppercase tracking-widest font-medium border-b border-[#1A1A1A] pb-1">
-                  Подробнее
-                </span>
-              </Link>
-            </motion.div>
+              </div>
+            </Link>
           ))}
         </div>
       </div>

@@ -49,18 +49,22 @@ export function AIEvaluation() {
           transition={{ duration: 0.8 }}
         >
           <span className="text-xs uppercase tracking-[0.2em] font-medium text-[#C5A059] mb-6 block flex items-center gap-4">
-            <span className="w-8 h-[1px] bg-[#C5A059]" /> Fatukhin Vision™
+            <span className="w-8 h-[1px] bg-[#C5A059]" /> Точечная Аналитика
           </span>
           <h2 className="font-serif text-5xl md:text-6xl lg:text-7xl leading-[1.1] mb-8">
-            Оценка <br /> алгоритмами.
+            Оценка <br /> без случайностей.
           </h2>
           <p className="text-gray-400 font-light text-lg mb-10 max-w-md">
-            Вместо того, чтобы гадать о стоимости, наш AI-агент напрямую анализирует скрытые данные рынка для выдачи мгновенного преданализа вашего актива.
+            Мы используем большие данные и закрытые реестры сделок для мгновенного преданализа вашего актива. Интеллектуальный расчет рыночной стоимости с учетом скрытых факторов.
           </p>
           <div className="flex flex-col gap-6">
             <div className="flex items-center gap-4">
-              <div className="w-2 h-2 rounded-full bg-[#C5A059] animate-pulse" />
-              <span className="text-sm font-medium tracking-widest uppercase text-gray-300">Live GPT-4 Integration</span>
+              <div className="w-2 h-2 rounded-full bg-[#C5A059]" />
+              <span className="text-sm font-medium tracking-widest uppercase text-gray-300">Точность до 1%</span>
+            </div>
+            <div className="flex items-center gap-4">
+              <div className="w-2 h-2 rounded-full bg-[#C5A059]" />
+              <span className="text-sm font-medium tracking-widest uppercase text-gray-300">Мгновенный результат</span>
             </div>
           </div>
         </motion.div>
@@ -76,22 +80,20 @@ export function AIEvaluation() {
           {/* Terminal Header */}
           <div className="flex items-center gap-2 mb-8 border-b border-white/10 pb-4">
             <div className="flex gap-1.5">
-              <div className="w-3 h-3 rounded-full bg-red-500/80" />
-              <div className="w-3 h-3 rounded-full bg-yellow-500/80" />
-              <div className="w-3 h-3 rounded-full bg-green-500/80" />
+              <div className="w-3 h-3 rounded-full bg-white/20" />
+              <div className="w-3 h-3 rounded-full bg-white/20" />
+              <div className="w-3 h-3 rounded-full bg-white/20" />
             </div>
-            <span className="ml-4 text-[10px] tracking-widest text-[#C5A059] uppercase font-mono">Fatukhin // R4X Core Terminal</span>
+            <span className="ml-4 text-[10px] tracking-widest text-[#C5A059] uppercase font-mono">Fatukhin // Smart Valuation</span>
           </div>
 
           <div className="flex-1 overflow-y-auto font-mono text-sm text-gray-300 mb-6 flex flex-col gap-4">
             <div className="bg-white/5 p-4 rounded border border-white/5">
-              <span className="text-[#C5A059]">&gt; system boot...</span><br/>
-              <span className="text-green-400">&gt; connection established.</span><br/>
-              Опишите ваш объект (площадь, район, состояние):
+              Опишите базовые параметры объекта для получения расчетной стоимости (площадь, класс, расположение, состояние).
             </div>
 
             {result && (
-              <motion.div initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} className="bg-[#C5A059] text-black p-4 rounded font-medium">
+              <motion.div initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} className="bg-white/10 border border-white/20 text-white p-4 rounded font-medium leading-relaxed">
                 {result}
               </motion.div>
             )}
