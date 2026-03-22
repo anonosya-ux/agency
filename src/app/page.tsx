@@ -1,5 +1,6 @@
 import { ElevatorScroll } from "@/components/ElevatorScroll";
 import { Gateway } from "@/components/Gateway";
+import { Quiz } from "@/components/Quiz";
 import { Founder } from "@/components/Founder";
 import { TrustBanner } from "@/components/TrustBanner";
 import { Catalog } from "@/components/Catalog";
@@ -15,6 +16,7 @@ export default function Home() {
       <div id="directions">
         <Gateway />
       </div>
+      <Quiz />
       <Founder />
       <TrustBanner />
       <Catalog />

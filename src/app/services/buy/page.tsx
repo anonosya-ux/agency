@@ -66,7 +66,7 @@ export default function BuyPage() {
       <BlogSnippet />
       <Footer />
       
-      <Quiz isOpen={isQuizOpen} onClose={() => setIsQuizOpen(false)} />
+      <Quiz />
     </main>
   );
 }
