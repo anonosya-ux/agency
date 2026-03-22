@@ -1,0 +1,3 @@
+User-Agent: *
+Allow: /
+Sitemap: https://fatukhin.ru/sitemap.xml
