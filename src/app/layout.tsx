@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Inter, Playfair_Display } from "next/font/google";
+import { Cinzel, Josefin_Sans, Geist } from "next/font/google";
 import "./globals.css";
 import { AIConcierge } from "@/components/AIConcierge";
 import { StickyCTA } from "@/components/StickyCTA";
@@ -8,9 +8,12 @@ import { StructuredData } from "@/components/StructuredData";
 import { Preloader } from "@/components/Preloader";
 import { CustomCursor } from "@/components/CustomCursor";
 import { SmoothScroll } from "@/components/SmoothScroll";
+import { cn } from "@/lib/utils";
 
-const inter = Inter({ subsets: ["latin", "cyrillic"], variable: "--font-inter" });
-const playfair = Playfair_Display({ subsets: ["latin", "cyrillic"], variable: "--font-playfair" });
+const geist = Geist({subsets:['latin'],variable:'--font-sans'});
+
+const cinzel = Cinzel({ subsets: ["latin"], weight: ["400", "500", "600", "700"], variable: "--font-heading" });
+const josefin = Josefin_Sans({ subsets: ["latin"], weight: ["300", "400", "500", "600", "700"], variable: "--font-body" });
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://fatukhin.ru'),
@@ -56,8 +59,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="ru" className={`${inter.variable} ${playfair.variable}`}>
-      <body className="antialiased bg-[#F8F8F8] text-[#1A1A1A] font-sans selection:bg-[#C5A059] selection:text-white flex flex-col min-h-screen">
+    <html lang="ru" className={cn(cinzel.variable, josefin.variable, "font-sans", geist.variable)}>
+      <body className="antialiased bg-[#0F0F1A] text-[#F5F5F5] font-body selection:bg-[#C9A84C] selection:text-[#0F0F1A] flex flex-col min-h-screen">
         <StructuredData />
         <Preloader />
         <CustomCursor />

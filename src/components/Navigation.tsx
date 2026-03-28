@@ -37,7 +37,7 @@ export function Navigation() {
         animate={{ y: 0 }}
         transition={{ duration: 0.8, ease: [0.76, 0, 0.24, 1] }}
       >
-        <div className="max-w-7xl mx-auto px-4 md:px-8 h-20 flex items-center justify-between">
+        <div className="max-w-7xl mx-auto px-4 lg:px-8 h-20 flex items-center justify-between">
 
           {/* Logo */}
           <Link href="/" className="flex flex-col leading-none group">
@@ -50,7 +50,7 @@ export function Navigation() {
           </Link>
 
           {/* Desktop Nav */}
-          <nav className="hidden md:flex items-center gap-8">
+          <nav className="hidden lg:flex items-center gap-8">
             {navLinks.map((link) => (
               <a
                 key={link.href}
@@ -63,7 +63,7 @@ export function Navigation() {
           </nav>
 
           {/* Right CTA */}
-          <div className="hidden md:flex items-center gap-6">
+          <div className="hidden lg:flex items-center gap-6">
             <a
               href="tel:+74950000000"
               className="flex items-center gap-2 text-white/70 hover:text-[#C5A059] transition-colors text-sm"
@@ -79,9 +79,9 @@ export function Navigation() {
             </a>
           </div>
 
-          {/* Mobile Burger */}
+          {/* Mobile/Tablet Burger */}
           <button
-            className="md:hidden text-white p-2"
+            className="lg:hidden text-white p-2"
             onClick={() => setMenuOpen(!menuOpen)}
             aria-label="Toggle menu"
           >
@@ -90,9 +90,9 @@ export function Navigation() {
         </div>
       </motion.header>
 
-      {/* Mobile Menu Overlay */}
+      {/* Mobile/Tablet Menu Overlay */}
       <motion.div
-        className="fixed inset-0 z-[90] bg-[#111111] flex flex-col items-center justify-center gap-10 md:hidden"
+        className="fixed inset-0 z-[90] bg-[#111111] flex flex-col items-center justify-center gap-10 lg:hidden"
         initial={{ x: "100%" }}
         animate={{ x: menuOpen ? 0 : "100%" }}
         transition={{ type: "tween", duration: 0.45, ease: [0.76, 0, 0.24, 1] }}
