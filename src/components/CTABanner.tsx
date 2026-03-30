@@ -25,7 +25,7 @@ export const CTABanner = () => {
           whileInView={{ opacity: 1, scale: 1 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
-          className="relative overflow-hidden rounded-[2rem] border border-text/10 bg-[#1A1A1A] p-8 md:p-16 lg:p-20 mx-auto max-w-5xl"
+          className="relative overflow-hidden rounded-[2rem] border border-text/10 bg-dark p-8 md:p-16 lg:p-20 mx-auto max-w-5xl"
         >
           {/* Background accents */}
           <div className="absolute -left-[15%] top-1/2 -translate-y-1/2 w-[400px] h-[400px] bg-accent/15 rounded-full blur-[120px] pointer-events-none" />
@@ -67,7 +67,8 @@ export const CTABanner = () => {
                     onChange={(e) => setName(e.target.value)}
                     placeholder="Ваше имя" 
                     required
-                    className="w-full bg-white/5 border border-white/15 rounded-xl px-5 py-4 text-white placeholder:text-white/30 focus:outline-none focus:border-accent/60 transition-colors text-base"
+                    aria-label="Ваше имя"
+                    className="w-full bg-white/5 border border-white/15 rounded-xl px-5 py-4 text-white placeholder:text-white/30 focus:outline-none focus:border-accent/60 focus-visible:ring-2 focus-visible:ring-accent/40 transition-colors text-base"
                   />
                   <input 
                     type="tel" 
@@ -75,26 +76,28 @@ export const CTABanner = () => {
                     onChange={(e) => setPhone(e.target.value)}
                     placeholder="+7 (___) ___-__-__" 
                     required
-                    className="w-full bg-white/5 border border-white/15 rounded-xl px-5 py-4 text-white placeholder:text-white/30 focus:outline-none focus:border-accent/60 transition-colors text-base"
+                    aria-label="Телефон"
+                    className="w-full bg-white/5 border border-white/15 rounded-xl px-5 py-4 text-white placeholder:text-white/30 focus:outline-none focus:border-accent/60 focus-visible:ring-2 focus-visible:ring-accent/40 transition-colors text-base"
                   />
                   <select
                     value={interest}
                     onChange={(e) => setInterest(e.target.value)}
-                    className="w-full bg-white/5 border border-white/15 rounded-xl px-5 py-4 text-white/70 focus:outline-none focus:border-accent/60 transition-colors text-base appearance-none cursor-pointer"
+                    aria-label="Что вас интересует"
+                    className="w-full bg-white/5 border border-white/15 rounded-xl px-5 py-4 text-white/70 focus:outline-none focus:border-accent/60 focus-visible:ring-2 focus-visible:ring-accent/40 transition-colors text-base appearance-none cursor-pointer"
                     style={{ backgroundImage: `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%23C1A080' d='M6 8L1 3h10z'/%3E%3C/svg%3E")`, backgroundRepeat: 'no-repeat', backgroundPosition: 'right 16px center' }}
                   >
-                    <option value="" className="bg-[#1A1A1A]">Что вас интересует?</option>
-                    <option value="buy" className="bg-[#1A1A1A]">Покупка недвижимости</option>
-                    <option value="sell" className="bg-[#1A1A1A]">Продажа недвижимости</option>
-                    <option value="rent" className="bg-[#1A1A1A]">Аренда</option>
-                    <option value="invest" className="bg-[#1A1A1A]">Инвестиции (Дубай, Кипр)</option>
-                    <option value="fast-buy" className="bg-[#1A1A1A]">Срочный выкуп</option>
-                    <option value="mortgage" className="bg-[#1A1A1A]">Ипотека / Финансирование</option>
+                    <option value="" className="bg-dark">Что вас интересует?</option>
+                    <option value="buy" className="bg-dark">Покупка недвижимости</option>
+                    <option value="sell" className="bg-dark">Продажа недвижимости</option>
+                    <option value="rent" className="bg-dark">Аренда</option>
+                    <option value="invest" className="bg-dark">Инвестиции (Дубай, Кипр)</option>
+                    <option value="fast-buy" className="bg-dark">Срочный выкуп</option>
+                    <option value="mortgage" className="bg-dark">Ипотека / Финансирование</option>
                   </select>
 
                   <button 
                     type="submit" 
-                    className="w-full bg-accent hover:bg-[#d4b896] text-[#1A1A1A] font-semibold uppercase tracking-[0.12em] py-4 rounded-xl transition-all duration-300 text-base flex items-center justify-center gap-2 mt-1"
+                    className="w-full bg-accent hover:bg-[#d4b896] text-dark font-semibold uppercase tracking-[0.12em] py-4 rounded-xl transition-all duration-300 text-base flex items-center justify-center gap-2 mt-1 focus-visible:ring-2 focus-visible:ring-accent/60 focus-visible:ring-offset-2 focus-visible:ring-offset-dark"
                   >
                     Получить подборку <ArrowRight className="w-4 h-4" />
                   </button>

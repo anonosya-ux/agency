@@ -38,7 +38,7 @@ function StatItem({ value, suffix, label, prefix, started }: typeof stats[0] & {
       transition={{ duration: 0.7 }}
       className="flex flex-col items-center text-center gap-3"
     >
-      <span className="font-serif text-6xl md:text-7xl lg:text-8xl text-[#C1A080] tracking-tighter leading-none">
+      <span className="font-serif text-6xl md:text-7xl lg:text-8xl text-accent tracking-tighter leading-none">
         {prefix}{count.toLocaleString("ru-RU")}{suffix}
       </span>
       <span className="text-xs uppercase tracking-[0.2em] text-text/50 font-medium">
@@ -59,7 +59,7 @@ export function StatsCounter() {
     >
       {/* Ambient glow */}
       <div className="absolute inset-0 pointer-events-none">
-        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[300px] bg-[#C1A080]/5 rounded-full blur-3xl" />
+        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[300px] bg-accent/5 rounded-full blur-3xl" />
       </div>
 
       <div className="max-w-7xl mx-auto relative z-10">
@@ -68,7 +68,7 @@ export function StatsCounter() {
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
-            className="text-xs uppercase tracking-[0.3em] text-[#C1A080] font-medium"
+            className="text-xs uppercase tracking-[0.3em] text-accent font-medium"
           >
             В цифрах
           </motion.span>

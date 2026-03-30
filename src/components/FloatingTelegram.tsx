@@ -32,7 +32,7 @@ export function FloatingTelegram() {
             rel="noopener noreferrer"
             className="group flex items-center gap-0 bg-[#1A1A1A] text-text rounded-full shadow-2xl hover:shadow-[#C1A080]/20 transition-all duration-300 overflow-hidden"
           >
-            <div className="w-14 h-14 flex items-center justify-center bg-[#C1A080] text-text group-hover:bg-white group-hover:text-[#1A1A1A] transition-colors shrink-0">
+            <div className="w-14 h-14 flex items-center justify-center bg-accent text-text group-hover:bg-white group-hover:text-[#1A1A1A] transition-colors shrink-0">
               <Send className="w-5 h-5 ml-1" />
             </div>
             <div className="max-w-0 group-hover:max-w-xs transition-all duration-500 ease-in-out overflow-hidden whitespace-nowrap">

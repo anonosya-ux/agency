@@ -19,6 +19,8 @@
   --color-text: #333333;
   --color-text-muted: #7A7A7A;
   --color-cta: #C1A080;
+  --color-dark: #1A1A1A;
+  --color-light-gray: #F8F8F8;
 
   --font-sans: var(--font-sans);
   --font-serif: var(--font-display);

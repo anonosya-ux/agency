@@ -5,6 +5,7 @@ import { usePathname } from 'next/navigation';
 export const StructuredData = () => {
   const pathname = usePathname();
   
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const jsonLd: any = {
     "@context": "https://schema.org",
     "@graph": [

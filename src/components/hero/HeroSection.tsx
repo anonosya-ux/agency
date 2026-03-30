@@ -59,7 +59,7 @@ export const HeroSection = () => {
         >
           <Link 
             href="/catalog"
-            className="bg-accent hover:bg-accent-light text-[#1A1A1A] font-medium uppercase tracking-[0.15em] px-10 py-4 text-sm md:text-base transition-all duration-300 flex items-center justify-center gap-2"
+            className="bg-accent hover:bg-accent-light text-dark font-medium uppercase tracking-[0.15em] px-10 py-4 text-sm md:text-base transition-all duration-300 flex items-center justify-center gap-2"
           >
             Подобрать объект <ArrowRight className="w-4 h-4" />
           </Link>

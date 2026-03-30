@@ -87,7 +87,7 @@ export function AIEvaluation() {
         }}
       />
       {/* Top gold line */}
-      <div className="absolute top-0 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-[#C1A080]/40 to-transparent" />
+      <div className="absolute top-0 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-accent/40 to-transparent" />
 
       <div className="max-w-7xl mx-auto relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
@@ -102,8 +102,8 @@ export function AIEvaluation() {
           >
             {/* Badge */}
             <div className="inline-flex items-center gap-3 mb-10">
-              <span className="w-8 h-[1px] bg-[#C1A080]" />
-              <span className="text-[10px] uppercase tracking-[0.28em] text-[#C1A080] font-medium">
+              <span className="w-8 h-[1px] bg-accent" />
+              <span className="text-[10px] uppercase tracking-[0.28em] text-accent font-medium">
                 AI Аналитика
               </span>
             </div>
@@ -122,8 +122,8 @@ export function AIEvaluation() {
             <div className="flex flex-col gap-5">
               {FEATURES.map(({ icon: Icon, label }) => (
                 <div key={label} className="flex items-center gap-4">
-                  <div className="w-8 h-8 rounded-full border border-[#C1A080]/20 flex items-center justify-center shrink-0">
-                    <Icon className="w-3.5 h-3.5 text-[#C1A080]" />
+                  <div className="w-8 h-8 rounded-full border border-accent/20 flex items-center justify-center shrink-0">
+                    <Icon className="w-3.5 h-3.5 text-accent" />
                   </div>
                   <span className="text-sm text-text/60 uppercase tracking-[0.15em] font-medium">
                     {label}
@@ -161,8 +161,8 @@ export function AIEvaluation() {
                   </span>
                 </div>
                 <div className="flex items-center gap-2">
-                  <div className="w-1.5 h-1.5 rounded-full bg-[#C1A080] animate-pulse" />
-                  <span className="text-[9px] text-[#C1A080] uppercase tracking-[0.2em] font-mono">Online</span>
+                  <div className="w-1.5 h-1.5 rounded-full bg-accent animate-pulse" />
+                  <span className="text-[9px] text-accent uppercase tracking-[0.2em] font-mono">Online</span>
                 </div>
               </div>
 
@@ -177,8 +177,8 @@ export function AIEvaluation() {
                     animate={{ opacity: 1, y: 0 }}
                     className="flex items-start gap-3"
                   >
-                    <div className="w-6 h-6 rounded-full bg-[#C1A080]/10 border border-[#C1A080]/20 flex items-center justify-center shrink-0 mt-0.5">
-                      <Sparkles className="w-3 h-3 text-[#C1A080]" />
+                    <div className="w-6 h-6 rounded-full bg-accent/10 border border-accent/20 flex items-center justify-center shrink-0 mt-0.5">
+                      <Sparkles className="w-3 h-3 text-accent" />
                     </div>
                     <div className="bg-white/[0.04] border border-white/[0.06] rounded-xl rounded-tl-none px-4 py-3 max-w-[85%]">
                       <p className="text-text/70 text-sm font-light leading-relaxed">
@@ -199,14 +199,14 @@ export function AIEvaluation() {
                       className={`flex items-start gap-3 ${msg.role === "user" ? "flex-row-reverse" : ""}`}
                     >
                       {msg.role === "ai" && (
-                        <div className="w-6 h-6 rounded-full bg-[#C1A080]/10 border border-[#C1A080]/20 flex items-center justify-center shrink-0 mt-0.5">
-                          <Sparkles className="w-3 h-3 text-[#C1A080]" />
+                        <div className="w-6 h-6 rounded-full bg-accent/10 border border-accent/20 flex items-center justify-center shrink-0 mt-0.5">
+                          <Sparkles className="w-3 h-3 text-accent" />
                         </div>
                       )}
                       <div
                         className={`rounded-xl px-4 py-3 max-w-[85%] text-sm leading-relaxed ${
                           msg.role === "user"
-                            ? "bg-[#C1A080]/10 border border-[#C1A080]/20 text-text/90 rounded-tr-none ml-auto"
+                            ? "bg-accent/10 border border-accent/20 text-text/90 rounded-tr-none ml-auto"
                             : "bg-white/[0.04] border border-white/[0.06] text-text/80 font-light rounded-tl-none"
                         }`}
                       >
@@ -222,15 +222,15 @@ export function AIEvaluation() {
                     animate={{ opacity: 1 }}
                     className="flex items-center gap-3"
                   >
-                    <div className="w-6 h-6 rounded-full bg-[#C1A080]/10 border border-[#C1A080]/20 flex items-center justify-center shrink-0">
-                      <Sparkles className="w-3 h-3 text-[#C1A080]" />
+                    <div className="w-6 h-6 rounded-full bg-accent/10 border border-accent/20 flex items-center justify-center shrink-0">
+                      <Sparkles className="w-3 h-3 text-accent" />
                     </div>
                     <div className="bg-white/[0.04] border border-white/[0.06] rounded-xl rounded-tl-none px-4 py-3">
                       <div className="flex gap-1 items-center h-4">
                         {[0, 1, 2].map((i) => (
                           <motion.div
                             key={i}
-                            className="w-1.5 h-1.5 rounded-full bg-[#C1A080]/60"
+                            className="w-1.5 h-1.5 rounded-full bg-accent/60"
                             animate={{ scale: [1, 1.4, 1], opacity: [0.4, 1, 0.4] }}
                             transition={{ duration: 0.9, repeat: Infinity, delay: i * 0.2 }}
                           />
@@ -247,7 +247,7 @@ export function AIEvaluation() {
                   <button
                     key={i}
                     onClick={() => handleHintClick(hint)}
-                    className="text-[10px] text-text/30 border border-white/[0.07] rounded-full px-3 py-1 hover:text-[#C1A080] hover:border-[#C1A080]/30 transition-colors duration-200 font-light"
+                    className="text-[10px] text-text/30 border border-white/[0.07] rounded-full px-3 py-1 hover:text-accent hover:border-accent/30 transition-colors duration-200 font-light"
                   >
                     {hint.length > 30 ? hint.slice(0, 28) + "…" : hint}
                   </button>
@@ -257,7 +257,7 @@ export function AIEvaluation() {
               {/* Input */}
               <div className="px-6 pb-6">
                 <form onSubmit={handleEvaluate} className="relative">
-                  <div className="flex items-center gap-3 bg-white/[0.03] border border-white/[0.07] rounded-xl px-4 py-3 focus-within:border-[#C1A080]/40 transition-colors duration-300">
+                  <div className="flex items-center gap-3 bg-white/[0.03] border border-white/[0.07] rounded-xl px-4 py-3 focus-within:border-accent/40 transition-colors duration-300">
                     <input
                       ref={inputRef}
                       type="text"
@@ -270,7 +270,7 @@ export function AIEvaluation() {
                     <button
                       type="submit"
                       disabled={loading || !input.trim()}
-                      className="w-8 h-8 rounded-lg bg-[#C1A080] flex items-center justify-center shrink-0 hover:bg-[#d4b06a] disabled:opacity-30 transition-all duration-200 hover:scale-105 active:scale-95"
+                      className="w-8 h-8 rounded-lg bg-accent flex items-center justify-center shrink-0 hover:bg-[#d4b06a] disabled:opacity-30 transition-all duration-200 hover:scale-105 active:scale-95"
                     >
                       <ArrowRight className="w-4 h-4 text-[#0D0D0D]" />
                     </button>
@@ -280,8 +280,8 @@ export function AIEvaluation() {
 
               {/* Bottom disclaimer */}
               <div className="px-6 pb-5 flex items-center gap-2">
-                <div className="w-3 h-3 rounded border border-[#C1A080]/30 flex items-center justify-center">
-                  <div className="w-1 h-1 rounded-full bg-[#C1A080]/60" />
+                <div className="w-3 h-3 rounded border border-accent/30 flex items-center justify-center">
+                  <div className="w-1 h-1 rounded-full bg-accent/60" />
                 </div>
                 <span className="text-[9px] text-text/20 uppercase tracking-[0.2em]">
                   Данные защищены · Анализ на основе 50 000+ сделок

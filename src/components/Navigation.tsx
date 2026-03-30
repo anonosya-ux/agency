@@ -70,7 +70,7 @@ export function Navigation() {
             </a>
             <Link
               href="/contacts"
-              className="group relative overflow-hidden bg-accent text-[#1A1A1A] px-6 py-3 uppercase tracking-[0.15em] text-[10px] font-bold hover:scale-105 transition-transform duration-300"
+              className="group relative overflow-hidden bg-accent text-dark px-6 py-3 uppercase tracking-[0.15em] text-[10px] font-bold hover:scale-105 transition-transform duration-300"
             >
               Консультация
             </Link>

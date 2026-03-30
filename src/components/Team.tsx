@@ -32,7 +32,7 @@ export function Team() {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <span className="text-xs uppercase tracking-[0.2em] text-[#C1A080] block mb-4">Инсайдеры</span>
+          <span className="text-xs uppercase tracking-[0.2em] text-accent block mb-4">Инсайдеры</span>
           <h2 className="font-serif text-4xl lg:text-5xl">Команда Экспертов</h2>
         </motion.div>
 
@@ -54,7 +54,7 @@ export function Team() {
                   className="object-cover group-hover:scale-105 transition-transform duration-700"
                 />
               </div>
-              <h3 className="font-serif text-2xl mb-1 group-hover:text-[#C1A080] transition-colors">{broker.name}</h3>
+              <h3 className="font-serif text-2xl mb-1 group-hover:text-accent transition-colors">{broker.name}</h3>
               <p className="text-xs uppercase tracking-widest text-text/50">{broker.role}</p>
             </motion.div>
           ))}

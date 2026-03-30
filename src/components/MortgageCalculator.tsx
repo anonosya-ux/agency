@@ -1,7 +1,7 @@
 'use client';
 
 import { useState, useCallback } from 'react';
-import { Calculator as CalcIcon, TrendingUp } from 'lucide-react';
+import { Calculator as CalcIcon } from 'lucide-react';
 
 export function MortgageCalculator() {
   const [price, setPrice] = useState(20000000);
@@ -48,10 +48,11 @@ export function MortgageCalculator() {
             {/* Price */}
             <div>
               <div className="flex justify-between items-baseline mb-3">
-                <label className="text-sm text-text font-medium uppercase tracking-wider">Стоимость объекта</label>
+                <label htmlFor="mc-price" className="text-sm text-text font-medium uppercase tracking-wider">Стоимость объекта</label>
                 <span className="text-accent font-serif text-xl">{formatNum(price)} ₽</span>
               </div>
               <input 
+                id="mc-price"
                 type="range" min={3000000} max={100000000} step={500000} value={price}
                 onChange={(e) => setPrice(Number(e.target.value))}
                 className="w-full h-1.5 bg-text/10 rounded-full appearance-none cursor-pointer accent-accent"
@@ -64,10 +65,11 @@ export function MortgageCalculator() {
             {/* Down payment */}
             <div>
               <div className="flex justify-between items-baseline mb-3">
-                <label className="text-sm text-text font-medium uppercase tracking-wider">Первоначальный взнос</label>
+                <label htmlFor="mc-down" className="text-sm text-text font-medium uppercase tracking-wider">Первоначальный взнос</label>
                 <span className="text-accent font-serif text-xl">{downPayment}% ({formatNum(Math.round(price * downPayment / 100))} ₽)</span>
               </div>
               <input 
+                id="mc-down"
                 type="range" min={10} max={90} step={5} value={downPayment}
                 onChange={(e) => setDownPayment(Number(e.target.value))}
                 className="w-full h-1.5 bg-text/10 rounded-full appearance-none cursor-pointer accent-accent"
@@ -80,10 +82,11 @@ export function MortgageCalculator() {
             {/* Rate */}
             <div>
               <div className="flex justify-between items-baseline mb-3">
-                <label className="text-sm text-text font-medium uppercase tracking-wider">Ставка</label>
+                <label htmlFor="mc-rate" className="text-sm text-text font-medium uppercase tracking-wider">Ставка</label>
                 <span className="text-accent font-serif text-xl">{rate}%</span>
               </div>
               <input 
+                id="mc-rate"
                 type="range" min={1} max={25} step={0.5} value={rate}
                 onChange={(e) => setRate(Number(e.target.value))}
                 className="w-full h-1.5 bg-text/10 rounded-full appearance-none cursor-pointer accent-accent"
@@ -96,10 +99,11 @@ export function MortgageCalculator() {
             {/* Term */}
             <div>
               <div className="flex justify-between items-baseline mb-3">
-                <label className="text-sm text-text font-medium uppercase tracking-wider">Срок кредита</label>
+                <label htmlFor="mc-term" className="text-sm text-text font-medium uppercase tracking-wider">Срок кредита</label>
                 <span className="text-accent font-serif text-xl">{term} лет</span>
               </div>
               <input 
+                id="mc-term"
                 type="range" min={1} max={30} step={1} value={term}
                 onChange={(e) => setTerm(Number(e.target.value))}
                 className="w-full h-1.5 bg-text/10 rounded-full appearance-none cursor-pointer accent-accent"
@@ -111,7 +115,7 @@ export function MortgageCalculator() {
           </div>
 
           {/* Result */}
-          <div className="lg:col-span-2 bg-[#1A1A1A] text-white rounded-2xl p-8 flex flex-col justify-between">
+          <div className="lg:col-span-2 bg-dark text-white rounded-2xl p-8 flex flex-col justify-between">
             <div>
               <p className="text-white/50 uppercase tracking-widest text-[10px] mb-2">Ежемесячный платёж</p>
               <p className="font-serif text-4xl md:text-5xl text-accent mb-8 tracking-tight">{formatNum(result.monthly)} ₽</p>
@@ -134,7 +138,7 @@ export function MortgageCalculator() {
 
             <a 
               href="tel:+79951138937"
-              className="mt-8 block text-center bg-accent text-[#1A1A1A] py-4 uppercase tracking-[0.15em] text-xs font-bold hover:bg-white transition-colors duration-300"
+              className="mt-8 block text-center bg-accent text-dark py-4 rounded-lg uppercase tracking-[0.15em] text-sm font-bold hover:bg-white transition-colors duration-300 focus-visible:ring-2 focus-visible:ring-accent/60 focus-visible:ring-offset-2 focus-visible:ring-offset-dark"
             >
               Получить одобрение
             </a>

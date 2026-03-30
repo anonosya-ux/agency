@@ -32,7 +32,7 @@ export interface SanityProperty {
     floor?: string;
     completion?: string;
   };
-  description?: any[];  // Portable Text
+  description?: unknown[];  // Portable Text
   features?: string[];
   seo?: {
     metaTitle?: string;
@@ -49,7 +49,7 @@ export interface SanityPost {
   mainImage?: SanityImage;
   excerpt?: string;
   category?: string;
-  body?: any[];  // Portable Text
+  body?: unknown[];  // Portable Text
   seo?: {
     metaTitle?: string;
     metaDescription?: string;

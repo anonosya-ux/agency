@@ -78,7 +78,7 @@ export const AwardStrip = () => {
               className="flex flex-col items-center text-center px-4"
             >
               <div className="flex items-baseline gap-2 mb-2">
-                <span className="font-serif text-5xl md:text-6xl font-bold text-accent drop-shadow-[0_0_15px_rgba(201,168,76,0.5)]">
+                <span className="font-serif text-5xl md:text-6xl font-bold text-accent drop-shadow-[0_0_15px_rgba(193,160,128,0.5)]">
                   <Counter from={0} to={stat.value} />
                 </span>
               </div>
@@ -90,7 +90,7 @@ export const AwardStrip = () => {
         
         {/* Certificate preview Marquee */}
         <div className="mt-20 flex overflow-hidden [mask-image:linear-gradient(to_right,transparent,black_20%,black_80%,transparent)]">
-            <div className="flex w-max animate-marquee shadow-sm [--duration:50s] gap-3 px-3">
+            <div className="flex w-max animate-marquee [--duration:50s] gap-6 px-3">
                 {awardsData.map((src, i) => (
                     <div key={`cert-${i}`} className="w-64 h-80 rounded border border-text/10 bg-surface/50 backdrop-blur-md flex items-center justify-center relative overflow-hidden group">
                         <img src={src} alt="Награда агентства" className="w-full h-full object-cover" />
@@ -98,7 +98,7 @@ export const AwardStrip = () => {
                     </div>
                 ))}
             </div>
-            <div className="flex w-max animate-marquee shadow-sm [--duration:50s] gap-3 px-3" aria-hidden="true">
+            <div className="flex w-max animate-marquee [--duration:50s] gap-6 px-3" aria-hidden="true">
                 {awardsData.map((src, i) => (
                     <div key={`cert-dup-${i}`} className="w-64 h-80 rounded border border-text/10 bg-surface/50 backdrop-blur-md flex items-center justify-center relative overflow-hidden group">
                         <img src={src} alt="Награда агентства" className="w-full h-full object-cover" />

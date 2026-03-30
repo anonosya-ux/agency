@@ -5,7 +5,7 @@ import { ArrowUpRight } from "lucide-react";
 
 export function Hero() {
   return (
-    <section className="relative h-screen w-full flex flex-col justify-center items-center px-4 overflow-hidden bg-[#1A1A1A] text-[#F8F8F8]">
+    <section className="relative h-screen w-full flex flex-col justify-center items-center px-4 overflow-hidden bg-dark text-[#F8F8F8]">
       {/* Background Image / Overlay */}
       <div 
         className="absolute inset-0 bg-cover bg-center opacity-40 mix-blend-overlay"
@@ -17,7 +17,7 @@ export function Hero() {
           initial={{ opacity: 0, y: 10 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.2 }}
-          className="text-sm md:text-base uppercase tracking-[0.2em] mb-6 text-[#C1A080]"
+          className="text-sm md:text-base uppercase tracking-[0.2em] mb-6 text-accent"
         >
           Фатюхин и Ко
         </motion.p>
@@ -44,7 +44,7 @@ export function Hero() {
           initial={{ opacity: 0, scale: 0.95 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.8, delay: 0.8 }}
-          className="group flex items-center gap-3 bg-white text-[#1A1A1A] px-8 py-4 uppercase tracking-widest text-sm font-medium hover:bg-[#C1A080] hover:text-text transition-all duration-500 ease-out"
+          className="group flex items-center gap-3 bg-white text-dark px-8 py-4 uppercase tracking-widest text-sm font-medium hover:bg-accent hover:text-text transition-all duration-500 ease-out"
         >
           Обсудить Задачу
           <ArrowUpRight className="w-4 h-4 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform duration-500" />

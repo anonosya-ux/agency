@@ -3,7 +3,6 @@ import { Geist, Cormorant_Garamond, Cormorant } from "next/font/google";
 import localFont from 'next/font/local';
 import "./globals.css";
 import { StickyCTA } from "@/components/StickyCTA";
-
 import { StructuredData } from "@/components/StructuredData";
 import { Preloader } from "@/components/Preloader";
 import { CustomCursor } from "@/components/CustomCursor";

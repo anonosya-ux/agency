@@ -1,7 +1,7 @@
 'use client';
 
 import React from 'react';
-import { motion } from 'framer-motion';
+
 
 const stats = [
   { label: 'Лет на рынке', value: '15+' },
@@ -27,16 +27,16 @@ export const TrustBar = () => {
 
       {/* Marquee for Partners */}
       <div className="w-full relative flex overflow-hidden [mask-image:linear-gradient(to_right,transparent,black_10%,black_90%,transparent)]">
-        <div className="flex w-max animate-marquee shadow-sm [--duration:40s]">
-          {/* First set of partners */}
+        <div className="flex w-max animate-marquee [--duration:40s]">
           {partners.map((partner, index) => (
-            <div key={index} className="flex items-center justify-center mx-4 text-text/40 hover:text-text transition-colors duration-300">
+            <div key={index} className="flex items-center justify-center mx-6 text-text/40 hover:text-text transition-colors duration-300">
               <span className="text-sm font-medium tracking-widest uppercase pointer-events-none select-none">{partner}</span>
             </div>
           ))}
-          {/* Duplicate set for seamless looping */}
+        </div>
+        <div className="flex w-max animate-marquee [--duration:40s]" aria-hidden="true">
           {partners.map((partner, index) => (
-            <div key={`dup-${index}`} className="flex items-center justify-center mx-8 text-text/40 hover:text-text transition-colors duration-300">
+            <div key={`dup-${index}`} className="flex items-center justify-center mx-6 text-text/40 hover:text-text transition-colors duration-300">
               <span className="text-sm font-medium tracking-widest uppercase pointer-events-none select-none">{partner}</span>
             </div>
           ))}

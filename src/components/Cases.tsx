@@ -36,12 +36,12 @@ export function Cases() {
       <div className="max-w-7xl mx-auto">
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-8">
           <div>
-            <span className="text-xs uppercase tracking-[0.2em] font-medium text-[#C1A080] mb-4 block">Реальная практика</span>
-            <h2 className="font-serif text-4xl md:text-5xl text-[#1A1A1A] max-w-2xl leading-[1.1]">
+            <span className="text-xs uppercase tracking-[0.2em] font-medium text-accent mb-4 block">Реальная практика</span>
+            <h2 className="font-serif text-4xl md:text-5xl text-dark max-w-2xl leading-[1.1]">
               Мы не продаем стены. Мы решаем задачи капитала.
             </h2>
           </div>
-          <a href="#contacts" className="flex items-center gap-2 text-xs uppercase tracking-widest font-medium text-[#1A1A1A] hover:text-[#C1A080] transition-colors whitespace-nowrap">
+          <a href="#contacts" className="flex items-center gap-2 text-xs uppercase tracking-widest font-medium text-dark hover:text-accent transition-colors whitespace-nowrap">
             Все кейсы <ArrowUpRight className="w-4 h-4" />
           </a>
         </div>
@@ -54,12 +54,12 @@ export function Cases() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: idx * 0.1, duration: 0.8 }}
-              className="bg-[#F8F8F8] p-8 border border-gray-100 flex flex-col group hover:shadow-xl transition-shadow duration-500"
+              className="bg-light-gray p-8 border border-gray-100 flex flex-col group hover:shadow-xl transition-shadow duration-500"
             >
               <div className="flex justify-between items-start mb-8 pb-8 border-b border-gray-200">
-                <h3 className="font-serif text-2xl text-[#1A1A1A]">{deal.task}</h3>
+                <h3 className="font-serif text-2xl text-dark">{deal.task}</h3>
                 <div className="text-right shrink-0 ml-4">
-                  <span className="block text-2xl text-[#C1A080] font-medium tracking-tighter">{deal.metric}</span>
+                  <span className="block text-2xl text-accent font-medium tracking-tighter">{deal.metric}</span>
                   <span className="text-[10px] text-gray-400 uppercase tracking-widest">{deal.metricLabel}</span>
                 </div>
               </div>
@@ -67,15 +67,15 @@ export function Cases() {
               <div className="flex flex-col gap-6 flex-1">
                 <div>
                   <span className="text-xs uppercase tracking-widest text-red-400 font-medium block mb-2">Риски ситуации</span>
-                  <p className="text-gray-600 font-light text-sm">{deal.risk}</p>
+                  <p className="text-gray-600 font-light text-base">{deal.risk}</p>
                 </div>
                 <div>
-                  <span className="text-xs uppercase tracking-widest text-[#1A1A1A] font-medium block mb-2">Что было сделано</span>
-                  <p className="text-gray-600 font-light text-sm">{deal.execution}</p>
+                  <span className="text-xs uppercase tracking-widest text-dark font-medium block mb-2">Что было сделано</span>
+                  <p className="text-gray-600 font-light text-base">{deal.execution}</p>
                 </div>
                 <div className="mt-auto pt-6 border-t border-gray-200">
                   <span className="text-xs uppercase tracking-widest text-green-600 font-medium block mb-2">Итог</span>
-                  <p className="text-[#1A1A1A] font-medium text-sm">{deal.result}</p>
+                  <p className="text-dark font-medium text-base">{deal.result}</p>
                 </div>
               </div>
             </motion.div>

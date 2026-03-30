@@ -2,7 +2,7 @@
 
 import { Marquee } from "./ui/marquee";
 import { Card } from "./ui/card";
-import { Avatar, AvatarFallback, AvatarImage } from "./ui/avatar";
+import { Avatar, AvatarFallback } from "./ui/avatar";
 import { Star } from "lucide-react";
 
 // Яндекс.Карты review data

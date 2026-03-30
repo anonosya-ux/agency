@@ -1,7 +1,7 @@
 'use client';
 
 import { useState } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
+import { motion } from 'framer-motion';
 import { Tabs, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { SpotlightCard } from './ui/spotlight-card';
 import { Bed, Bath, ArrowUpRight } from 'lucide-react';

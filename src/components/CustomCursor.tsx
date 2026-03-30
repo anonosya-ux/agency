@@ -48,6 +48,7 @@ export function CustomCursor() {
       window.removeEventListener("mousemove", mouseMove);
       window.removeEventListener("mouseover", handleMouseOver);
     };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   // Hide on mobile via CSS matchMedia or just render

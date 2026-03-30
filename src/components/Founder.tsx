@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 
 export function Founder() {
   return (
-    <section className="py-24 px-4 bg-[#F8F8F8]">
+    <section className="py-24 px-4 bg-light-gray">
       <div className="max-w-7xl mx-auto flex flex-col lg:flex-row items-center gap-16 lg:gap-24">
         
         {/* Left: Founder Image */}
@@ -30,11 +30,11 @@ export function Founder() {
           viewport={{ once: true }}
           className="w-full lg:w-7/12 flex flex-col gap-8"
         >
-          <span className="text-xs uppercase tracking-[0.2em] font-medium text-[#C1A080] flex items-center gap-4">
-            <span className="w-8 h-[1px] bg-[#C1A080]" /> Слово Основателя
+          <span className="text-sm uppercase tracking-[0.2em] font-medium text-accent flex items-center gap-4">
+            <span className="w-8 h-[1px] bg-accent" /> Слово Основателя
           </span>
           
-          <h2 className="font-serif text-4xl leading-[1.2] text-[#1A1A1A]">
+          <h2 className="font-serif text-4xl leading-[1.2] text-dark">
             «Для нас хорошая сделка — это не подписанный договор. Это уверенность клиента, что его капитал находится в абсолютной безопасности.»
           </h2>
 
@@ -52,8 +52,8 @@ export function Founder() {
 
           <div className="mt-4 border-t border-gray-200 pt-8 flex items-center justify-between">
             <div>
-              <p className="font-serif text-2xl text-[#1A1A1A]">Виталий Фатюхин</p>
-              <p className="text-sm text-gray-400 uppercase tracking-widest mt-1">Основатель, Управляющий партнер</p>
+              <p className="font-serif text-2xl text-dark">Виталий Фатюхин</p>
+              <p className="text-base text-gray-400 uppercase tracking-widest mt-1">Основатель, Управляющий партнер</p>
             </div>
           </div>
         </motion.div>

@@ -75,7 +75,7 @@ export function Testimonials() {
         {/* Header */}
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-8">
           <div>
-            <span className="text-xs uppercase tracking-[0.2em] font-medium text-[#C1A080] mb-4 block">
+            <span className="text-xs uppercase tracking-[0.2em] font-medium text-accent mb-4 block">
               Клиенты о нас
             </span>
             <h2 className="font-serif text-4xl md:text-5xl text-[#1A1A1A] leading-[1.1] max-w-xl">
@@ -129,7 +129,7 @@ export function Testimonials() {
                   <p className="font-serif text-xl text-[#1A1A1A]">{reviews[current].name}</p>
                   <p className="text-xs text-gray-400 uppercase tracking-widest mt-1">{reviews[current].role}</p>
                 </div>
-                <div className="h-px w-12 bg-[#C1A080] hidden sm:block" />
+                <div className="h-px w-12 bg-accent hidden sm:block" />
                 <p className="text-sm text-gray-500 font-light">{reviews[current].deal}</p>
               </div>
             </motion.div>
@@ -142,7 +142,7 @@ export function Testimonials() {
             <button
               key={i}
               onClick={() => { pause(); setCurrent(i); }}
-              className={`h-[2px] transition-all duration-500 ${i === current ? "w-8 bg-[#C1A080]" : "w-4 bg-gray-300"}`}
+              className={`h-[2px] transition-all duration-500 ${i === current ? "w-8 bg-accent" : "w-4 bg-gray-300"}`}
               aria-label={`Отзыв ${i + 1}`}
             />
           ))}

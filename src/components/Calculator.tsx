@@ -22,15 +22,15 @@ export function Calculator() {
   };
 
   return (
-    <section id="calculator" className="py-24 px-4 bg-[#F8F8F8]">
+    <section id="calculator" className="py-24 px-4 bg-light-gray">
       <div className="max-w-4xl mx-auto">
         <div className="bg-white border border-[#EAEAEA] p-8 md:p-16 relative overflow-hidden">
           {/* Decorative element */}
           <div className="absolute top-0 right-0 w-64 h-64 bg-gray-50 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2" />
 
           <div className="relative z-10">
-            <span className="text-xs uppercase tracking-[0.2em] text-[#C1A080] block mb-4">Оценка</span>
-            <h2 className="font-serif text-3xl md:text-5xl text-[#1A1A1A] mb-4">Узнать стоимость объекта</h2>
+            <span className="text-xs uppercase tracking-[0.2em] text-accent block mb-4">Оценка</span>
+            <h2 className="font-serif text-3xl md:text-5xl text-dark mb-4">Узнать стоимость объекта</h2>
             <p className="font-light text-gray-500 mb-12 max-w-lg">
               Определяем точную рыночную стоимость недвижимости за 15 минут. Бесплатно и объективно.
             </p>
@@ -47,7 +47,7 @@ export function Calculator() {
                     onChange={(e) => setArea(e.target.value)}
                     placeholder="Например, 65"
                     min={1}
-                    className="w-full border-b border-gray-200 py-4 outline-none focus:border-[#C1A080] bg-transparent transition-colors font-serif text-xl"
+                    className="w-full border-b border-gray-200 py-4 outline-none focus:border-accent bg-transparent transition-colors font-serif text-xl"
                   />
                 </div>
                 <div className="space-y-2">
@@ -55,7 +55,7 @@ export function Calculator() {
                   <select
                     value={rooms}
                     onChange={(e) => setRooms(e.target.value)}
-                    className="w-full border-b border-gray-200 py-4 outline-none focus:border-[#C1A080] bg-transparent transition-colors font-serif text-xl appearance-none cursor-pointer"
+                    className="w-full border-b border-gray-200 py-4 outline-none focus:border-accent bg-transparent transition-colors font-serif text-xl appearance-none cursor-pointer"
                   >
                     <option>Студия</option>
                     <option>1 комната</option>
@@ -75,14 +75,14 @@ export function Calculator() {
                   value={metro}
                   onChange={(e) => setMetro(e.target.value)}
                   placeholder="Ближайшее метро"
-                  className="w-full border-b border-gray-200 py-4 outline-none focus:border-[#C1A080] bg-transparent transition-colors font-serif text-xl"
+                  className="w-full border-b border-gray-200 py-4 outline-none focus:border-accent bg-transparent transition-colors font-serif text-xl"
                 />
               </div>
 
               <div className="pt-8 flex items-center gap-8 flex-wrap">
                 <button
                   type="submit"
-                  className="bg-[#1A1A1A] text-text px-12 py-5 uppercase tracking-widest text-xs font-medium hover:bg-[#C1A080] transition-colors duration-500 disabled:opacity-40"
+                  className="bg-dark text-text px-12 py-5 uppercase tracking-widest text-xs font-medium hover:bg-accent transition-colors duration-500 disabled:opacity-40"
                   disabled={submitted}
                 >
                   Рассчитать стоимость
