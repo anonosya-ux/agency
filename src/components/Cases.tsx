@@ -36,12 +36,12 @@ export function Cases() {
       <div className="max-w-7xl mx-auto">
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-8">
           <div>
-            <span className="text-xs uppercase tracking-[0.2em] font-medium text-[#C5A059] mb-4 block">Реальная практика</span>
+            <span className="text-xs uppercase tracking-[0.2em] font-medium text-[#C1A080] mb-4 block">Реальная практика</span>
             <h2 className="font-serif text-4xl md:text-5xl text-[#1A1A1A] max-w-2xl leading-[1.1]">
               Мы не продаем стены. Мы решаем задачи капитала.
             </h2>
           </div>
-          <a href="#contacts" className="flex items-center gap-2 text-xs uppercase tracking-widest font-medium text-[#1A1A1A] hover:text-[#C5A059] transition-colors whitespace-nowrap">
+          <a href="#contacts" className="flex items-center gap-2 text-xs uppercase tracking-widest font-medium text-[#1A1A1A] hover:text-[#C1A080] transition-colors whitespace-nowrap">
             Все кейсы <ArrowUpRight className="w-4 h-4" />
           </a>
         </div>
@@ -59,7 +59,7 @@ export function Cases() {
               <div className="flex justify-between items-start mb-8 pb-8 border-b border-gray-200">
                 <h3 className="font-serif text-2xl text-[#1A1A1A]">{deal.task}</h3>
                 <div className="text-right shrink-0 ml-4">
-                  <span className="block text-2xl text-[#C5A059] font-medium tracking-tighter">{deal.metric}</span>
+                  <span className="block text-2xl text-[#C1A080] font-medium tracking-tighter">{deal.metric}</span>
                   <span className="text-[10px] text-gray-400 uppercase tracking-widest">{deal.metricLabel}</span>
                 </div>
               </div>

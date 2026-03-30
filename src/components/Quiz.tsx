@@ -41,7 +41,7 @@ export function Quiz() {
     <section className="py-24 px-4 bg-[#F8F8F8] border-y border-gray-100">
       <div className="max-w-4xl mx-auto">
         <div className="text-center mb-12">
-          <span className="text-xs uppercase tracking-[0.2em] font-medium text-[#C5A059] mb-4 block">Подбор стратегии</span>
+          <span className="text-xs uppercase tracking-[0.2em] font-medium text-[#C1A080] mb-4 block">Подбор стратегии</span>
           <h2 className="font-serif text-3xl md:text-5xl text-[#1A1A1A] leading-[1.1]">
             Какая задача стоит перед вами?
           </h2>
@@ -64,7 +64,7 @@ export function Quiz() {
                     <button 
                       key={g} 
                       onClick={() => handleGoal(g)}
-                      className="text-left px-6 py-4 border border-gray-200 hover:border-[#1A1A1A] hover:bg-[#1A1A1A] hover:text-white transition-all duration-300 group flex justify-between items-center"
+                      className="text-left px-6 py-4 border border-gray-200 hover:border-[#1A1A1A] hover:bg-[#1A1A1A] hover:text-text transition-all duration-300 group flex justify-between items-center"
                     >
                       <span className="font-light">{g}</span>
                       <ArrowRight className="w-4 h-4 opacity-0 group-hover:opacity-100 transition-opacity" />
@@ -92,7 +92,7 @@ export function Quiz() {
                     <button 
                       key={b} 
                       onClick={() => handleBudget(b)}
-                      className="text-left px-6 py-4 border border-gray-200 hover:border-[#1A1A1A] hover:bg-[#1A1A1A] hover:text-white transition-all duration-300 group flex justify-between items-center"
+                      className="text-left px-6 py-4 border border-gray-200 hover:border-[#1A1A1A] hover:bg-[#1A1A1A] hover:text-text transition-all duration-300 group flex justify-between items-center"
                     >
                       <span className="font-light">{b}</span>
                       <ArrowRight className="w-4 h-4 opacity-0 group-hover:opacity-100 transition-opacity" />
@@ -110,7 +110,7 @@ export function Quiz() {
                 animate={{ opacity: 1, scale: 1 }}
                 className="text-center flex flex-col items-center justify-center py-8"
               >
-                <div className="w-16 h-16 bg-[#F8F8F8] rounded-full flex items-center justify-center mb-6 text-[#C5A059]">
+                <div className="w-16 h-16 bg-[#F8F8F8] rounded-full flex items-center justify-center mb-6 text-[#C1A080]">
                   <Send className="w-6 h-6 ml-1" />
                 </div>
                 <h3 className="font-serif text-3xl mb-4 text-[#1A1A1A]">Аналитика сформирована</h3>
@@ -123,7 +123,7 @@ export function Quiz() {
                   href="https://t.me/PlaceholderUsername" // REQUIRES CONFIRMATION: Actual TG link
                   target="_blank" 
                   rel="noopener noreferrer"
-                  className="bg-[#1A1A1A] text-white px-8 py-4 uppercase tracking-widest text-xs font-medium hover:bg-[#C5A059] transition-colors flex items-center gap-3"
+                  className="bg-[#1A1A1A] text-text px-8 py-4 uppercase tracking-widest text-xs font-medium hover:bg-[#C1A080] transition-colors flex items-center gap-3"
                 >
                   <Send className="w-4 h-4" /> Перейти в Telegram
                 </a>

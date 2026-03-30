@@ -32,10 +32,10 @@ export function BlogSnippet() {
       <div className="max-w-7xl mx-auto">
         <div className="flex flex-col md:flex-row justify-between items-end mb-16 gap-4">
           <div>
-            <span className="text-xs uppercase tracking-[0.2em] text-[#C5A059] block mb-4">Экспертиза</span>
+            <span className="text-xs uppercase tracking-[0.2em] text-[#C1A080] block mb-4">Экспертиза</span>
             <h2 className="font-serif text-4xl lg:text-5xl text-[#1A1A1A]">Блог и Аналитика</h2>
           </div>
-          <Link href="/blog" className="hidden md:flex items-center gap-2 uppercase tracking-widest text-xs font-semibold hover:text-[#C5A059] transition-colors">
+          <Link href="/blog" className="hidden md:flex items-center gap-2 uppercase tracking-widest text-xs font-semibold hover:text-[#C1A080] transition-colors">
             Читать все статьи <ArrowUpRight className="w-4 h-4" />
           </Link>
         </div>
@@ -52,7 +52,7 @@ export function BlogSnippet() {
                 />
               </div>
               <span className="text-[10px] uppercase tracking-widest text-gray-500 block mb-2">{article.category}</span>
-              <h3 className="font-serif text-xl line-clamp-2 leading-snug group-hover:text-[#C5A059] transition-colors">
+              <h3 className="font-serif text-xl line-clamp-2 leading-snug group-hover:text-[#C1A080] transition-colors">
                 {article.title}
               </h3>
             </Link>

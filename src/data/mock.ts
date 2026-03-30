@@ -25,7 +25,7 @@ export const MOCK_PROPERTIES = [
   },
   {
     id: 3,
-    title: "Апартаменты Москва-Сити",
+    title: "Апартаменты Москва",
     price: 95000000,
     priceStr: "95 000 000 ₽",
     area: 98,

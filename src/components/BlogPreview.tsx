@@ -1,98 +1,99 @@
-"use client";
+'use client';
 
-import { motion } from "framer-motion";
-import { ArrowUpRight, Clock } from "lucide-react";
+import { motion } from 'framer-motion';
+import { Card } from './ui/card';
+import { ArrowUpRight } from 'lucide-react';
+import Link from 'next/link';
 
-const posts = [
+const articles = [
   {
-    cat: "Аналитика рынка",
-    title: "Офисы А-класса в Москве: доходность в 2025 году выросла до 11%",
-    excerpt: "Анализ ставок аренды в деловых кластерах Москва-Сити, Белорусская и Электрозаводская. Почему сейчас — окно возможностей для инвестора.",
-    date: "18 марта 2025",
-    readTime: "7 мин",
+    id: 1,
+    category: 'Жилые комплексы',
+    title: 'Самые перспективные районы Москвы для инвестиций',
+    date: '25 Марта 2026',
+    image: '/images/blog-1.jpg',
   },
   {
-    cat: "Юридические кейсы",
-    title: "Как снять арест с объекта недвижимости за 2 недели: пошаговый разбор",
-    excerpt: "Реальный кейс нашего клиента: ипотечный арест + исполнительное производство. Порядок действий, инструменты, результат.",
-    date: "5 марта 2025",
-    readTime: "12 мин",
+    id: 2,
+    category: 'Аналитика',
+    title: 'Рынок элитной недвижимости Дубая: итоги Q1 2026',
+    date: '18 Марта 2026',
+    image: '/images/blog-2.jpg',
   },
   {
-    cat: "Инвестиции",
-    title: "Пхукет vs Дубай: где эффективнее разместить капитал в 2025 году",
-    excerpt: "Сравнение по 8 параметрам: доходность аренды, ликвидность выхода, налоговая нагрузка, курсовые риски и защита права собственности.",
-    date: "22 февраля 2025",
-    readTime: "10 мин",
+    id: 3,
+    category: 'Документы',
+    title: 'Понятие, виды и классификация сделок: полное руководство',
+    date: '10 Марта 2026',
+    image: '/images/blog-3.jpg',
   },
 ];
 
-export function BlogPreview() {
+export const BlogPreview = () => {
   return (
-    <section id="blog" className="py-28 px-4 bg-[#F8F8F8]">
-      <div className="max-w-7xl mx-auto">
-
-        {/* Header */}
-        <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-8">
-          <div>
-            <span className="text-xs uppercase tracking-[0.2em] font-medium text-[#C5A059] mb-4 block">
-              Экспертный взгляд
-            </span>
-            <h2 className="font-serif text-4xl md:text-5xl text-[#1A1A1A] leading-[1.1] max-w-lg">
-              Аналитика и кейсы<br />от практиков.
-            </h2>
-          </div>
-          <a
-            href="/blog"
-            className="group flex items-center gap-3 text-[#1A1A1A] hover:text-[#C5A059] transition-colors text-sm uppercase tracking-[0.15em] font-medium"
+    <section className="py-24 bg-bg w-full">
+      <div className="container mx-auto px-4">
+        <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6">
+          <motion.div 
+            initial={{ opacity: 0, x: -20 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5 }}
           >
-            Все материалы
-            <span className="w-8 h-8 border border-current rounded-full flex items-center justify-center group-hover:bg-[#C5A059] group-hover:border-[#C5A059] group-hover:text-white transition-all duration-300">
-              <ArrowUpRight className="w-4 h-4" />
-            </span>
-          </a>
+            <h2 className="font-serif text-3xl md:text-5xl font-semibold text-text uppercase mb-4">
+              Экспертиза
+            </h2>
+            <p className="text-text-muted text-lg max-w-xl font-light">
+              Новости рынка, глубокая аналитика и инсайды от наших экспертов.
+            </p>
+          </motion.div>
+          <motion.div
+            initial={{ opacity: 0, x: 20 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5 }}
+          >
+            <Link href="/blog" className="inline-block px-6 py-3 rounded-full border border-text/20 text-text hover:bg-white hover:text-bg transition-colors font-medium uppercase tracking-wider text-sm">
+              Все статьи
+            </Link>
+          </motion.div>
         </div>
 
-        {/* Cards */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          {posts.map((post, i) => (
-            <motion.a
-              key={i}
-              href="/blog"
-              initial={{ opacity: 0, y: 20 }}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          {articles.map((article, idx) => (
+            <motion.div
+              key={article.id}
+              initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: i * 0.1 }}
-              className="group bg-white border border-gray-100 p-8 flex flex-col gap-5 hover:border-[#C5A059]/30 hover:shadow-lg transition-all duration-300"
+              transition={{ duration: 0.5, delay: idx * 0.15 }}
             >
-              {/* Category */}
-              <span className="text-[10px] uppercase tracking-[0.22em] font-semibold text-[#C5A059]">
-                {post.cat}
-              </span>
-
-              {/* Title */}
-              <h3 className="font-serif text-xl text-[#1A1A1A] leading-[1.3] group-hover:text-[#C5A059] transition-colors duration-300">
-                {post.title}
-              </h3>
-
-              {/* Excerpt */}
-              <p className="text-gray-500 font-light text-sm leading-relaxed flex-1">
-                {post.excerpt}
-              </p>
-
-              {/* Meta */}
-              <div className="flex items-center justify-between pt-5 border-t border-gray-100">
-                <span className="text-xs text-gray-400">{post.date}</span>
-                <span className="flex items-center gap-1.5 text-xs text-gray-400">
-                  <Clock className="w-3 h-3" />
-                  {post.readTime}
-                </span>
-              </div>
-            </motion.a>
+              <Link href={`/blog/${article.id}`} className="block group">
+                <Card className="h-full border-text/10 bg-surface/30 hover:bg-surface/60 transition-colors duration-500 overflow-hidden shadow-none rounded-xl">
+                  <div className="relative aspect-[16/9] overflow-hidden bg-secondary/30">
+                     <div className="absolute inset-0 bg-gradient-to-t from-surface via-transparent to-transparent z-10" />
+                     <div className="absolute inset-0 transition-transform duration-700 group-hover:scale-105">
+                        {/* Image Placeholder */}
+                     </div>
+                     <div className="absolute top-4 left-4 z-20 px-3 py-1 bg-black/40 backdrop-blur-md rounded border border-text/10 text-[10px] text-text uppercase tracking-widest">
+                       {article.category}
+                     </div>
+                  </div>
+                  <div className="p-6 relative z-20">
+                    <div className="text-text-muted text-xs mb-3 font-light tracking-wide">{article.date}</div>
+                    <h3 className="font-serif text-xl font-medium text-text mb-4 group-hover:text-accent transition-colors leading-snug line-clamp-2">
+                      {article.title}
+                    </h3>
+                    <div className="flex items-center text-accent text-sm font-semibold uppercase tracking-wider group-hover:gap-2 transition-all">
+                      Читать статью <ArrowUpRight className="w-4 h-4 ml-1" />
+                    </div>
+                  </div>
+                </Card>
+              </Link>
+            </motion.div>
           ))}
         </div>
-
       </div>
     </section>
   );
-}
+};

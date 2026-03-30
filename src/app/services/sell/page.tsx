@@ -24,16 +24,16 @@ export default function SellPage() {
           
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             <div>
-              <span className="text-xs uppercase tracking-[0.2em] text-[#C5A059] block mb-4">Для Владельцев</span>
-              <h1 className="font-serif text-5xl lg:text-7xl text-[#1A1A1A] leading-[1.1] mb-8">
-                Продажа недвижимости <br/>без рисков.
+              <span className="text-xs uppercase tracking-[0.2em] text-[#C1A080] block mb-4">Для Владельцев</span>
+              <h1 className="font-serif text-4xl md:text-5xl lg:text-7xl text-[#1A1A1A] leading-[1.1] mb-8 font-semibold uppercase">
+                Продажа недвижимости <br/><span className="text-[#C1A080] font-light">без рисков.</span>
               </h1>
               <p className="text-lg text-gray-500 font-light mb-12 max-w-lg leading-relaxed">
-                Мы используем многоканальный маркетинг, профессиональный хоум-стейджинг и собственную базу инвесторов, чтобы реализовать ваш актив по максимальной рыночной цене за 14–30 дней.
+                Применяем многоканальный маркетинг премиум-класса, профессиональный хоум-стейджинг и собственную базу лояльных инвесторов. Реализуем ваш актив по максимальной рыночной цене за 14–30 дней, соблюдая абсолютную конфиденциальность.
               </p>
               
               <div className="flex flex-col sm:flex-row gap-4">
-                <a href="#calc" className="group flex items-center justify-center gap-3 bg-[#1A1A1A] text-white px-8 py-4 uppercase tracking-widest text-xs font-medium hover:bg-[#C5A059] transition-all">
+                <a href="#calc" className="group flex items-center justify-center gap-3 bg-[#1A1A1A] text-text px-8 py-4 uppercase tracking-widest text-xs font-medium hover:bg-[#C1A080] transition-all">
                   Оценить квартиру
                   <ArrowUpRight className="w-4 h-4 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
                 </a>

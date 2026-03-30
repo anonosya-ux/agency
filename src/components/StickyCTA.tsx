@@ -13,7 +13,7 @@ export function StickyCTA() {
         href="https://t.me/Vitali_fat"
         target="_blank"
         rel="noreferrer" 
-        className="flex-shrink-0 bg-[#1A1A1A] text-white px-5 py-2.5 uppercase tracking-widest text-[10px] font-medium flex items-center gap-2 hover:bg-[#C5A059] transition-colors whitespace-nowrap"
+        className="flex-shrink-0 bg-[#1A1A1A] text-text px-5 py-2.5 uppercase tracking-widest text-[10px] font-medium flex items-center gap-2 hover:bg-[#C1A080] transition-colors whitespace-nowrap"
       >
         Telegram <Send className="w-3 h-3" />
       </a>

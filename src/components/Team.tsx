@@ -23,7 +23,7 @@ const BROKERS = [
 
 export function Team() {
   return (
-    <section className="py-24 px-4 bg-[#1A1A1A] text-white overflow-hidden">
+    <section className="py-24 px-4 bg-[#1A1A1A] text-text overflow-hidden">
       <div className="max-w-7xl mx-auto">
         <motion.div 
           initial={{ opacity: 0, y: 20 }}
@@ -32,7 +32,7 @@ export function Team() {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <span className="text-xs uppercase tracking-[0.2em] text-[#C5A059] block mb-4">Инсайдеры</span>
+          <span className="text-xs uppercase tracking-[0.2em] text-[#C1A080] block mb-4">Инсайдеры</span>
           <h2 className="font-serif text-4xl lg:text-5xl">Команда Экспертов</h2>
         </motion.div>
 
@@ -54,8 +54,8 @@ export function Team() {
                   className="object-cover group-hover:scale-105 transition-transform duration-700"
                 />
               </div>
-              <h3 className="font-serif text-2xl mb-1 group-hover:text-[#C5A059] transition-colors">{broker.name}</h3>
-              <p className="text-xs uppercase tracking-widest text-white/50">{broker.role}</p>
+              <h3 className="font-serif text-2xl mb-1 group-hover:text-[#C1A080] transition-colors">{broker.name}</h3>
+              <p className="text-xs uppercase tracking-widest text-text/50">{broker.role}</p>
             </motion.div>
           ))}
         </div>

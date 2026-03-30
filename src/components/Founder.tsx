@@ -16,14 +16,11 @@ export function Founder() {
           className="w-full lg:w-5/12 aspect-[3/4] relative rounded-lg overflow-hidden shrink-0 shadow-2xl"
         >
           <Image 
-            src="https://images.unsplash.com/photo-1556157382-97eda2d62296?q=80&w=2000" 
+            src="/images/team/agent-01-processed.webp" 
             alt="Виталий Фатюхин" 
             fill 
-            className="object-cover grayscale hover:grayscale-0 transition-all duration-700"
+            className="object-cover transition-all duration-700 hover:scale-105"
           />
-          <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/80 to-transparent p-6 text-white text-center opacity-0 hover:opacity-100 transition-opacity">
-            Виталий Фатюхин
-          </div>
         </motion.div>
 
         {/* Right: Founder Speech */}
@@ -33,8 +30,8 @@ export function Founder() {
           viewport={{ once: true }}
           className="w-full lg:w-7/12 flex flex-col gap-8"
         >
-          <span className="text-xs uppercase tracking-[0.2em] font-medium text-[#C5A059] flex items-center gap-4">
-            <span className="w-8 h-[1px] bg-[#C5A059]" /> Слово Основателя
+          <span className="text-xs uppercase tracking-[0.2em] font-medium text-[#C1A080] flex items-center gap-4">
+            <span className="w-8 h-[1px] bg-[#C1A080]" /> Слово Основателя
           </span>
           
           <h2 className="font-serif text-4xl leading-[1.2] text-[#1A1A1A]">

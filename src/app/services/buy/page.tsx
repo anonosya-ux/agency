@@ -24,18 +24,18 @@ export default function BuyPage() {
           
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             <div>
-              <span className="text-xs uppercase tracking-[0.2em] text-[#C5A059] block mb-4">Для Покупателей</span>
-              <h1 className="font-serif text-5xl lg:text-7xl text-[#1A1A1A] leading-[1.1] mb-8">
-                Подбор идеального <br/>объекта.
+              <span className="text-xs uppercase tracking-[0.2em] text-[#C1A080] block mb-4">Для Покупателей</span>
+              <h1 className="font-serif text-4xl md:text-5xl lg:text-7xl text-[#1A1A1A] leading-[1.1] mb-8 font-semibold uppercase">
+                Подбор идеального <br/><span className="text-[#C1A080] font-light">актива.</span>
               </h1>
               <p className="text-lg text-gray-500 font-light mb-12 max-w-lg leading-relaxed">
-                Мы открываем доступ к приватным off-market базам и лучшим проектам от застройщиков Москвы с эксклюзивными скидками. 
+                Открываем доступ к закрытым пулам застройщиков (off-market) и ликвидным объектам Москвы с премиальным дисконтом. Мы не просто ищем квартиру — мы формируем ваш надежный инвестиционный портфель с юридической гарантией.
               </p>
               
               <div className="flex flex-col sm:flex-row gap-4">
                 <button 
                   onClick={() => setIsQuizOpen(true)}
-                  className="group flex items-center justify-center gap-3 bg-[#1A1A1A] text-white px-8 py-4 uppercase tracking-widest text-xs font-medium hover:bg-[#C5A059] transition-all"
+                  className="group flex items-center justify-center gap-3 bg-[#1A1A1A] text-text px-8 py-4 uppercase tracking-widest text-xs font-medium hover:bg-[#C1A080] transition-all"
                 >
                   Пройти квиз подбора
                   <ArrowUpRight className="w-4 h-4 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />

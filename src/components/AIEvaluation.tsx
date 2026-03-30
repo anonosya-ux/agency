@@ -16,7 +16,7 @@ const FEATURES = [
 ];
 
 const HINTS = [
-  "120 м², Москва-Сити, Башня Федерация, чистовая отделка",
+  "120 м², Москва, пл. Журавлёва, чистовая отделка",
   "Пентхаус 280 м², ЖК Ritz Carlton, panoramic view",
   "3-комнатная, Хамовники, ЦАО, сталинка, 95 м²",
 ];
@@ -87,7 +87,7 @@ export function AIEvaluation() {
         }}
       />
       {/* Top gold line */}
-      <div className="absolute top-0 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-[#C5A059]/40 to-transparent" />
+      <div className="absolute top-0 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-[#C1A080]/40 to-transparent" />
 
       <div className="max-w-7xl mx-auto relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
@@ -102,19 +102,19 @@ export function AIEvaluation() {
           >
             {/* Badge */}
             <div className="inline-flex items-center gap-3 mb-10">
-              <span className="w-8 h-[1px] bg-[#C5A059]" />
-              <span className="text-[10px] uppercase tracking-[0.28em] text-[#C5A059] font-medium">
+              <span className="w-8 h-[1px] bg-[#C1A080]" />
+              <span className="text-[10px] uppercase tracking-[0.28em] text-[#C1A080] font-medium">
                 AI Аналитика
               </span>
             </div>
 
-            <h2 className="font-serif text-5xl md:text-6xl xl:text-7xl leading-[1.05] text-white mb-8">
+            <h2 className="font-serif text-5xl md:text-6xl xl:text-7xl leading-[1.05] text-text mb-8">
               Умная<br />
               оценка<br />
               актива.
             </h2>
 
-            <p className="text-white/50 font-light text-lg leading-relaxed mb-14 max-w-sm">
+            <p className="text-text/50 font-light text-lg leading-relaxed mb-14 max-w-sm">
               Опишите объект — и в течение секунды получите расчёт рыночной стоимости от AI-аналитика, обученного на закрытых реестрах сделок Москвы и Дубая.
             </p>
 
@@ -122,10 +122,10 @@ export function AIEvaluation() {
             <div className="flex flex-col gap-5">
               {FEATURES.map(({ icon: Icon, label }) => (
                 <div key={label} className="flex items-center gap-4">
-                  <div className="w-8 h-8 rounded-full border border-[#C5A059]/20 flex items-center justify-center shrink-0">
-                    <Icon className="w-3.5 h-3.5 text-[#C5A059]" />
+                  <div className="w-8 h-8 rounded-full border border-[#C1A080]/20 flex items-center justify-center shrink-0">
+                    <Icon className="w-3.5 h-3.5 text-[#C1A080]" />
                   </div>
-                  <span className="text-sm text-white/60 uppercase tracking-[0.15em] font-medium">
+                  <span className="text-sm text-text/60 uppercase tracking-[0.15em] font-medium">
                     {label}
                   </span>
                 </div>
@@ -133,7 +133,7 @@ export function AIEvaluation() {
             </div>
 
             {/* Disclaimer */}
-            <p className="mt-14 text-white/20 text-xs font-light leading-relaxed max-w-xs">
+            <p className="mt-14 text-text/20 text-xs font-light leading-relaxed max-w-xs">
               * Предварительная оценка. Для точного расчёта свяжитесь с аналитиком.
             </p>
           </motion.div>
@@ -156,13 +156,13 @@ export function AIEvaluation() {
                       <div key={i} className={`w-2.5 h-2.5 rounded-full ${c}`} />
                     ))}
                   </div>
-                  <span className="text-[9px] text-white/25 uppercase tracking-[0.25em] font-mono ml-2">
+                  <span className="text-[9px] text-text/25 uppercase tracking-[0.25em] font-mono ml-2">
                     fatukhin.ai / smart-valuation
                   </span>
                 </div>
                 <div className="flex items-center gap-2">
-                  <div className="w-1.5 h-1.5 rounded-full bg-[#C5A059] animate-pulse" />
-                  <span className="text-[9px] text-[#C5A059] uppercase tracking-[0.2em] font-mono">Online</span>
+                  <div className="w-1.5 h-1.5 rounded-full bg-[#C1A080] animate-pulse" />
+                  <span className="text-[9px] text-[#C1A080] uppercase tracking-[0.2em] font-mono">Online</span>
                 </div>
               </div>
 
@@ -177,11 +177,11 @@ export function AIEvaluation() {
                     animate={{ opacity: 1, y: 0 }}
                     className="flex items-start gap-3"
                   >
-                    <div className="w-6 h-6 rounded-full bg-[#C5A059]/10 border border-[#C5A059]/20 flex items-center justify-center shrink-0 mt-0.5">
-                      <Sparkles className="w-3 h-3 text-[#C5A059]" />
+                    <div className="w-6 h-6 rounded-full bg-[#C1A080]/10 border border-[#C1A080]/20 flex items-center justify-center shrink-0 mt-0.5">
+                      <Sparkles className="w-3 h-3 text-[#C1A080]" />
                     </div>
                     <div className="bg-white/[0.04] border border-white/[0.06] rounded-xl rounded-tl-none px-4 py-3 max-w-[85%]">
-                      <p className="text-white/70 text-sm font-light leading-relaxed">
+                      <p className="text-text/70 text-sm font-light leading-relaxed">
                         Здравствуйте. Укажите параметры объекта — площадь, класс, район, состояние — и я мгновенно подготовлю предварительный расчёт стоимости.
                       </p>
                     </div>
@@ -199,15 +199,15 @@ export function AIEvaluation() {
                       className={`flex items-start gap-3 ${msg.role === "user" ? "flex-row-reverse" : ""}`}
                     >
                       {msg.role === "ai" && (
-                        <div className="w-6 h-6 rounded-full bg-[#C5A059]/10 border border-[#C5A059]/20 flex items-center justify-center shrink-0 mt-0.5">
-                          <Sparkles className="w-3 h-3 text-[#C5A059]" />
+                        <div className="w-6 h-6 rounded-full bg-[#C1A080]/10 border border-[#C1A080]/20 flex items-center justify-center shrink-0 mt-0.5">
+                          <Sparkles className="w-3 h-3 text-[#C1A080]" />
                         </div>
                       )}
                       <div
                         className={`rounded-xl px-4 py-3 max-w-[85%] text-sm leading-relaxed ${
                           msg.role === "user"
-                            ? "bg-[#C5A059]/10 border border-[#C5A059]/20 text-white/90 rounded-tr-none ml-auto"
-                            : "bg-white/[0.04] border border-white/[0.06] text-white/80 font-light rounded-tl-none"
+                            ? "bg-[#C1A080]/10 border border-[#C1A080]/20 text-text/90 rounded-tr-none ml-auto"
+                            : "bg-white/[0.04] border border-white/[0.06] text-text/80 font-light rounded-tl-none"
                         }`}
                       >
                         {msg.text}
@@ -222,15 +222,15 @@ export function AIEvaluation() {
                     animate={{ opacity: 1 }}
                     className="flex items-center gap-3"
                   >
-                    <div className="w-6 h-6 rounded-full bg-[#C5A059]/10 border border-[#C5A059]/20 flex items-center justify-center shrink-0">
-                      <Sparkles className="w-3 h-3 text-[#C5A059]" />
+                    <div className="w-6 h-6 rounded-full bg-[#C1A080]/10 border border-[#C1A080]/20 flex items-center justify-center shrink-0">
+                      <Sparkles className="w-3 h-3 text-[#C1A080]" />
                     </div>
                     <div className="bg-white/[0.04] border border-white/[0.06] rounded-xl rounded-tl-none px-4 py-3">
                       <div className="flex gap-1 items-center h-4">
                         {[0, 1, 2].map((i) => (
                           <motion.div
                             key={i}
-                            className="w-1.5 h-1.5 rounded-full bg-[#C5A059]/60"
+                            className="w-1.5 h-1.5 rounded-full bg-[#C1A080]/60"
                             animate={{ scale: [1, 1.4, 1], opacity: [0.4, 1, 0.4] }}
                             transition={{ duration: 0.9, repeat: Infinity, delay: i * 0.2 }}
                           />
@@ -247,7 +247,7 @@ export function AIEvaluation() {
                   <button
                     key={i}
                     onClick={() => handleHintClick(hint)}
-                    className="text-[10px] text-white/30 border border-white/[0.07] rounded-full px-3 py-1 hover:text-[#C5A059] hover:border-[#C5A059]/30 transition-colors duration-200 font-light"
+                    className="text-[10px] text-text/30 border border-white/[0.07] rounded-full px-3 py-1 hover:text-[#C1A080] hover:border-[#C1A080]/30 transition-colors duration-200 font-light"
                   >
                     {hint.length > 30 ? hint.slice(0, 28) + "…" : hint}
                   </button>
@@ -257,7 +257,7 @@ export function AIEvaluation() {
               {/* Input */}
               <div className="px-6 pb-6">
                 <form onSubmit={handleEvaluate} className="relative">
-                  <div className="flex items-center gap-3 bg-white/[0.03] border border-white/[0.07] rounded-xl px-4 py-3 focus-within:border-[#C5A059]/40 transition-colors duration-300">
+                  <div className="flex items-center gap-3 bg-white/[0.03] border border-white/[0.07] rounded-xl px-4 py-3 focus-within:border-[#C1A080]/40 transition-colors duration-300">
                     <input
                       ref={inputRef}
                       type="text"
@@ -265,12 +265,12 @@ export function AIEvaluation() {
                       onChange={(e) => setInput(e.target.value)}
                       disabled={loading}
                       placeholder={HINTS[hintIdx]}
-                      className="flex-1 bg-transparent text-white/80 text-sm font-light placeholder:text-white/20 outline-none disabled:opacity-40 transition-all"
+                      className="flex-1 bg-transparent text-text/80 text-sm font-light placeholder:text-text/20 outline-none disabled:opacity-40 transition-all"
                     />
                     <button
                       type="submit"
                       disabled={loading || !input.trim()}
-                      className="w-8 h-8 rounded-lg bg-[#C5A059] flex items-center justify-center shrink-0 hover:bg-[#d4b06a] disabled:opacity-30 transition-all duration-200 hover:scale-105 active:scale-95"
+                      className="w-8 h-8 rounded-lg bg-[#C1A080] flex items-center justify-center shrink-0 hover:bg-[#d4b06a] disabled:opacity-30 transition-all duration-200 hover:scale-105 active:scale-95"
                     >
                       <ArrowRight className="w-4 h-4 text-[#0D0D0D]" />
                     </button>
@@ -280,10 +280,10 @@ export function AIEvaluation() {
 
               {/* Bottom disclaimer */}
               <div className="px-6 pb-5 flex items-center gap-2">
-                <div className="w-3 h-3 rounded border border-[#C5A059]/30 flex items-center justify-center">
-                  <div className="w-1 h-1 rounded-full bg-[#C5A059]/60" />
+                <div className="w-3 h-3 rounded border border-[#C1A080]/30 flex items-center justify-center">
+                  <div className="w-1 h-1 rounded-full bg-[#C1A080]/60" />
                 </div>
-                <span className="text-[9px] text-white/20 uppercase tracking-[0.2em]">
+                <span className="text-[9px] text-text/20 uppercase tracking-[0.2em]">
                   Данные защищены · Анализ на основе 50 000+ сделок
                 </span>
               </div>

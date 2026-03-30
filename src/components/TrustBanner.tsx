@@ -38,7 +38,7 @@ export function TrustBanner() {
     <section className="py-24 px-4 bg-white border-y border-gray-100">
       <div className="max-w-7xl mx-auto">
         <div className="mb-16">
-          <span className="text-xs uppercase tracking-[0.2em] font-medium text-[#C5A059] mb-4 block">Архитектура Доверия</span>
+          <span className="text-xs uppercase tracking-[0.2em] font-medium text-[#C1A080] mb-4 block">Архитектура Доверия</span>
           <h2 className="font-serif text-4xl md:text-5xl lg:text-6xl text-[#1A1A1A] max-w-2xl leading-[1.1]">
             Почему нам доверяют<br/>сложные капиталы.
           </h2>

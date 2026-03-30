@@ -1,30 +1,105 @@
-export function StructuredData() {
-  const jsonLd = {
+'use client';
+
+import { usePathname } from 'next/navigation';
+
+export const StructuredData = () => {
+  const pathname = usePathname();
+  
+  const jsonLd: any = {
     "@context": "https://schema.org",
-    "@type": "RealEstateAgent",
-    name: "Фатюхин и Ко — Элитная недвижимость",
-    image: "https://fatukhin.ru/renders/hero_skyscraper.png",
-    "@id": "https://fatukhin.ru",
-    url: "https://fatukhin.ru",
-    telephone: "+74950000000",
-    priceRange: "$$$$",
-    address: {
-      "@type": "PostalAddress",
-      streetAddress: "Пресненская наб., 12",
-      addressLocality: "Москва",
-      postalCode: "123112",
-      addressCountry: "RU"
-    },
-    geo: {
-      "@type": "GeoCoordinates",
-      latitude: 55.747115,
-      longitude: 37.539078
-    },
-    sameAs: [
-      "https://t.me/fatukhin_realestate",
-      "https://www.youtube.com/@fatukhin"
+    "@graph": [
+      {
+        "@type": "RealEstateAgent",
+        "@id": "https://fatukhin.ru/#organization",
+        "name": "Фатюхин и Ко",
+        "url": "https://fatukhin.ru",
+        "logo": "https://fatukhin.ru/logo.svg",
+        "image": "https://fatukhin.ru/images/founder.jpg",
+        "description": "Элитное агентство недвижимости в Москве и Дубае. Покупка, продажа, срочный выкуп и аренда премиальной недвижимости.",
+        "telephone": "+79951138937",
+        "email": "info@fatukhin.ru",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "пл. Журавлёва",
+          "addressLocality": "Москва",
+          "postalCode": "123317",
+          "addressCountry": "RU"
+        },
+        "priceRange": "$$$",
+        "openingHoursSpecification": {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": [
+            "Monday",
+            "Tuesday",
+            "Wednesday",
+            "Thursday",
+            "Friday",
+            "Saturday",
+            "Sunday"
+          ],
+          "opens": "09:00",
+          "closes": "21:00"
+        },
+        "sameAs": [
+          "https://t.me/fatukhin_ko",
+          "https://instagram.com/fatukhin_ko"
+        ],
+        "aggregateRating": {
+          "@type": "AggregateRating",
+          "ratingValue": "5.0",
+          "reviewCount": "120"
+        }
+      },
+      {
+        "@type": "WebSite",
+        "@id": "https://fatukhin.ru/#website",
+        "url": "https://fatukhin.ru",
+        "name": "Фатюхин и Ко | Элитная Недвижимость",
+        "publisher": {
+          "@id": "https://fatukhin.ru/#organization"
+        }
+      }
     ]
   };
+
+  // Dynamically add structured data based on route
+  if (pathname?.startsWith('/catalog')) {
+    jsonLd['@graph'].push({
+      "@type": "BreadcrumbList",
+      "@id": "https://fatukhin.ru/catalog/#breadcrumb",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Главная",
+          "item": "https://fatukhin.ru/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Каталог недвижимости",
+          "item": "https://fatukhin.ru/catalog"
+        }
+      ]
+    });
+  }
+
+  if (pathname === '/contacts') {
+    jsonLd['@graph'].push({
+       "@type": "LocalBusiness",
+       "@id": "https://fatukhin.ru/contacts/#localbusiness",
+       "name": "Запись на консультацию — Фатюхин и Ко",
+       "url": "https://fatukhin.ru/contacts",
+       "telephone": "+79951138937",
+       "address": {
+         "@type": "PostalAddress",
+         "streetAddress": "пл. Журавлёва",
+         "addressLocality": "Москва",
+         "postalCode": "123317",
+         "addressCountry": "RU"
+       }
+    });
+  }
 
   return (
     <script
@@ -32,4 +107,4 @@ export function StructuredData() {
       dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
     />
   );
-}
+};

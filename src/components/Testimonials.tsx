@@ -8,7 +8,7 @@ const reviews = [
   {
     name: "Андрей Соколов",
     role: "Предприниматель",
-    deal: "Продажа пентхауса в Москва-Сити",
+    deal: "Продажа пентхауса в Москва",
     text: "Продавал пентхаус с непростой историей — незарегистрированная перепланировка и арест по бизнес-делу. Команда Виталия за две недели сняла арест, легализовала перепланировку и закрыла сделку на 12% выше моих ожиданий. Профессионализм не слова, а цифры.",
     stars: 5,
   },
@@ -75,7 +75,7 @@ export function Testimonials() {
         {/* Header */}
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-8">
           <div>
-            <span className="text-xs uppercase tracking-[0.2em] font-medium text-[#C5A059] mb-4 block">
+            <span className="text-xs uppercase tracking-[0.2em] font-medium text-[#C1A080] mb-4 block">
               Клиенты о нас
             </span>
             <h2 className="font-serif text-4xl md:text-5xl text-[#1A1A1A] leading-[1.1] max-w-xl">
@@ -85,14 +85,14 @@ export function Testimonials() {
           <div className="flex items-center gap-4">
             <button
               onClick={() => { pause(); prev(); }}
-              className="w-12 h-12 border border-[#1A1A1A] flex items-center justify-center hover:bg-[#1A1A1A] hover:text-white transition-colors"
+              className="w-12 h-12 border border-[#1A1A1A] flex items-center justify-center hover:bg-[#1A1A1A] hover:text-text transition-colors"
               aria-label="Предыдущий отзыв"
             >
               <ChevronLeft className="w-5 h-5" />
             </button>
             <button
               onClick={() => { pause(); next(); }}
-              className="w-12 h-12 border border-[#1A1A1A] flex items-center justify-center hover:bg-[#1A1A1A] hover:text-white transition-colors"
+              className="w-12 h-12 border border-[#1A1A1A] flex items-center justify-center hover:bg-[#1A1A1A] hover:text-text transition-colors"
               aria-label="Следующий отзыв"
             >
               <ChevronRight className="w-5 h-5" />
@@ -114,7 +114,7 @@ export function Testimonials() {
               {/* Stars */}
               <div className="flex gap-1">
                 {Array.from({ length: reviews[current].stars }).map((_, i) => (
-                  <Star key={i} className="w-4 h-4 fill-[#C5A059] stroke-[#C5A059]" />
+                  <Star key={i} className="w-4 h-4 fill-[#C1A080] stroke-[#C1A080]" />
                 ))}
               </div>
 
@@ -129,7 +129,7 @@ export function Testimonials() {
                   <p className="font-serif text-xl text-[#1A1A1A]">{reviews[current].name}</p>
                   <p className="text-xs text-gray-400 uppercase tracking-widest mt-1">{reviews[current].role}</p>
                 </div>
-                <div className="h-px w-12 bg-[#C5A059] hidden sm:block" />
+                <div className="h-px w-12 bg-[#C1A080] hidden sm:block" />
                 <p className="text-sm text-gray-500 font-light">{reviews[current].deal}</p>
               </div>
             </motion.div>
@@ -142,7 +142,7 @@ export function Testimonials() {
             <button
               key={i}
               onClick={() => { pause(); setCurrent(i); }}
-              className={`h-[2px] transition-all duration-500 ${i === current ? "w-8 bg-[#C5A059]" : "w-4 bg-gray-300"}`}
+              className={`h-[2px] transition-all duration-500 ${i === current ? "w-8 bg-[#C1A080]" : "w-4 bg-gray-300"}`}
               aria-label={`Отзыв ${i + 1}`}
             />
           ))}

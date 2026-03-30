@@ -65,7 +65,7 @@ export function ElevatorScroll() {
           className="absolute inset-0 flex flex-col items-center justify-center px-4 text-center z-10"
         >
           <div className="overflow-hidden">
-            <motion.p initial={{y: "100%"}} animate={{y: 0}} transition={{delay: 1, duration: 1}} className="text-xs uppercase tracking-[0.3em] mb-6 text-[#C5A059] font-medium tracking-[0.3em]">Фатюхин и Ко • Агентство Недвижимости</motion.p>
+            <motion.p initial={{y: "100%"}} animate={{y: 0}} transition={{delay: 1, duration: 1}} className="text-xs uppercase tracking-[0.3em] mb-6 text-[#C1A080] font-medium tracking-[0.3em]">Фатюхин и Ко • Агентство Недвижимости</motion.p>
           </div>
           <div className="overflow-hidden py-4">
             <motion.h1 initial={{y: "100%"}} animate={{y: 0}} transition={{delay: 1.2, duration: 1.2, ease: [0.76, 0, 0.24, 1]}} className="font-serif text-[10vw] md:text-[7vw] leading-[0.9] tracking-tighter">
@@ -89,13 +89,13 @@ export function ElevatorScroll() {
           className="absolute inset-0 bg-white flex flex-col items-center justify-center md:flex-row gap-12 px-8 max-w-[100vw] mx-auto z-20"
         >
           <motion.div className="w-full md:w-1/2 md:pl-24" style={{ y: s2Y }}>
-            <span className="text-xs uppercase tracking-[0.2em] block mb-4 text-[#C5A059] flex items-center gap-4">
-              <span className="w-12 h-[1px] bg-[#C5A059]" /> Топ Локации
+            <span className="text-xs uppercase tracking-[0.2em] block mb-4 text-[#C1A080] flex items-center gap-4">
+              <span className="w-12 h-[1px] bg-[#C1A080]" /> Топ Локации
             </span>
             <h2 className="font-serif text-[8vw] md:text-7xl leading-[0.9] tracking-tighter mb-8">Новостройки<br/>Бизнес-класса</h2>
             <p className="text-[#1A1A1A]/70 font-light text-xl mb-10 max-w-md">Современные жилые комплексы в развитых районах. Удобные планировки, паркинги и инфраструктура для комфортной жизни.</p>
             <a href="#catalog" data-magnetic="true" className="group relative overflow-hidden border border-[#1A1A1A] text-[#1A1A1A] px-10 py-5 uppercase tracking-widest text-xs font-medium transition-colors inline-block">
-              <span className="relative z-10 group-hover:text-white transition-colors duration-500">Смотреть лоты</span>
+              <span className="relative z-10 group-hover:text-text transition-colors duration-500">Смотреть лоты</span>
               <div className="absolute inset-0 bg-[#1A1A1A] transform scale-x-0 origin-left group-hover:scale-x-100 transition-transform duration-500 ease-[0.76,0,0.24,1]" />
             </a>
           </motion.div>
@@ -112,14 +112,14 @@ export function ElevatorScroll() {
           className="absolute inset-0 bg-[#F8F8F8] flex flex-col items-center justify-center md:flex-row-reverse gap-12 px-8 max-w-[100vw] mx-auto z-30"
         >
           <motion.div className="w-full md:w-1/2 md:pr-24" style={{ y: s3Y }}>
-            <span className="text-xs uppercase tracking-[0.2em] block mb-4 text-[#C5A059] flex items-center md:justify-end gap-4">
-              Загородная <span className="w-12 h-[1px] bg-[#C5A059]" />
+            <span className="text-xs uppercase tracking-[0.2em] block mb-4 text-[#C1A080] flex items-center md:justify-end gap-4">
+              Загородная <span className="w-12 h-[1px] bg-[#C1A080]" />
             </span>
             <h2 className="font-serif text-[8vw] md:text-7xl leading-[0.9] tracking-tighter mb-8 md:text-right">Загородные<br/>Дома</h2>
             <p className="text-[#1A1A1A]/70 font-light text-xl mb-10 max-w-md md:ml-auto md:text-right">Коттеджи и таунхаусы в экологически чистых направлениях Подмосковья для всей семьи.</p>
             <div className="flex md:justify-end">
               <a href="#catalog" data-magnetic="true" className="group relative overflow-hidden border border-[#1A1A1A] text-[#1A1A1A] px-10 py-5 uppercase tracking-widest text-xs font-medium transition-colors inline-block">
-                <span className="relative z-10 group-hover:text-white transition-colors duration-500">Изучить проекты</span>
+                <span className="relative z-10 group-hover:text-text transition-colors duration-500">Изучить проекты</span>
                 <div className="absolute inset-0 bg-[#1A1A1A] transform scale-x-0 origin-right group-hover:scale-x-100 transition-transform duration-500 ease-[0.76,0,0.24,1]" />
               </a>
             </div>
@@ -134,13 +134,13 @@ export function ElevatorScroll() {
         {/* Scene 4: Ground Floor / Entrance */}
         <motion.div 
           style={{ clipPath: mask4, y: s4Y, pointerEvents: "auto" }}
-          className="absolute inset-0 bg-[#C5A059] flex flex-col items-center justify-center text-center px-4 z-40 text-white"
+          className="absolute inset-0 bg-[#C1A080] flex flex-col items-center justify-center text-center px-4 z-40 text-text"
         >
-          <span className="text-xs uppercase tracking-[0.2em] mb-6 font-medium text-white/70">Приватность и Контроль</span>
+          <span className="text-xs uppercase tracking-[0.2em] mb-6 font-medium text-text/70">Приватность и Контроль</span>
           <h2 className="font-serif text-[10vw] md:text-[8vw] leading-[0.9] tracking-tighter mb-10">
             Безопасность.<br/>Опыт.<br/>Сделка.
           </h2>
-          <p className="text-white/80 font-light text-xl mb-12 max-w-xl mx-auto">
+          <p className="text-text/80 font-light text-xl mb-12 max-w-xl mx-auto">
             Мы решаем сложные задачи: от срочного выкупа до расселения коммерции. Берем на себя юридическую проверку каждого объекта и гарантируем безопасность расчетов.
           </p>
           <a href="#contacts" data-magnetic="true" className="group relative overflow-hidden bg-white text-[#1A1A1A] px-12 py-6 uppercase tracking-[0.3em] text-xs font-bold shadow-2xl transition-transform hover:scale-105 duration-500 inline-block">
@@ -151,7 +151,7 @@ export function ElevatorScroll() {
         {/* Progress Bar (Elevator shaft indicator) */}
         <div className="absolute right-4 md:right-8 top-1/2 -translate-y-1/2 w-[2px] h-48 bg-white/20 z-50 overflow-hidden">
           <motion.div 
-            className="w-full bg-[#C5A059]" 
+            className="w-full bg-[#C1A080]" 
             style={{ height: "100%", originY: 0, scaleY: smoothProgress }} 
           />
         </div>
