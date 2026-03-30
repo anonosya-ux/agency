@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Geist } from "next/font/google";
+import { Geist, Cormorant_Garamond, Cormorant } from "next/font/google";
 import localFont from 'next/font/local';
 import "./globals.css";
 import { AIConcierge } from "@/components/AIConcierge";
@@ -13,50 +13,42 @@ import { MessengerButton } from "@/components/MessengerButton";
 import { cn } from "@/lib/utils";
 
 /* ── Fallback sans (system font for UI elements) ────────────────── */
-const geist = Geist({ subsets: ['latin'], variable: '--font-sans' });
+const geist = Geist({ subsets: ['latin', 'cyrillic'], variable: '--font-sans' });
 
-/* ── Blacker Sans Display — Hero headings (H1, H2) ──────────────── */
-const blackerDisplay = localFont({
-  src: [
-    { path: '../../public/fonts/Blacker-Sans-Display-Light-trial.ttf', weight: '300', style: 'normal' },
-    { path: '../../public/fonts/Blacker-Sans-Display-Regular-trial.ttf', weight: '400', style: 'normal' },
-    { path: '../../public/fonts/Blacker-Sans-Display-Book-Italic.ttf', weight: '400', style: 'italic' },
-    { path: '../../public/fonts/Blacker-Sans-Display-Bold-trial.ttf', weight: '700', style: 'normal' },
-  ],
+/* ── Cormorant Garamond — Hero headings (H1, H2) ────────────────── */
+const cormorantGaramond = Cormorant_Garamond({
+  subsets: ['latin', 'cyrillic'],
+  weight: ['300', '400', '500', '600', '700'],
+  style: ['normal', 'italic'],
   variable: '--font-display',
   display: 'swap',
 });
 
-/* ── Blacker Sans Pro — Subheadings, buttons, nav (H3–H6) ───────── */
-const blackerPro = localFont({
-  src: [
-    { path: '../../public/fonts/Blacker-Sans-Pro-Light.ttf', weight: '300', style: 'normal' },
-    { path: '../../public/fonts/Blacker-Sans-Pro-Regular-trial.ttf', weight: '400', style: 'normal' },
-    { path: '../../public/fonts/Blacker-Sans-Pro-Medium-trial.ttf', weight: '500', style: 'normal' },
-    { path: '../../public/fonts/Blacker-Sans-Pro-Medium-Italic.ttf', weight: '500', style: 'italic' },
-    { path: '../../public/fonts/Blacker-Sans-Pro-Bold-trial.ttf', weight: '700', style: 'normal' },
-  ],
+/* ── Cormorant — Subheadings, buttons, nav (H3–H6) ──────────────── */
+const cormorant = Cormorant({
+  subsets: ['latin', 'cyrillic'],
+  weight: ['300', '400', '500', '600', '700'],
+  style: ['normal', 'italic'],
   variable: '--font-heading',
   display: 'swap',
 });
 
-/* ── Blacker Sans Text — Body copy, paragraphs ───────────────────── */
-const blackerText = localFont({
-  src: [
-    { path: '../../public/fonts/Blacker-Sans-Text-Light-trial.ttf', weight: '300', style: 'normal' },
-    { path: '../../public/fonts/Blacker-Sans-Text-Book-trial.ttf', weight: '400', style: 'normal' },
-    { path: '../../public/fonts/Blacker-Sans-Text-Regular-trial.ttf', weight: '450', style: 'normal' },
-    { path: '../../public/fonts/Blacker-Sans-Text-Bold-trial.ttf', weight: '700', style: 'normal' },
-    { path: '../../public/fonts/Blacker-Sans-Text-Heavy.ttf', weight: '900', style: 'normal' },
-  ],
+/* ── Cormorant Garamond as body copy variable ────────────────────── */
+const cormorantBody = Cormorant_Garamond({
+  subsets: ['latin', 'cyrillic'],
+  weight: ['300', '400', '500', '600', '700'],
+  style: ['normal', 'italic'],
   variable: '--font-body',
   display: 'swap',
 });
 
-/* ── Blacker Sans ExtraLight — Decorative, fine text ─────────────── */
-const blackerExtraLight = localFont({
+/* ── Blacker Sans Pro Free — Accent use (Light, Medium-Italic) ───── */
+const blackerAccent = localFont({
   src: [
-    { path: '../../public/fonts/Blacker-Sans-Extralight-Italic-trial.ttf', weight: '200', style: 'italic' },
+    { path: '../../public/fonts/Blacker-Sans-Pro-Light.ttf', weight: '300', style: 'normal' },
+    { path: '../../public/fonts/Blacker-Sans-Pro-Medium-Italic.ttf', weight: '500', style: 'italic' },
+    { path: '../../public/fonts/Blacker-Sans-Text-Heavy.ttf', weight: '900', style: 'normal' },
+    { path: '../../public/fonts/Blacker-Sans-Display-Book-Italic.ttf', weight: '400', style: 'italic' },
   ],
   variable: '--font-extralight',
   display: 'swap',
@@ -107,10 +99,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="ru" className={cn(
-      blackerDisplay.variable,
-      blackerPro.variable,
-      blackerText.variable,
-      blackerExtraLight.variable,
+      cormorantGaramond.variable,
+      cormorant.variable,
+      cormorantBody.variable,
+      blackerAccent.variable,
       geist.variable,
       "font-sans"
     )}>

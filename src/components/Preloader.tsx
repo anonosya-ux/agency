@@ -44,7 +44,7 @@ export function Preloader() {
             <span className="text-xs uppercase tracking-[0.4em] font-light text-[#C1A080]">
               Фатюхин и Ко
             </span>
-            <div className="font-serif text-[12vw] md:text-9xl font-light tabular-nums tracking-tighter mix-blend-difference overflow-hidden">
+            <div className="font-serif text-[12vw] md:text-9xl font-light tabular-nums tracking-tighter text-white overflow-hidden">
               <motion.span 
                 initial={{ y: "100%" }}
                 animate={{ y: "0%" }}
