@@ -35,8 +35,8 @@ export const HeroSection = () => {
             Агентство недвижимости полного цикла
           </p>
           <h1 className="font-serif text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-light leading-[1.1] text-white mb-8 uppercase tracking-wider drop-shadow-lg">
-            Недвижимость<br />
-            <span className="text-accent font-normal">без рисков</span>
+            Элитная недвижимость<br />
+            <span className="text-accent font-normal">в Москве и Дубае</span>
           </h1>
         </motion.div>
 
@@ -46,9 +46,8 @@ export const HeroSection = () => {
           transition={{ duration: 1, delay: 0.3, ease: 'easeOut' }}
           className="max-w-2xl"
         >
-          <p className="text-lg md:text-xl text-white/85 mb-12 font-light leading-relaxed drop-shadow-md">
-            Покупка, продажа, аренда и срочный выкуп в Москве и за рубежом.
-            Оплата только за результат. Гарантия качества на каждом этапе.
+          <p className="text-base md:text-lg lg:text-xl text-white/85 mb-12 font-light leading-relaxed drop-shadow-md">
+            Покупка, продажа, аренда и срочный выкуп. 15 лет безупречных сделок. Юридическая гарантия на каждом этапе.
           </p>
         </motion.div>
 
@@ -60,15 +59,15 @@ export const HeroSection = () => {
         >
           <Link 
             href="/catalog"
-            className="bg-accent hover:bg-accent-light text-[#1A1A1A] font-medium uppercase tracking-[0.15em] px-10 py-4 text-sm transition-all duration-300 flex items-center justify-center gap-2"
+            className="bg-accent hover:bg-accent-light text-[#1A1A1A] font-medium uppercase tracking-[0.15em] px-10 py-4 text-sm md:text-base transition-all duration-300 flex items-center justify-center gap-2"
           >
-            Смотреть каталог <ArrowRight className="w-4 h-4" />
+            Подобрать объект <ArrowRight className="w-4 h-4" />
           </Link>
           <a 
             href="tel:+79951138937"
-            className="bg-transparent border border-white/60 text-white hover:bg-white/10 backdrop-blur-md font-medium uppercase tracking-[0.15em] px-10 py-4 text-sm transition-all duration-300 flex items-center justify-center gap-2"
+            className="bg-transparent border border-white/60 text-white hover:bg-white/10 backdrop-blur-md font-medium uppercase tracking-[0.15em] px-10 py-4 text-sm md:text-base transition-all duration-300 flex items-center justify-center gap-2"
           >
-            <Phone className="w-4 h-4" /> Позвонить
+            <Phone className="w-4 h-4" /> Бесплатная консультация
           </a>
         </motion.div>
 

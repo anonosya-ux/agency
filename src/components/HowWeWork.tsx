@@ -69,7 +69,7 @@ export const HowWeWork = () => {
                 <h3 className="font-serif text-xl font-medium text-text mb-3">
                   {step.title}
                 </h3>
-                <p className="text-sm text-text-muted font-light leading-relaxed px-2">
+                <p className="text-base text-text-muted font-light leading-relaxed px-2">
                   {step.desc}
                 </p>
               </motion.div>

@@ -7,7 +7,7 @@ import Link from 'next/link';
 const directions = [
   {
     title: 'Зарубежная недвижимость',
-    desc: 'Эксклюзивные предложения в ОАЭ, Европе и Азии',
+    desc: 'Доходные объекты и получение ВНЖ в ОАЭ, Азии и Европе',
     link: '/abroad',
     image: '/images/abroad.jpg',
     className: 'md:col-span-2 md:row-span-2 min-h-[400px]',
@@ -21,7 +21,7 @@ const directions = [
   },
   {
     title: 'Аренда элитного жилья',
-    desc: 'Роскошные апартаменты и особняки',
+    desc: 'Долгосрочная аренда премиум-класса и коммерческих площадей',
     link: '/rent',
     image: '/images/rent.jpg',
     className: 'md:col-span-1 md:row-span-1 min-h-[250px]',
@@ -40,8 +40,8 @@ export const DirectionsGrid = () => {
           className="mb-12"
         >
           <h2 className="font-serif text-3xl md:text-5xl font-semibold text-text uppercase mb-4">Направления</h2>
-          <p className="text-text-muted text-lg max-w-2xl font-light">
-            Откройте двери в мир безупречного качества и инвестиционного потенциала с нашими ключевыми экспертизами.
+          <p className="text-text-muted text-base md:text-lg max-w-2xl font-light">
+            Мы подберём объект для инвестиций, жизни или бизнеса. Гарантируем конфиденциальность, юридическую чистоту и прозрачность сделки.
           </p>
         </motion.div>
 

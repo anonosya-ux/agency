@@ -8,39 +8,33 @@ import { Star } from "lucide-react";
 // Яндекс.Карты review data
 const reviews = [
   {
-    name: "Александр Д.",
-    date: "12 марта 2026",
-    text: "Идеальная работа. Подобрали квартиру в Сити за 2 дня, учли все пожелания по виду и этажу. Сделка прошла безупречно.",
+    name: "Ирина Гавр",
+    text: "Обратились по рекомендации для покупки квартиры в Сити. Сделка прошла быстро, проверили все юридические тонкости. Очень профессиональный подход.",
     rating: 5,
   },
   {
-    name: "Елена С.",
-    date: "28 февраля 2026",
-    text: "Покупали виллу в Дубае через агентство Фатюхина. Огромное спасибо за профессионализм и полное сопровождение от первого звонка до ключей.",
+    name: "Вадим Михалин",
+    text: "Потрясающий сервис. Виталий лично курировал подбор инвестиционного объекта в Дубае. Оформление ВНЖ взяли на себя, мы только приехали на подписание.",
     rating: 5,
   },
   {
-    name: "Михаил Воронов",
-    date: "15 января 2026",
-    text: "Быстрый выкуп моей квартиры на Остоженке. Предложили лучшую цену на рынке, вышли на сделку за 3 дня.",
+    name: "Вероника Л.",
+    text: "Нужно было срочно продать загородный дом на Рублёвке. Команда Фатюхина нашла покупателя за неделю по отличной цене. Рекомендую однозначно.",
     rating: 5,
   },
   {
-    name: "Виктория К.",
-    date: "10 декабря 2025",
-    text: "Снимаю элитные апартаменты. Агентство решило все вопросы с собственником моментально. Очень приятный сервис.",
+    name: "Елизавета Ефимова",
+    text: "Арендовали через них коммерческое помещение под бутик. Брокер учел все требования к трафику и планировке. Договор согласовали блестяще.",
     rating: 5,
   },
   {
-    name: "Дмитрий П.",
-    date: "5 ноября 2025",
-    text: "Инвестировали в новостройку премиум-класса. Доходность уже превысила ожидания. Отличная аналитика рынка.",
+    name: "Андрей Лупанов",
+    text: "Лучшее агентство элитной недвижимости из тех, с кем доводилось работать. Действительно индивидуальный подход и полная конфиденциальность.",
     rating: 5,
   },
   {
-    name: "Анна Романова",
-    date: "20 октября 2025",
-    text: "Сотрудники агентства — настоящие профи. Не просто показывают квартиры, а дают полную картину по инфраструктуре и соседям.",
+    name: "Алина Юзефович",
+    text: "Помогли с выгодной покупкой новостройки премиум-класса на старте продаж. Аналитика рынка на высшем уровне, доходность уже радует.",
     rating: 5,
   },
 ];
@@ -53,8 +47,7 @@ const ReviewCard = ({ review }: { review: typeof reviews[0] }) => {
           <AvatarFallback className="bg-primary text-accent">{review.name.charAt(0)}</AvatarFallback>
         </Avatar>
         <div>
-          <h4 className="font-semibold text-text/90 text-sm">{review.name}</h4>
-          <p className="text-xs text-text-muted">{review.date}</p>
+          <h4 className="font-semibold text-text/90 text-base">{review.name}</h4>
         </div>
       </div>
       <div className="flex gap-1 mb-3">
@@ -62,7 +55,7 @@ const ReviewCard = ({ review }: { review: typeof reviews[0] }) => {
           <Star key={i} className="w-4 h-4 fill-accent text-accent" />
         ))}
       </div>
-      <p className="text-sm text-text/80 leading-relaxed font-light">{review.text}</p>
+      <p className="text-base text-text/80 leading-relaxed font-light">{review.text}</p>
     </Card>
   );
 };
@@ -86,10 +79,10 @@ export const Testimonials3D = () => {
           href="https://yandex.ru/maps/-/CDu~Y4Lp" 
           target="_blank" 
           rel="noreferrer"
-          className="inline-flex items-center gap-2 px-6 py-3 rounded-full border border-text/10 text-text/90 hover:bg-white/5 transition-all"
+          className="inline-flex items-center gap-2 px-6 py-3 rounded-full border border-text/10 text-text/90 hover:bg-white/5 transition-all text-sm md:text-base group"
         >
           <span className="font-medium text-lg text-accent">5.0</span>
-          <span>Рейтинг на Яндекс.Картах</span>
+          <span className="group-hover:text-accent transition-colors">Читать все 61 отзыв на Яндекс.Картах &rarr;</span>
         </a>
       </div>
 

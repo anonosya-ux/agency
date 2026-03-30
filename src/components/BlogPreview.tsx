@@ -41,10 +41,10 @@ export const BlogPreview = () => {
             transition={{ duration: 0.5 }}
           >
             <h2 className="font-serif text-3xl md:text-5xl font-semibold text-text uppercase mb-4">
-              Экспертиза
+              Аналитика рынка
             </h2>
-            <p className="text-text-muted text-lg max-w-xl font-light">
-              Новости рынка, глубокая аналитика и инсайды от наших экспертов.
+            <p className="text-base md:text-lg text-text-muted max-w-xl font-light">
+              Свежие обзоры, инвестиционные инсайды и юридические тонкости от экспертов «Фатюхин и Ко».
             </p>
           </motion.div>
           <motion.div
@@ -80,11 +80,11 @@ export const BlogPreview = () => {
                      </div>
                   </div>
                   <div className="p-6 relative z-20">
-                    <div className="text-text-muted text-xs mb-3 font-light tracking-wide">{article.date}</div>
+                    <div className="text-text-muted text-sm mb-3 font-light tracking-wide">{article.date}</div>
                     <h3 className="font-serif text-xl font-medium text-text mb-4 group-hover:text-accent transition-colors leading-snug line-clamp-2">
-                      {article.title}
+                       {article.title}
                     </h3>
-                    <div className="flex items-center text-accent text-sm font-semibold uppercase tracking-wider group-hover:gap-2 transition-all">
+                    <div className="flex items-center text-accent text-sm md:text-base font-semibold uppercase tracking-wider group-hover:gap-2 transition-all">
                       Читать статью <ArrowUpRight className="w-4 h-4 ml-1" />
                     </div>
                   </div>

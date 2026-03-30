@@ -2,13 +2,11 @@ import type { Metadata } from "next";
 import { Geist, Cormorant_Garamond, Cormorant } from "next/font/google";
 import localFont from 'next/font/local';
 import "./globals.css";
-import { AIConcierge } from "@/components/AIConcierge";
 import { StickyCTA } from "@/components/StickyCTA";
-import { PageTransition } from "@/components/PageTransition";
+
 import { StructuredData } from "@/components/StructuredData";
 import { Preloader } from "@/components/Preloader";
 import { CustomCursor } from "@/components/CustomCursor";
-import { SmoothScroll } from "@/components/SmoothScroll";
 import { MessengerButton } from "@/components/MessengerButton";
 import { cn } from "@/lib/utils";
 
@@ -110,14 +108,11 @@ export default function RootLayout({
         <StructuredData />
         <Preloader />
         <CustomCursor />
-        <SmoothScroll>
-          <PageTransition>
-            {children}
-          </PageTransition>
-          <AIConcierge />
-          <StickyCTA />
-          <MessengerButton />
-        </SmoothScroll>
+        <div className="flex-1 w-full">
+          {children}
+        </div>
+        <StickyCTA />
+        <MessengerButton />
       </body>
     </html>
   );
