@@ -4,10 +4,10 @@ import { useState, useCallback } from 'react';
 import { Calculator as CalcIcon, TrendingUp } from 'lucide-react';
 
 export function MortgageCalculator() {
-  const [price, setPrice] = useState(15000000);
-  const [downPayment, setDownPayment] = useState(20);
-  const [rate, setRate] = useState(6);
-  const [term, setTerm] = useState(20);
+  const [price, setPrice] = useState(20000000);
+  const [downPayment, setDownPayment] = useState(30);
+  const [rate, setRate] = useState(12);
+  const [term, setTerm] = useState(25);
 
   const calculate = useCallback(() => {
     const loanAmount = price * (1 - downPayment / 100);

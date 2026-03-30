@@ -4,7 +4,7 @@ import { useEffect, useRef } from 'react';
 import { motion, useInView, animate } from 'framer-motion';
 
 const stats = [
-  { value: 1, label: 'Место', desc: 'Среди элитных агентств' },
+  { value: 61, label: 'Отзывов', desc: 'На Яндекс.Картах' },
   { value: 15, label: 'Лет', desc: 'Безупречной репутации' },
   { value: 100, label: 'Млрд ₽+', desc: 'Объем продаж за 2025' },
   { value: 50, label: 'Наград', desc: 'На престижных премиях' },
@@ -90,7 +90,7 @@ export const AwardStrip = () => {
         
         {/* Certificate preview Marquee */}
         <div className="mt-20 flex overflow-hidden [mask-image:linear-gradient(to_right,transparent,black_20%,black_80%,transparent)]">
-            <div className="flex w-max animate-marquee shadow-sm [--duration:50s] gap-6 px-6">
+            <div className="flex w-max animate-marquee shadow-sm [--duration:50s] gap-3 px-3">
                 {awardsData.map((src, i) => (
                     <div key={`cert-${i}`} className="w-64 h-80 rounded border border-text/10 bg-surface/50 backdrop-blur-md flex items-center justify-center relative overflow-hidden group">
                         <img src={src} alt="Награда агентства" className="w-full h-full object-cover" />
@@ -98,7 +98,7 @@ export const AwardStrip = () => {
                     </div>
                 ))}
             </div>
-            <div className="flex w-max animate-marquee.shadow-sm [--duration:50s] gap-6 px-6" aria-hidden="true">
+            <div className="flex w-max animate-marquee shadow-sm [--duration:50s] gap-3 px-3" aria-hidden="true">
                 {awardsData.map((src, i) => (
                     <div key={`cert-dup-${i}`} className="w-64 h-80 rounded border border-text/10 bg-surface/50 backdrop-blur-md flex items-center justify-center relative overflow-hidden group">
                         <img src={src} alt="Награда агентства" className="w-full h-full object-cover" />

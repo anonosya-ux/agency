@@ -30,7 +30,7 @@ export const TrustBar = () => {
         <div className="flex w-max animate-marquee shadow-sm [--duration:40s]">
           {/* First set of partners */}
           {partners.map((partner, index) => (
-            <div key={index} className="flex items-center justify-center mx-8 text-text/40 hover:text-text transition-colors duration-300">
+            <div key={index} className="flex items-center justify-center mx-4 text-text/40 hover:text-text transition-colors duration-300">
               <span className="text-sm font-medium tracking-widest uppercase pointer-events-none select-none">{partner}</span>
             </div>
           ))}

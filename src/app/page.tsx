@@ -2,6 +2,7 @@ import { Navigation } from "@/components/Navigation";
 import { HeroSection } from "@/components/hero/HeroSection";
 import { TrustBar } from "@/components/TrustBar";
 import { DirectionsGrid } from "@/components/DirectionsGrid";
+import { MortgageCalculator } from "@/components/MortgageCalculator";
 import { Catalog } from "@/components/Catalog";
 import { AwardStrip } from "@/components/AwardStrip";
 import { Testimonials3D } from "@/components/Testimonials3D";
@@ -33,6 +34,7 @@ export default function Home() {
       <Testimonials3D />
       <HowWeWork />
       <AboutTeam />
+      <MortgageCalculator />
       <BlogPreview />
       <FAQ />
       <CTABanner />

@@ -1,54 +1,124 @@
 'use client';
 
+import { useState } from 'react';
 import { motion } from 'framer-motion';
-import { Button } from './ui/button';
-import { ArrowRight } from 'lucide-react';
+import { ArrowRight, CheckCircle2, Phone, Clock, Shield } from 'lucide-react';
 
 export const CTABanner = () => {
+  const [name, setName] = useState('');
+  const [phone, setPhone] = useState('');
+  const [interest, setInterest] = useState('');
+  const [submitted, setSubmitted] = useState(false);
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    if (!name.trim() || !phone.trim()) return;
+    setSubmitted(true);
+    // TODO: Connect to CRM / Telegram bot / email
+  };
+
   return (
-    <section className="py-24 bg-bg w-full relative overflow-hidden">
+    <section className="py-20 md:py-28 bg-bg w-full relative overflow-hidden">
       <div className="container mx-auto px-4 relative z-20">
         <motion.div 
           initial={{ opacity: 0, scale: 0.95 }}
           whileInView={{ opacity: 1, scale: 1 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
-          className="relative overflow-hidden rounded-[2rem] border border-text/10 bg-surface/60 backdrop-blur-xl p-8 md:p-16 lg:p-24 flex flex-col items-center text-center shadow-2xl mx-auto max-w-5xl"
+          className="relative overflow-hidden rounded-[2rem] border border-text/10 bg-[#1A1A1A] p-8 md:p-16 lg:p-20 mx-auto max-w-5xl"
         >
-          {/* Glass glare effect */}
-          <div className="absolute top-0 left-0 w-full h-1/2 bg-gradient-to-b from-white/5 to-transparent pointer-events-none" />
-          <div className="absolute -left-[20%] top-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-accent/20 rounded-full blur-[100px] pointer-events-none" />
-          <div className="absolute -right-[20%] top-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-accent/10 rounded-full blur-[100px] pointer-events-none" />
+          {/* Background accents */}
+          <div className="absolute -left-[15%] top-1/2 -translate-y-1/2 w-[400px] h-[400px] bg-accent/15 rounded-full blur-[120px] pointer-events-none" />
+          <div className="absolute -right-[15%] bottom-0 w-[300px] h-[300px] bg-accent/10 rounded-full blur-[100px] pointer-events-none" />
 
-          <h2 className="font-serif text-3xl md:text-5xl lg:text-6xl font-semibold text-text uppercase mb-6 drop-shadow-md">
-            Готовы обсудить ваш <span className="text-accent font-light">запрос?</span>
-          </h2>
-          <p className="text-text/80 text-lg md:text-xl max-w-2xl font-light mb-10">
-            Оставьте заявку, и персональный брокер свяжется с вами в течение 15 минут для конфиденциальной консультации.
-          </p>
+          <div className="flex flex-col lg:flex-row gap-12 lg:gap-16 items-center">
+            {/* Left: Offer */}
+            <div className="flex-1 text-center lg:text-left">
+              <h2 className="font-serif text-3xl md:text-4xl lg:text-5xl font-semibold text-white uppercase mb-5 leading-tight">
+                Получите подборку из <span className="text-accent">5 объектов</span> за 30 минут
+              </h2>
+              <p className="text-white/60 text-base md:text-lg font-light mb-8 leading-relaxed max-w-lg">
+                Оставьте номер — персональный брокер перезвонит и подберёт варианты под ваш бюджет и задачи. Бесплатно и без обязательств.
+              </p>
 
-          <form className="w-full max-w-md flex flex-col gap-4 relative z-10" onSubmit={(e) => e.preventDefault()}>
-            <input 
-              type="text" 
-              placeholder="Ваше имя" 
-              className="w-full bg-black/40 border border-text/20 rounded-xl px-5 py-4 text-text placeholder:text-text/40 focus:outline-none focus:border-accent transition-colors"
-            />
-            <input 
-              type="tel" 
-              placeholder="Номер телефона" 
-              className="w-full bg-black/40 border border-text/20 rounded-xl px-5 py-4 text-text placeholder:text-text/40 focus:outline-none focus:border-accent transition-colors"
-            />
-            <Button 
-              type="submit" 
-              size="lg" 
-              className="w-full bg-accent hover:bg-accent-light text-primary font-serif font-medium uppercase tracking-widest h-14 rounded-xl transition-all duration-300 mt-2"
-            >
-              Отправить заявку <ArrowRight className="w-4 h-4 ml-2" />
-            </Button>
-            <p className="text-xs text-text/40 mt-3 font-light text-center">
-              Нажимая кнопку, вы соглашаетесь с политикой конфиденциальности
-            </p>
-          </form>
+              <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 text-white/50 text-sm">
+                <span className="flex items-center gap-2">
+                  <Clock className="w-4 h-4 text-accent" /> Ответ за 15 минут
+                </span>
+                <span className="flex items-center gap-2">
+                  <Shield className="w-4 h-4 text-accent" /> Конфиденциально
+                </span>
+                <span className="flex items-center gap-2">
+                  <Phone className="w-4 h-4 text-accent" /> Без спама
+                </span>
+              </div>
+            </div>
+
+            {/* Right: Form */}
+            <div className="w-full lg:w-[420px] shrink-0">
+              {!submitted ? (
+                <form 
+                  className="flex flex-col gap-4 relative z-10" 
+                  onSubmit={handleSubmit}
+                >
+                  <input 
+                    type="text" 
+                    value={name}
+                    onChange={(e) => setName(e.target.value)}
+                    placeholder="Ваше имя" 
+                    required
+                    className="w-full bg-white/5 border border-white/15 rounded-xl px-5 py-4 text-white placeholder:text-white/30 focus:outline-none focus:border-accent/60 transition-colors text-base"
+                  />
+                  <input 
+                    type="tel" 
+                    value={phone}
+                    onChange={(e) => setPhone(e.target.value)}
+                    placeholder="+7 (___) ___-__-__" 
+                    required
+                    className="w-full bg-white/5 border border-white/15 rounded-xl px-5 py-4 text-white placeholder:text-white/30 focus:outline-none focus:border-accent/60 transition-colors text-base"
+                  />
+                  <select
+                    value={interest}
+                    onChange={(e) => setInterest(e.target.value)}
+                    className="w-full bg-white/5 border border-white/15 rounded-xl px-5 py-4 text-white/70 focus:outline-none focus:border-accent/60 transition-colors text-base appearance-none cursor-pointer"
+                    style={{ backgroundImage: `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%23C1A080' d='M6 8L1 3h10z'/%3E%3C/svg%3E")`, backgroundRepeat: 'no-repeat', backgroundPosition: 'right 16px center' }}
+                  >
+                    <option value="" className="bg-[#1A1A1A]">Что вас интересует?</option>
+                    <option value="buy" className="bg-[#1A1A1A]">Покупка недвижимости</option>
+                    <option value="sell" className="bg-[#1A1A1A]">Продажа недвижимости</option>
+                    <option value="rent" className="bg-[#1A1A1A]">Аренда</option>
+                    <option value="invest" className="bg-[#1A1A1A]">Инвестиции (Дубай, Кипр)</option>
+                    <option value="fast-buy" className="bg-[#1A1A1A]">Срочный выкуп</option>
+                    <option value="mortgage" className="bg-[#1A1A1A]">Ипотека / Финансирование</option>
+                  </select>
+
+                  <button 
+                    type="submit" 
+                    className="w-full bg-accent hover:bg-[#d4b896] text-[#1A1A1A] font-semibold uppercase tracking-[0.12em] py-4 rounded-xl transition-all duration-300 text-base flex items-center justify-center gap-2 mt-1"
+                  >
+                    Получить подборку <ArrowRight className="w-4 h-4" />
+                  </button>
+                  <p className="text-xs text-white/25 font-light text-center mt-1">
+                    Нажимая кнопку, вы соглашаетесь с политикой конфиденциальности
+                  </p>
+                </form>
+              ) : (
+                <motion.div
+                  initial={{ opacity: 0, scale: 0.9 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  className="flex flex-col items-center text-center py-8 gap-4"
+                >
+                  <div className="w-16 h-16 rounded-full bg-accent/20 flex items-center justify-center">
+                    <CheckCircle2 className="w-8 h-8 text-accent" />
+                  </div>
+                  <h3 className="text-white text-2xl font-serif">Заявка отправлена!</h3>
+                  <p className="text-white/50 text-base font-light">
+                    Персональный брокер свяжется с вами в течение 15 минут.
+                  </p>
+                </motion.div>
+              )}
+            </div>
+          </div>
         </motion.div>
       </div>
     </section>
