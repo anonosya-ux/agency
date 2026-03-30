@@ -9,25 +9,25 @@ const team = [
     name: 'Виталий Фатюхин',
     role: 'Основатель и руководитель',
     experience: '15+ лет на рынке',
-    image: '/images/team/agent-01-processed.webp',
+    image: '/images/team/vitaly_f.jpeg',
+  },
+  {
+    name: 'Александр Чернышев',
+    role: 'Ведущий специалист по недвижимости',
+    experience: 'Проверка и сопровождение сделок',
+    image: '/images/team/alexander.jpeg',
   },
   {
     name: 'Виталий Ерошкин',
-    role: 'Ведущий специалист по недвижимости',
+    role: 'Специалист по недвижимости',
     experience: 'Эксперт по сделкам полного цикла',
-    image: '/images/team/agent-02-processed.webp',
+    image: '/images/team/vitaly_e.jpeg',
   },
   {
     name: 'Ольга Острикова',
     role: 'Менеджер по работе с клиентами',
     experience: 'Специалист по подбору объектов',
-    image: '/images/team/agent-03-processed.webp',
-  },
-  {
-    name: 'Александр Чернышов',
-    role: 'Юрист по недвижимости',
-    experience: 'Проверка и сопровождение сделок',
-    image: '/images/team/agent-04-processed.webp',
+    image: '/images/team/olga.jpeg',
   },
 ];
 
@@ -55,7 +55,7 @@ export const AboutTeam = () => {
               <div className="absolute inset-0 bg-gradient-to-t from-bg via-transparent to-transparent z-10" />
               <div className="absolute inset-0 bg-secondary/40 z-0 transition-transform duration-700 group-hover:scale-105">
                 {/* Founder Image */}
-                <img src="/images/team/agent-01-processed.webp" alt="Основатель" className="w-full h-full object-cover" />
+                <img src="/images/team/vitaly_f.jpeg" alt="Основатель" className="w-full h-full object-cover" />
               </div>
               
               <div className="absolute inset-x-0 bottom-0 p-6 z-20">

@@ -16,7 +16,7 @@ export function Founder() {
           className="w-full lg:w-5/12 aspect-[3/4] relative rounded-lg overflow-hidden shrink-0 shadow-2xl"
         >
           <Image 
-            src="/images/team/agent-01-processed.webp" 
+            src="/images/team/vitaly_f.jpeg" 
             alt="Виталий Фатюхин" 
             fill 
             className="object-cover transition-all duration-700 hover:scale-105"
