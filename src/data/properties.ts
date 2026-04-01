@@ -318,5 +318,28 @@ export const properties: Property[] = [
     description: 'Инфинити бассейн, коворкинг, фитнес. Доход от аренды от 8%. Беспроцентная рассрочка на период стройки.',
     features: ['Инфинити бассейн', 'Фитнес-зал', 'Коворкинг и кафе', 'Сдача 4 кв. 2027', 'Рассрочка 0%'],
     coordinates: [7.7766, 98.3242],
+  },
+  // === ЗАРУБЕЖНАЯ НЕДВИЖИМОСТЬ (Кипр) ===
+  {
+    id: 'abr-cyprus-1',
+    category: 'abroad',
+    title: 'Phuket Health & Wellness Resort',
+    developer: 'Cyprus Constructions',
+    propertyClass: 'premium',
+    location: 'Северный Кипр',
+    price: 'от £175,000',
+    priceNum: 20125000,
+    specs: { beds: 1, baths: 1, area: '47 – 365 м²', areaNum: 47, completion: '2027-2028' },
+    image: 'https://images.unsplash.com/photo-1566073771259-6a8506099945?w=800&auto=format&fit=crop',
+    description: 'Премиальный оздоровительный резорт на Северном Кипре. Уникальная концепция с интегрированными медицинскими клиниками, центрами красоты и обширными зонами для активного отдыха на природе.',
+    features: [
+      'Клиники и Yoga Center',
+      'SPA, Хамам и Сауна',
+      'Крытый бассейн',
+      'Теннисный корт',
+      'Рассрочка до января 2028'
+    ],
+    tags: ['Кипр', 'Wellness', 'Премиум', 'Рассрочка'],
+    coordinates: [35.3395, 33.3150]
   }
 ];
