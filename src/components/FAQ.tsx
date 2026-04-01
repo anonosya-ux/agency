@@ -33,7 +33,7 @@ export function FAQ() {
   return (
     <section className="py-24 px-4 bg-[#F8F8F8]">
       <div className="max-w-4xl mx-auto">
-        <h2 className="font-serif text-4xl lg:text-5xl text-[#1A1A1A] text-center mb-16">Частые вопросы</h2>
+        <h2 className="font-serif text-4xl lg:text-5xl text-dark text-center mb-16">Частые вопросы</h2>
         
         <div className="space-y-4">
           {FAQS.map((faq, idx) => (
@@ -46,7 +46,7 @@ export function FAQ() {
                 className="w-full text-left px-6 py-6 flex justify-between items-center"
               >
                 <span className="font-serif text-xl pr-8">{faq.q}</span>
-                <span className="text-[#C1A080] flex-shrink-0">
+                <span className="text-accent flex-shrink-0">
                   {openIndex === idx ? <Minus className="w-5 h-5" /> : <Plus className="w-5 h-5" />}
                 </span>
               </button>

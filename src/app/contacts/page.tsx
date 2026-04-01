@@ -4,7 +4,8 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { Navigation } from '@/components/Navigation';
 import { Footer } from '@/components/Footer';
-import { MapPin, Phone, Mail, Clock, ArrowUpRight } from 'lucide-react';
+import { MapPin, Phone, Mail, Clock, ArrowUpRight, MessageCircle } from 'lucide-react';
+import { YMaps, Map, Placemark } from '@pbe/react-yandex-maps';
 
 export default function ContactsPage() {
   return (
@@ -71,6 +72,23 @@ export default function ContactsPage() {
                   </div>
                 </div>
               </div>
+
+              {/* Quick Contact Buttons */}
+              <div className="space-y-3">
+                <a
+                  href={`https://wa.me/79951138937?text=${encodeURIComponent('Здравствуйте! Хотел бы обсудить вопрос по недвижимости.')}`}
+                  target="_blank" rel="noopener noreferrer"
+                  className="flex items-center justify-center gap-3 bg-[#25D366] text-white px-6 py-3.5 uppercase tracking-widest text-xs font-medium hover:bg-[#20BD5A] transition-all rounded-full w-full"
+                >
+                  <MessageCircle className="w-4 h-4" /> Написать в WhatsApp
+                </a>
+                <a
+                  href="tel:+79951138937"
+                  className="flex items-center justify-center gap-3 bg-text text-bg px-6 py-3.5 uppercase tracking-widest text-xs font-medium hover:bg-accent transition-all rounded-full w-full"
+                >
+                  <Phone className="w-4 h-4" /> Позвонить
+                </a>
+              </div>
             </div>
 
             {/* Contact Form & Map */}
@@ -106,14 +124,40 @@ export default function ContactsPage() {
                 </form>
               </div>
 
-              {/* Map Placeholder */}
-              <div className="w-full h-[400px] bg-secondary/50 rounded-3xl border border-text/10 overflow-hidden relative">
-                 <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1547448415-e9f5b28e570d?w=1600&auto=format&fit=crop')] bg-cover bg-center opacity-60 grayscale blend-luminosity" />
-                 <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
-                    <div className="w-16 h-16 bg-accent rounded-full flex items-center justify-center shadow-2xl animate-pulse">
-                      <MapPin className="w-8 h-8 text-white" />
-                    </div>
-                 </div>
+              {/* Interactive Yandex Map */}
+              <div className="w-full h-[400px] rounded-3xl border border-text/10 overflow-hidden relative">
+                <YMaps query={{ apikey: 'fe2fe889-cb48-43d9-a7e8-eccbe9be0441' }}>
+                  <Map 
+                    defaultState={{ 
+                      center: [55.784015, 37.702292], 
+                      zoom: 16 
+                    }}
+                    className="w-full h-full"
+                    options={{
+                      suppressMapOpenBlock: true,
+                    }}
+                  >
+                    <Placemark 
+                      geometry={[55.784015, 37.702292]}
+                      options={{
+                        preset: 'islands#darkOrangeDotIconWithCaption',
+                        iconColor: '#C1A080',
+                      }}
+                      properties={{
+                        iconCaption: 'Фатюхин и Ко',
+                        hintContent: 'Агентство недвижимости «Фатюхин и Ко»',
+                        balloonContent: `
+                          <div style="padding: 8px; font-family: system-ui;">
+                            <h4 style="margin: 0 0 4px; font-size: 15px; font-weight: 600;">Фатюхин и Ко</h4>
+                            <p style="margin: 0 0 4px; font-size: 13px; color: #666;">пл. Журавлёва, м. Электрозаводская</p>
+                            <p style="margin: 0 0 8px; font-size: 13px; color: #C1A080; font-weight: 500;">+7 (995) 113-89-37</p>
+                            <a href="https://yandex.ru/maps/org/fatiukhin_co/54567120289/" target="_blank" style="display: block; text-align: center; padding: 6px; border: 1px solid #C1A080; border-radius: 6px; color: #C1A080; text-decoration: none; font-size: 12px;">Открыть в Яндекс.Картах</a>
+                          </div>
+                        `,
+                      }}
+                    />
+                  </Map>
+                </YMaps>
               </div>
             </div>
 

@@ -7,68 +7,34 @@ import { Footer } from '@/components/Footer';
 import { CTABanner } from '@/components/CTABanner';
 import { MortgageCalculator } from '@/components/MortgageCalculator';
 import { SpotlightCard } from '@/components/ui/spotlight-card';
-import { ArrowUpRight, Search, MapPin, CheckCircle2, Building2, CalendarDays } from 'lucide-react';
+import { ArrowUpRight, Search, MapPin, CheckCircle2, Building2, CalendarDays, Key, Droplet, Leaf, Train } from 'lucide-react';
 import Link from 'next/link';
-
-const newDevelopments = [
-  {
-    id: 1,
-    title: 'ЖК «Ренессанс»',
-    location: 'Москва, ВАО (м. Сокольники)',
-    price: 'от 18 200 000 руб.',
-    specs: { completion: 'II квартал 2026', type: 'Квартиры' },
-    image: 'https://images.unsplash.com/photo-1600607688969-a5bfcd64bd15?w=800&auto=format&fit=crop',
-    status: 'hot',
-    category: 'Квартиры'
-  },
-  {
-    id: 21,
-    title: 'ЖК «Архитектор»',
-    location: 'Москва, ЮЗАО',
-    price: 'от 22 500 000 руб.',
-    specs: { completion: 'IV квартал 2026', type: 'Квартиры' },
-    image: 'https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?w=800&auto=format&fit=crop',
-    status: 'hot',
-    category: 'Квартиры'
-  },
-  {
-    id: 22,
-    title: 'УЛ. НОВАЯ',
-    location: 'Москва, ЦАО',
-    price: 'от 35 000 000 руб.',
-    specs: { completion: 'Сдан', type: 'Апартаменты' },
-    image: 'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=800&auto=format&fit=crop',
-    status: 'premium',
-    category: 'Апартаменты'
-  },
-  {
-    id: 23,
-    title: 'Коллекция «ЛУЖНИКИ»',
-    location: 'Москва, ЗАО',
-    price: 'от 25 000 000 руб.',
-    specs: { completion: 'I квартал 2027', type: 'Квартиры' },
-    image: 'https://images.unsplash.com/photo-1448630360428-65456885c650?w=800&auto=format&fit=crop',
-    status: 'new',
-    category: 'Квартиры'
-  }
-];
+import { properties } from '@/data/properties';
 
 export default function NewBuildingsPage() {
   const [activeTab, setActiveTab] = useState('all');
   const [searchQuery, setSearchQuery] = useState('');
+
+  const newDevelopments = useMemo(() => {
+    return properties.filter(p => p.category === 'new');
+  }, []);
 
   const filteredDevelopments = useMemo(() => {
     return newDevelopments.filter((dev) => {
       const matchesSearch = dev.title.toLowerCase().includes(searchQuery.toLowerCase()) || 
                             dev.location.toLowerCase().includes(searchQuery.toLowerCase());
       
+      const isComfort = dev.propertyClass === 'comfort';
+      const isBusinessOptions = dev.propertyClass === 'business' || dev.propertyClass === 'premium' || dev.propertyClass === 'elit';
+
       const matchesTab = activeTab === 'all' 
-                          || dev.category === activeTab 
+                          || (activeTab === 'Бизнес и Премиум' && isBusinessOptions)
+                          || (activeTab === 'Комфорт' && isComfort)
                           || (activeTab === 'Сданы' && dev.specs.completion === 'Сдан')
-                          || (activeTab === 'Старт продаж' && dev.status === 'new');
+                          || (activeTab === 'В стройке' && dev.specs.completion !== 'Сдан');
       return matchesSearch && matchesTab;
     });
-  }, [activeTab, searchQuery]);
+  }, [activeTab, searchQuery, newDevelopments]);
 
   return (
     <main className="min-h-screen bg-bg flex flex-col">
@@ -98,7 +64,7 @@ export default function NewBuildingsPage() {
                   type="text" 
                   value={searchQuery}
                   onChange={(e) => setSearchQuery(e.target.value)}
-                  placeholder="ЖК, район или метро..." 
+                  placeholder="ЖК, застройщик, район или метро..." 
                   className="w-full bg-transparent pl-14 pr-4 py-3 text-text placeholder:text-text-muted/60 focus:outline-none placeholder:font-light"
                 />
               </div>
@@ -112,11 +78,11 @@ export default function NewBuildingsPage() {
           <div>
             <p className="text-center text-sm uppercase tracking-widest text-text-muted mb-8 font-serif">Официальные застройщики</p>
             <div className="flex flex-wrap justify-center items-center gap-8 opacity-60">
-              <span className="font-sans text-xl font-bold tracking-tighter text-text hover:text-accent transition-colors">SMINEX</span>
-              <span className="font-serif text-xl text-text hover:text-accent transition-colors">Vesper</span>
-              <span className="font-sans text-xl uppercase tracking-widest text-text hover:text-accent transition-colors">MR Group</span>
-              <span className="font-sans text-xl font-medium text-text hover:text-accent transition-colors">Capital Group</span>
-              <span className="font-serif text-xl tracking-tight text-text hover:text-accent transition-colors">PIONEER</span>
+              <span className="font-sans text-xl font-bold tracking-tighter text-text hover:text-accent transition-colors">MR Group</span>
+              <span className="font-serif text-xl text-text hover:text-accent transition-colors">Донстрой</span>
+              <span className="font-sans text-xl uppercase tracking-widest text-text hover:text-accent transition-colors">Capital Group</span>
+              <span className="font-sans text-xl font-medium text-text hover:text-accent transition-colors">ГК Основа</span>
+              <span className="font-serif text-xl tracking-tight text-text hover:text-accent transition-colors">ЛСР</span>
             </div>
           </div>
           <div>
@@ -135,7 +101,7 @@ export default function NewBuildingsPage() {
       <section className="py-24 bg-bg relative">
         <div className="container mx-auto px-4">
            <div className="flex flex-wrap justify-center gap-4 mb-16">
-              {['Все жилые комплексы', 'Квартиры', 'Апартаменты', 'Сданы', 'Старт продаж'].map((tab, i) => (
+              {['Все жилые комплексы', 'Бизнес и Премиум', 'Комфорт', 'В стройке', 'Сданы'].map((tab, i) => (
                 <button
                   key={i}
                   onClick={() => setActiveTab(i === 0 ? 'all' : tab)}
@@ -170,26 +136,42 @@ export default function NewBuildingsPage() {
                           style={{ backgroundImage: `url(${item.image})` }}
                         />
                         
-                        <div className="absolute top-4 left-4 z-20 px-3 py-1 bg-white/80 backdrop-blur-md border border-text/10 rounded-full text-[10px] text-text font-semibold uppercase tracking-widest shadow-sm">
-                          {item.status === 'hot' ? 'Хит продаж' : item.status === 'premium' ? 'Премиум' : 'Новинка'}
+                        <div className={`absolute top-4 left-4 z-20 px-3 py-1 bg-white/90 backdrop-blur-md border border-text/10 rounded-full text-[10px] text-text font-semibold uppercase tracking-widest shadow-sm`}>
+                          {item.propertyClass === 'elit' ? 'Элитный класс' : item.propertyClass === 'premium' ? 'Премиум' : item.propertyClass === 'business' ? 'Бизнес-класс' : 'Комфорт'}
                         </div>
                       </div>
 
                       <div className="flex flex-col flex-grow relative z-20">
-                        <p className="text-text-muted text-xs mb-2 font-light flex items-center gap-1.5 uppercase tracking-wide">
-                          <MapPin className="w-3.5 h-3.5 text-accent" /> {item.location}
-                        </p>
+                        <div className="flex justify-between items-start mb-2">
+                          <p className="text-text-muted text-xs font-light flex items-center gap-1.5 uppercase tracking-wide">
+                            <MapPin className="w-3.5 h-3.5 text-accent" /> {item.location.split(',')[0]}
+                          </p>
+                          <span className="text-[10px] font-bold uppercase text-text/50">{item.developer}</span>
+                        </div>
                         <h3 className="font-serif text-xl font-semibold text-text group-hover:text-accent transition-colors leading-tight mb-5 drop-shadow-sm">
                           {item.title}
                         </h3>
 
                         <div className="space-y-2 mb-6 flex-grow">
-                          <p className="flex items-center gap-2 text-sm text-text/80 font-light">
-                             <Building2 className="w-4 h-4 text-accent/50" /> {item.specs.type}
-                          </p>
-                          <p className="flex items-center gap-2 text-sm text-text/80 font-light">
-                             <CalendarDays className="w-4 h-4 text-accent/50" /> {item.specs.completion}
-                          </p>
+                           {item.specs.completion && (
+                            <p className="flex items-center gap-2 text-sm text-text/80 font-light">
+                              <CalendarDays className="w-4 h-4 text-accent/50 shrink-0" /> {item.specs.completion}
+                            </p>
+                           )}
+                           {item.specs.area && (
+                            <p className="flex items-center gap-2 text-sm text-text/80 font-light">
+                              <Building2 className="w-4 h-4 text-accent/50 shrink-0" /> Площади: {item.specs.area}
+                            </p>
+                           )}
+                           {item.tags && item.tags.length > 0 && (
+                            <div className="flex flex-wrap gap-1.5 mt-3 pt-2">
+                              {item.tags.slice(0, 3).map((tag, i) => (
+                                <span key={i} className="text-[10px] px-2 py-0.5 border border-text/10 rounded text-text/60">
+                                  {tag}
+                                </span>
+                              ))}
+                            </div>
+                           )}
                         </div>
 
                         <div className="pt-4 border-t border-text/10 flex items-center justify-between">

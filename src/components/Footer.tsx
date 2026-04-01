@@ -5,12 +5,12 @@ import { Instagram, Linkedin, MessageCircle, Phone, Mail, MapPin } from 'lucide-
 
 export const Footer = () => {
   return (
-    <footer className="bg-primary w-full pt-20 pb-10 border-t border-text/5 relative z-10">
+    <footer className="bg-primary w-full pt-12 sm:pt-20 pb-8 sm:pb-10 border-t border-text/5 relative z-10">
       <div className="container mx-auto px-4">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-10 lg:gap-6 mb-16">
+        <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-12 gap-8 lg:gap-6 mb-10 sm:mb-16">
           
           {/* Brand Col */}
-          <div className="lg:col-span-4 flex flex-col">
+          <div className="lg:col-span-4 flex flex-col col-span-2 md:col-span-1">
             <Link href="/" className="font-serif text-2xl font-bold tracking-widest uppercase text-text mb-6">
               Fatukhin <span className="text-accent font-light text-xl">&</span> Ko
             </Link>
@@ -76,7 +76,7 @@ export const Footer = () => {
         </div>
 
         {/* Bottom */}
-        <div className="pt-8 border-t border-text/10 flex flex-col md:flex-row items-center justify-between gap-4">
+        <div className="pt-6 sm:pt-8 border-t border-text/10 flex flex-col md:flex-row items-center justify-between gap-3 sm:gap-4">
           <p className="text-text/40 text-xs font-light">
             © {new Date().getFullYear()} Фатюхин и Ко. Все права защищены.
           </p>

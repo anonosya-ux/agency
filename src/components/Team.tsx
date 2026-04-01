@@ -7,23 +7,28 @@ const BROKERS = [
   {
     name: "Виталий Фатюхин",
     role: "Основатель, Управляющий Партнер",
-    image: "https://images.unsplash.com/photo-1560250097-0b93528c311a?q=80&w=2000"
+    image: "/images/team/vitaly_f.jpeg"
   },
   {
-    name: "Екатерина Соколова",
-    role: "Директор по продажам элитной недвижимости",
-    image: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=2000"
+    name: "Александр Чернышев",
+    role: "Ведущий специалист по недвижимости",
+    image: "/images/team/alexander.jpeg"
   },
   {
-    name: "Михаил Державин",
-    role: "Руководитель департамента инвестиций",
-    image: "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?q=80&w=2000"
+    name: "Виталий Ерошкин",
+    role: "Специалист по недвижимости",
+    image: "/images/team/vitaly_e.jpeg"
+  },
+  {
+    name: "Ольга Острикова",
+    role: "Менеджер по работе с клиентами",
+    image: "/images/team/olga.jpeg"
   }
 ];
 
 export function Team() {
   return (
-    <section className="py-24 px-4 bg-[#1A1A1A] text-text overflow-hidden">
+    <section className="py-24 px-4 bg-dark text-text overflow-hidden">
       <div className="max-w-7xl mx-auto">
         <motion.div 
           initial={{ opacity: 0, y: 20 }}

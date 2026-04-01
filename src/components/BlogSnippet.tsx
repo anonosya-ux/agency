@@ -22,7 +22,7 @@ const LATEST_ARTICLES = [
     title: "Материнский капитал в премиум-сегменте: легальные схемы интеграции в ипотеку от 100 млн",
     category: "Финансирование",
     date: "28 Февраля 2026",
-    image: "https://images.unsplash.com/photo-1556761175-5973dc0f32b7?q=80&w=1000&auto=format&fit=crop"
+    image: "https://images.unsplash.com/photo-1560520653-9e0e4c89eb11?q=80&w=1000&auto=format&fit=crop"
   }
 ];
 
@@ -32,10 +32,10 @@ export function BlogSnippet() {
       <div className="max-w-7xl mx-auto">
         <div className="flex flex-col md:flex-row justify-between items-end mb-16 gap-4">
           <div>
-            <span className="text-xs uppercase tracking-[0.2em] text-[#C1A080] block mb-4">Экспертиза</span>
-            <h2 className="font-serif text-4xl lg:text-5xl text-[#1A1A1A]">Блог и Аналитика</h2>
+            <span className="text-xs uppercase tracking-[0.2em] text-accent block mb-4">Экспертиза</span>
+            <h2 className="font-serif text-4xl lg:text-5xl text-dark">Блог и Аналитика</h2>
           </div>
-          <Link href="/blog" className="hidden md:flex items-center gap-2 uppercase tracking-widest text-xs font-semibold hover:text-[#C1A080] transition-colors">
+          <Link href="/blog" className="hidden md:flex items-center gap-2 uppercase tracking-widest text-xs font-semibold hover:text-accent transition-colors">
             Читать все статьи <ArrowUpRight className="w-4 h-4" />
           </Link>
         </div>
@@ -52,7 +52,7 @@ export function BlogSnippet() {
                 />
               </div>
               <span className="text-[10px] uppercase tracking-widest text-gray-500 block mb-2">{article.category}</span>
-              <h3 className="font-serif text-xl line-clamp-2 leading-snug group-hover:text-[#C1A080] transition-colors">
+              <h3 className="font-serif text-xl line-clamp-2 leading-snug group-hover:text-accent transition-colors">
                 {article.title}
               </h3>
             </Link>

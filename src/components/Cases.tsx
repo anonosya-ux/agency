@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import { ArrowUpRight } from "lucide-react";
+import Link from "next/link";
 
 export function Cases() {
   const cases = [
@@ -32,21 +33,21 @@ export function Cases() {
   ];
 
   return (
-    <section className="py-24 px-4 bg-white relative border-b border-gray-100">
+    <section className="py-16 sm:py-24 px-4 bg-white relative border-b border-gray-100">
       <div className="max-w-7xl mx-auto">
-        <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-8">
+        <div className="flex flex-col md:flex-row md:items-end justify-between mb-10 sm:mb-16 gap-6 sm:gap-8">
           <div>
             <span className="text-xs uppercase tracking-[0.2em] font-medium text-accent mb-4 block">Реальная практика</span>
-            <h2 className="font-serif text-4xl md:text-5xl text-dark max-w-2xl leading-[1.1]">
+            <h2 className="font-serif text-2xl sm:text-4xl md:text-5xl text-dark max-w-2xl leading-[1.1]">
               Мы не продаем стены. Мы решаем задачи капитала.
             </h2>
           </div>
-          <a href="#contacts" className="flex items-center gap-2 text-xs uppercase tracking-widest font-medium text-dark hover:text-accent transition-colors whitespace-nowrap">
+          <Link href="/cases" className="flex items-center gap-2 text-xs uppercase tracking-widest font-medium text-dark hover:text-accent transition-colors whitespace-nowrap">
             Все кейсы <ArrowUpRight className="w-4 h-4" />
-          </a>
+          </Link>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-8">
           {cases.map((deal, idx) => (
             <motion.div 
               key={idx}
@@ -54,10 +55,10 @@ export function Cases() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: idx * 0.1, duration: 0.8 }}
-              className="bg-light-gray p-8 border border-gray-100 flex flex-col group hover:shadow-xl transition-shadow duration-500"
+              className="bg-light-gray p-5 sm:p-8 border border-gray-100 flex flex-col group hover:shadow-xl transition-shadow duration-500"
             >
-              <div className="flex justify-between items-start mb-8 pb-8 border-b border-gray-200">
-                <h3 className="font-serif text-2xl text-dark">{deal.task}</h3>
+              <div className="flex justify-between items-start mb-5 sm:mb-8 pb-5 sm:pb-8 border-b border-gray-200">
+                <h3 className="font-serif text-lg sm:text-2xl text-dark">{deal.task}</h3>
                 <div className="text-right shrink-0 ml-4">
                   <span className="block text-2xl text-accent font-medium tracking-tighter">{deal.metric}</span>
                   <span className="text-[10px] text-gray-400 uppercase tracking-widest">{deal.metricLabel}</span>

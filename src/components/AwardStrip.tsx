@@ -2,6 +2,7 @@
 
 import { useEffect, useRef } from 'react';
 import { motion, useInView, animate } from 'framer-motion';
+import Image from 'next/image';
 
 const stats = [
   { value: 61, label: 'Отзывов', desc: 'На Яндекс.Картах' },
@@ -93,7 +94,7 @@ export const AwardStrip = () => {
             <div className="flex w-max animate-marquee [--duration:50s] gap-6 px-3">
                 {awardsData.map((src, i) => (
                     <div key={`cert-${i}`} className="w-64 h-80 rounded border border-text/10 bg-surface/50 backdrop-blur-md flex items-center justify-center relative overflow-hidden group">
-                        <img src={src} alt="Награда агентства" className="w-full h-full object-cover" />
+                        <Image src={src} alt="Награда агентства" fill className="object-cover" sizes="(max-width: 768px) 100vw, 33vw" />
                         <div className="absolute inset-0 bg-accent/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                     </div>
                 ))}
@@ -101,7 +102,7 @@ export const AwardStrip = () => {
             <div className="flex w-max animate-marquee [--duration:50s] gap-6 px-3" aria-hidden="true">
                 {awardsData.map((src, i) => (
                     <div key={`cert-dup-${i}`} className="w-64 h-80 rounded border border-text/10 bg-surface/50 backdrop-blur-md flex items-center justify-center relative overflow-hidden group">
-                        <img src={src} alt="Награда агентства" className="w-full h-full object-cover" />
+                        <Image src={src} alt="Награда агентства" fill className="object-cover" sizes="(max-width: 768px) 100vw, 33vw" />
                         <div className="absolute inset-0 bg-accent/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                     </div>
                 ))}

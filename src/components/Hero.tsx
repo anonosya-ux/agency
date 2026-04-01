@@ -1,54 +1,49 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { ArrowUpRight } from "lucide-react";
 
 export function Hero() {
   return (
     <section className="relative h-screen w-full flex flex-col justify-center items-center px-4 overflow-hidden bg-dark text-[#F8F8F8]">
-      {/* Background Image / Overlay */}
-      <div 
-        className="absolute inset-0 bg-cover bg-center opacity-40 mix-blend-overlay"
-        style={{ backgroundImage: 'url("https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?q=80&w=2075&auto=format&fit=crop")' }}
-      />
+      {/* Background Video / Overlay */}
+      <video
+        autoPlay
+        loop
+        muted
+        playsInline
+        className="absolute inset-0 w-full h-full object-cover opacity-[0.85] mix-blend-screen"
+      >
+        <source src="/hero-bg.mp4" type="video/mp4" />
+      </video>
+      <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-black/10 to-black/40" />
       
-      <div className="relative z-10 max-w-5xl mx-auto flex flex-col items-center text-center">
-        <motion.p 
-          initial={{ opacity: 0, y: 10 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.2 }}
-          className="text-sm md:text-base uppercase tracking-[0.2em] mb-6 text-accent"
-        >
-          Фатюхин и Ко
-        </motion.p>
+      <div className="relative z-10 w-full max-w-[1240px] mx-auto flex flex-col items-center">
         
         <motion.h1 
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, delay: 0.4 }}
-          className="font-serif text-5xl md:text-7xl lg:text-8xl leading-[1.1] tracking-tight mb-8"
+          className="font-serif text-5xl sm:text-6xl md:text-[80px] lg:text-[100px] xl:text-[120px] leading-[1.0] tracking-tight mb-6 sm:mb-8 text-center drop-shadow-2xl"
         >
-          В недвижимости <br/> нет мелочей.
+          Экспертиза элитной <br/> недвижимости
         </motion.h1>
         
-        <motion.p 
+        <motion.div 
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, delay: 0.6 }}
-          className="max-w-2xl text-lg md:text-xl font-light opacity-80 mb-12"
+          className="flex justify-center w-full"
         >
-          Исключительный сервис на рынке Москвы. От оценки до ключей — экспертиза агентства на вашей стороне.
-        </motion.p>
-        
-        <motion.button 
-          initial={{ opacity: 0, scale: 0.95 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.8, delay: 0.8 }}
-          className="group flex items-center gap-3 bg-white text-dark px-8 py-4 uppercase tracking-widest text-sm font-medium hover:bg-accent hover:text-text transition-all duration-500 ease-out"
-        >
-          Обсудить Задачу
-          <ArrowUpRight className="w-4 h-4 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform duration-500" />
-        </motion.button>
+          {/* Constrain width to precisely align with text above in typical desktop view */}
+          <div className="w-[300px] sm:w-[400px] md:w-[500px]">
+            <ul className="flex flex-col text-lg sm:text-xl lg:text-3xl font-light tracking-wide opacity-95 gap-2 sm:gap-3 drop-shadow-lg items-start text-left">
+              <li>&bull; зарубежная недвижимость</li>
+              <li>&bull; подбор новостроек</li>
+              <li>&bull; рента</li>
+            </ul>
+          </div>
+        </motion.div>
+
       </div>
 
       {/* Scroll indicator */}
@@ -56,12 +51,11 @@ export function Hero() {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 1, delay: 1.5 }}
-        className="absolute bottom-12 left-1/2 -translate-x-1/2 flex flex-col items-center gap-3 opacity-60"
+        className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-3 opacity-80"
       >
-        <span className="text-xs uppercase tracking-[0.2em]">Scroll</span>
-        <div className="w-[1px] h-12 bg-white/30 overflow-hidden">
+        <div className="w-[1px] h-16 bg-white/40 overflow-hidden">
           <motion.div 
-            animate={{ y: [0, 48] }}
+            animate={{ y: [0, 64] }}
             transition={{ repeat: Infinity, duration: 1.5, ease: "linear" }}
             className="w-full h-1/2 bg-white"
           />

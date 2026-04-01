@@ -25,19 +25,19 @@ export const CTABanner = () => {
           whileInView={{ opacity: 1, scale: 1 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
-          className="relative overflow-hidden rounded-[2rem] border border-text/10 bg-dark p-8 md:p-16 lg:p-20 mx-auto max-w-5xl"
+          className="relative overflow-hidden rounded-2xl sm:rounded-[2rem] border border-text/10 bg-dark p-6 sm:p-8 md:p-16 lg:p-20 mx-auto max-w-5xl"
         >
           {/* Background accents */}
           <div className="absolute -left-[15%] top-1/2 -translate-y-1/2 w-[400px] h-[400px] bg-accent/15 rounded-full blur-[120px] pointer-events-none" />
           <div className="absolute -right-[15%] bottom-0 w-[300px] h-[300px] bg-accent/10 rounded-full blur-[100px] pointer-events-none" />
 
-          <div className="flex flex-col lg:flex-row gap-12 lg:gap-16 items-center">
+          <div className="flex flex-col lg:flex-row gap-8 sm:gap-12 lg:gap-16 items-center">
             {/* Left: Offer */}
             <div className="flex-1 text-center lg:text-left">
-              <h2 className="font-serif text-3xl md:text-4xl lg:text-5xl font-semibold text-white uppercase mb-5 leading-tight">
+              <h2 className="font-serif text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-semibold text-white uppercase mb-4 sm:mb-5 leading-tight">
                 Получите подборку из <span className="text-accent">5 объектов</span> за 30 минут
               </h2>
-              <p className="text-white/60 text-base md:text-lg font-light mb-8 leading-relaxed max-w-lg">
+              <p className="text-white/60 text-sm sm:text-base md:text-lg font-light mb-6 sm:mb-8 leading-relaxed max-w-lg">
                 Оставьте номер — персональный брокер перезвонит и подберёт варианты под ваш бюджет и задачи. Бесплатно и без обязательств.
               </p>
 

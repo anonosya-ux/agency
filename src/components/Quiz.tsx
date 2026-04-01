@@ -110,24 +110,24 @@ export function Quiz() {
                 animate={{ opacity: 1, scale: 1 }}
                 className="text-center flex flex-col items-center justify-center py-8"
               >
-                <div className="w-16 h-16 bg-light-gray rounded-full flex items-center justify-center mb-6 text-accent">
+                <div className="w-16 h-16 bg-surface rounded-full flex items-center justify-center mb-6 text-accent border border-text/10">
                   <Send className="w-6 h-6 ml-1" />
                 </div>
-                <h3 className="font-serif text-3xl mb-4 text-dark">Аналитика сформирована</h3>
-                <p className="text-gray-500 font-light max-w-md mx-auto mb-8">
+                <h3 className="font-serif text-3xl mb-4 text-text uppercase">Аналитика сформирована</h3>
+                <p className="text-text-muted font-light max-w-md mx-auto mb-8">
                   Мы подготовили экспертный ответ под профиль: <br/>
-                  <span className="text-dark font-medium">{goal} ({budget})</span>. <br/>
-                  Перейдите в наш закрытый Telegram для связи со старшим партнером.
+                  <span className="text-text font-medium">{goal} ({budget})</span>. <br/>
+                  Перейдите в наш WhatsApp для связи со старшим партнером.
                 </p>
                 <a 
-                  href="https://t.me/PlaceholderUsername" // REQUIRES CONFIRMATION: Actual TG link
+                  href={`https://wa.me/79951138937?text=${encodeURIComponent(`Здравствуйте! Прошел квиз на сайте.\nЗадача: ${goal}\nБюджет: ${budget}\nЖду обратной связи!`)}`}
                   target="_blank" 
                   rel="noopener noreferrer"
-                  className="bg-dark text-text px-8 py-4 uppercase tracking-widest text-xs font-medium hover:bg-accent transition-colors flex items-center gap-3"
+                  className="bg-accent text-white px-8 py-4 uppercase tracking-widest text-xs font-medium hover:bg-accent/80 transition-colors flex items-center gap-3 rounded-full shadow-lg"
                 >
-                  <Send className="w-4 h-4" /> Перейти в Telegram
+                  <Send className="w-4 h-4" /> Написать в WhatsApp
                 </a>
-                <button onClick={() => setStep(1)} className="text-xs text-gray-400 hover:text-black mt-8 uppercase tracking-widest">
+                <button onClick={() => setStep(1)} className="text-xs text-text/40 hover:text-text mt-8 uppercase tracking-widest transition-colors">
                   Начать заново
                 </button>
               </motion.div>

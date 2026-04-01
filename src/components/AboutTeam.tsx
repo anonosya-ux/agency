@@ -3,6 +3,7 @@
 import { motion } from 'framer-motion';
 import { Card } from './ui/card';
 import { Linkedin, Mail, Phone } from 'lucide-react';
+import Image from 'next/image';
 
 const team = [
   {
@@ -55,7 +56,7 @@ export const AboutTeam = () => {
               <div className="absolute inset-0 bg-gradient-to-t from-bg via-transparent to-transparent z-10" />
               <div className="absolute inset-0 bg-secondary/40 z-0 transition-transform duration-700 group-hover:scale-105">
                 {/* Founder Image */}
-                <img src="/images/team/vitaly_f.jpeg" alt="Основатель" className="w-full h-full object-cover" />
+                <Image src="/images/team/vitaly_f.jpeg" alt="Основатель" fill className="object-cover" sizes="(max-width: 1024px) 100vw, 50vw" />
               </div>
               
               <div className="absolute inset-x-0 bottom-0 p-6 z-20">
@@ -98,7 +99,7 @@ export const AboutTeam = () => {
                       <div className="absolute inset-0 bg-gradient-to-t from-surface via-transparent to-transparent z-10" />
                       <div className="absolute inset-0 transition-transform duration-700 group-hover:scale-110">
                          {/* Team Image */}
-                         <img src={member.image} alt={member.name} className="w-full h-full object-cover" />
+                         <Image src={member.image} alt={member.name} fill className="object-cover" sizes="(max-width: 768px) 100vw, 33vw" />
                       </div>
                       <div className="absolute top-4 right-4 z-20 flex flex-col gap-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300 translate-x-4 group-hover:translate-x-0">
                         <a href="#" className="w-8 h-8 rounded-full bg-text/5 backdrop-blur-md flex items-center justify-center text-text hover:bg-accent hover:text-primary transition-colors">

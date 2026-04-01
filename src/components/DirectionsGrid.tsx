@@ -30,7 +30,7 @@ const directions = [
 
 export const DirectionsGrid = () => {
   return (
-    <section className="py-24 bg-bg w-full">
+    <section className="py-16 sm:py-24 bg-bg w-full">
       <div className="container mx-auto px-4 md:px-6">
         <motion.div 
           initial={{ opacity: 0, y: 20 }}
@@ -39,13 +39,13 @@ export const DirectionsGrid = () => {
           transition={{ duration: 0.6 }}
           className="mb-12"
         >
-          <h2 className="font-serif text-3xl md:text-5xl font-semibold text-text uppercase mb-4">Направления</h2>
+          <h2 className="font-serif text-2xl sm:text-3xl md:text-5xl font-semibold text-text uppercase mb-4">Направления</h2>
           <p className="text-text-muted text-base md:text-lg max-w-2xl font-light">
             Мы подберём объект для инвестиций, жизни или бизнеса. Гарантируем конфиденциальность, юридическую чистоту и прозрачность сделки.
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 auto-rows-min">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-3 sm:gap-4 auto-rows-min">
           {directions.map((item, idx) => (
             <motion.div
               key={idx}
@@ -55,7 +55,7 @@ export const DirectionsGrid = () => {
               transition={{ duration: 0.5, delay: idx * 0.1 }}
               className={`group relative overflow-hidden rounded-xl border border-text/10 bg-surface fallback-bg hover:border-accent/50 transition-colors duration-500 ${item.className}`}
             >
-              <Link href={item.link} className="absolute inset-0 z-20 flex flex-col justify-end p-6 md:p-8">
+              <Link href={item.link} className="absolute inset-0 z-20 flex flex-col justify-end p-4 sm:p-6 md:p-8">
                 {/* Background Image Placeholder */}
                 <div className="absolute inset-0 z-0 bg-secondary/20 transition-transform duration-700 group-hover:scale-105">
                   <div className="absolute inset-0 bg-gradient-to-t from-bg via-bg/80 to-transparent z-10" />
@@ -64,12 +64,12 @@ export const DirectionsGrid = () => {
                 
                 <div className="relative z-20 flex items-center justify-between">
                   <div>
-                    <h3 className="font-serif text-2xl md:text-3xl font-semibold text-text mb-2 group-hover:text-accent transition-colors duration-300">
+                    <h3 className="font-serif text-xl sm:text-2xl md:text-3xl font-semibold text-text mb-2 group-hover:text-accent transition-colors duration-300">
                       {item.title}
                     </h3>
-                    <p className="text-text-muted text-sm md:text-base">{item.desc}</p>
+                    <p className="text-text-muted text-xs sm:text-sm md:text-base">{item.desc}</p>
                   </div>
-                  <div className="w-12 h-12 rounded-full border border-text/20 flex items-center justify-center bg-black/20 backdrop-blur-md group-hover:bg-accent group-hover:text-bg transition-all duration-300">
+                  <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-full border border-text/20 flex items-center justify-center bg-black/20 backdrop-blur-md group-hover:bg-accent group-hover:text-bg transition-all duration-300 shrink-0">
                     <ArrowUpRight className="w-5 h-5" />
                   </div>
                 </div>
