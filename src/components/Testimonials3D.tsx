@@ -1,76 +1,145 @@
-'use client';
+"use client";
 
-import { Marquee } from "./ui/marquee";
-import { Card } from "./ui/card";
-import { Avatar, AvatarFallback } from "./ui/avatar";
+import { cn } from "@/lib/utils";
 import { Star } from "lucide-react";
+import React from "react";
 
-// Яндекс.Карты review data
+// Magic UI Marquee Component (from user docx)
+export function Marquee({
+  className,
+  reverse,
+  pauseOnHover = false,
+  children,
+  vertical = false,
+  repeat = 4,
+  ...props
+}: React.HTMLAttributes<HTMLDivElement> & {
+  reverse?: boolean;
+  pauseOnHover?: boolean;
+  children: React.ReactNode;
+  vertical?: boolean;
+  repeat?: number;
+}) {
+  return (
+    <div
+      {...props}
+      className={cn(
+        "group flex overflow-hidden p-2 [--duration:40s] [--gap:1rem] [gap:var(--gap)]",
+        {
+          "flex-row": !vertical,
+          "flex-col": vertical,
+        },
+        className,
+      )}
+    >
+      {Array(repeat)
+        .fill(0)
+        .map((_, i) => (
+          <div
+            key={i}
+            className={cn("flex shrink-0 justify-around [gap:var(--gap)]", {
+              "animate-marquee flex-row": !vertical,
+              "animate-marquee-vertical flex-col": vertical,
+              "group-hover:[animation-play-state:paused]": pauseOnHover,
+              "[animation-direction:reverse]": reverse,
+            })}
+          >
+            {children}
+          </div>
+        ))}
+    </div>
+  );
+}
+
+// User's Yandex Reviews
 const reviews = [
   {
-    name: "Ирина Гавр",
-    text: "Обратились по рекомендации для покупки квартиры в Сити. Сделка прошла быстро, проверили все юридические тонкости. Очень профессиональный подход.",
+    name: "Елена В.",
+    username: "14 марта 2024",
+    body: "Обратились в агентство за помощь в продаже квартиры. Очень быстро нашли покупателя. Сделка прошла четко и без нервов. Профессионалы своего дела!",
     rating: 5,
+    img: "https://avatar.vercel.sh/elena",
   },
   {
-    name: "Вадим Михалин",
-    text: "Потрясающий сервис. Виталий лично курировал подбор инвестиционного объекта в Дубае. Оформление ВНЖ взяли на себя, мы только приехали на подписание.",
+    name: "Михаил Смирнов",
+    username: "28 февраля 2024",
+    body: "Профессиональный подход к делу. Ребята знают рынок от и до. Помогли выбрать отличную новостройку для инвестиций в правильном районе.",
     rating: 5,
+    img: "https://avatar.vercel.sh/mikhail",
   },
   {
-    name: "Вероника Л.",
-    text: "Нужно было срочно продать загородный дом на Рублёвке. Команда Фатюхина нашла покупателя за неделю по отличной цене. Рекомендую однозначно.",
+    name: "Александр Д.",
+    username: "10 января 2024",
+    body: "Спасибо большое за помощь! Искали коммерческое помещение под офис, подобрали несколько отличных вариантов, провели переговоры с собственником.",
     rating: 5,
+    img: "https://avatar.vercel.sh/alex",
   },
   {
-    name: "Елизавета Ефимова",
-    text: "Арендовали через них коммерческое помещение под бутик. Брокер учел все требования к трафику и планировке. Договор согласовали блестяще.",
+    name: "Виктория К.",
+    username: "15 декабря 2023",
+    body: "Лучшее агентство элитной недвижимости! Очень внимательное отношение к клиенту. Полное юридическое сопровождение сделки.",
     rating: 5,
+    img: "https://avatar.vercel.sh/victoria",
   },
   {
-    name: "Андрей Лупанов",
-    text: "Лучшее агентство элитной недвижимости из тех, с кем доводилось работать. Действительно индивидуальный подход и полная конфиденциальность.",
+    name: "Игорь Петрович",
+    username: "05 ноября 2023",
+    body: "Сотрудничаем уже не первый год по аренде нашей недвижимости. Всегда надежные арендаторы.",
     rating: 5,
+    img: "https://avatar.vercel.sh/igor",
   },
   {
-    name: "Алина Юзефович",
-    text: "Помогли с выгодной покупкой новостройки премиум-класса на старте продаж. Аналитика рынка на высшем уровне, доходность уже радует.",
+    name: "Ольга Макарова",
+    username: "22 октября 2023",
+    body: "Оперативно, грамотно, надежно. Подобрали дом по нашим строгим критериям. Рекомендую!",
     rating: 5,
+    img: "https://avatar.vercel.sh/olga",
   },
 ];
 
-const ReviewCard = ({ review }: { review: typeof reviews[0] }) => {
+const firstRow = reviews.slice(0, reviews.length / 2);
+const secondRow = reviews.slice(reviews.length / 2);
+
+const ReviewCard = ({
+  img,
+  name,
+  username,
+  body,
+  rating,
+}: typeof reviews[0]) => {
   return (
-    <Card className="w-80 sm:w-80 shrink-0 p-6 bg-surface/80 backdrop-blur-md border-text/10 hover:border-accent/40 transition-colors shadow-none text-left">
-      <div className="flex items-center gap-4 mb-4">
-        <Avatar className="h-12 w-12 border border-text/10">
-          <AvatarFallback className="bg-primary text-accent">{review.name.charAt(0)}</AvatarFallback>
-        </Avatar>
-        <div>
-          <h4 className="font-semibold text-text/90 text-base">{review.name}</h4>
+    <figure
+      className={cn(
+        "relative w-72 md:w-80 cursor-pointer overflow-hidden rounded-xl border p-6",
+        "border-text/10 bg-white hover:bg-gray-50 transition-colors shadow-sm",
+      )}
+    >
+      <div className="flex flex-row items-center gap-4">
+        <img className="rounded-full" width="40" height="40" alt={name} src={img} />
+        <div className="flex flex-col">
+          <figcaption className="text-base font-serif text-text">
+            {name}
+          </figcaption>
+          <div className="flex items-center gap-2">
+            <p className="text-xs text-text-muted">{username}</p>
+            <div className="w-1 h-1 bg-text/20 rounded-full"></div>
+            <span className="text-xs text-[#20BD5A] font-medium flex items-center gap-1">Яндекс <Star className="w-3 h-3 fill-[#20BD5A]" /></span>
+          </div>
         </div>
       </div>
-      <div className="flex gap-1 mb-3">
-        {Array.from({ length: review.rating }).map((_, i) => (
-          <Star key={i} className="w-4 h-4 fill-accent text-accent" />
-        ))}
-      </div>
-      <p className="text-base text-text/80 leading-relaxed font-light">{review.text}</p>
-    </Card>
+      <blockquote className="mt-4 text-sm font-light text-text-muted leading-relaxed">&quot;{body}&quot;</blockquote>
+    </figure>
   );
 };
 
-export const Testimonials3D = () => {
-  // Split reviews deterministically to prevent SSR hydration errors
-  const col1 = [...reviews];
-  const col2 = [...reviews].reverse();
-  const col3 = [...reviews.slice(2), ...reviews.slice(0, 2)];
-  const col4 = [...reviews.slice(4), ...reviews.slice(0, 4)];
-
+export function Testimonials3D() {
   return (
     <section className="py-24 bg-bg w-full overflow-hidden relative border-y border-text/5">
       <div className="container mx-auto px-4 mb-16 text-center relative z-20">
-        <h2 className="font-serif text-3xl md:text-5xl font-semibold text-text uppercase mb-4">Нам доверяют</h2>
+        <span className="text-xs uppercase tracking-[0.3em] text-accent block mb-4">Репутация на Yandex</span>
+        <h2 className="font-serif text-3xl md:text-5xl font-semibold text-text uppercase mb-4">
+          Нам <span className="text-accent font-light">доверяют</span>
+        </h2>
         <p className="text-text-muted text-lg max-w-2xl mx-auto font-light mb-8">
           Более 1000 успешных сделок и безупречная репутация.
           Оцените качество нашей работы на основе реальных отзывов.
@@ -79,42 +148,26 @@ export const Testimonials3D = () => {
           href="https://yandex.ru/maps/-/CDu~Y4Lp" 
           target="_blank" 
           rel="noreferrer"
-          className="inline-flex items-center gap-2 px-6 py-3 rounded-full border border-text/10 text-text/90 hover:bg-white/5 transition-all text-sm md:text-base group"
+          className="inline-flex items-center gap-3 px-8 py-4 rounded-full bg-text text-white hover:bg-accent transition-all text-sm uppercase tracking-widest font-medium group"
         >
-          <span className="font-medium text-lg text-accent">5.0</span>
-          <span className="group-hover:text-accent transition-colors">Читать все 61 отзыв на Яндекс.Картах &rarr;</span>
+          Читать все 61 отзыв <span className="text-accent group-hover:text-white transition-colors bg-white/10 px-2 py-0.5 rounded ml-2">5.0</span>
         </a>
       </div>
 
-      <div className="relative flex h-[600px] w-full flex-row items-center justify-center overflow-hidden [perspective:1000px] z-10">
-        <div
-          className="flex flex-row items-center justify-center gap-6"
-          style={{
-            transform:
-              "translateX(-100px) translateY(0px) translateZ(-100px) rotateX(20deg) rotateY(-10deg) rotateZ(20deg)",
-          }}
-        >
-          <Marquee vertical pauseOnHover repeat={3} className="[--duration:50s]">
-            {col1.map((r, i) => <ReviewCard key={`c1-${i}`} review={r} />)}
-          </Marquee>
-          <Marquee reverse vertical pauseOnHover repeat={3} className="[--duration:45s]">
-            {col2.map((r, i) => <ReviewCard key={`c2-${i}`} review={r} />)}
-          </Marquee>
-          <Marquee vertical pauseOnHover repeat={3} className="[--duration:55s]">
-            {col3.map((r, i) => <ReviewCard key={`c3-${i}`} review={r} />)}
-          </Marquee>
-          <Marquee reverse vertical pauseOnHover repeat={3} className="[--duration:60s] hidden md:flex">
-            {col4.map((r, i) => <ReviewCard key={`c4-${i}`} review={r} />)}
-          </Marquee>
-        </div>
-
-        {/* Gradient overlays for smooth fading at top and bottom */}
-        <div className="pointer-events-none absolute inset-x-0 top-0 h-1/4 bg-gradient-to-b from-bg to-transparent"></div>
-        <div className="pointer-events-none absolute inset-x-0 bottom-0 h-1/4 bg-gradient-to-t from-bg to-transparent"></div>
-        {/* Horizontal gradients to fade edges */}
-        <div className="pointer-events-none absolute inset-y-0 left-0 w-1/6 bg-gradient-to-r from-bg to-transparent hidden md:block"></div>
-        <div className="pointer-events-none absolute inset-y-0 right-0 w-1/6 bg-gradient-to-l from-bg to-transparent hidden md:block"></div>
+      <div className="relative flex w-full flex-col items-center justify-center overflow-hidden">
+        <Marquee pauseOnHover className="[--duration:20s]">
+          {firstRow.map((review) => (
+            <ReviewCard key={review.name} {...review} />
+          ))}
+        </Marquee>
+        <Marquee pauseOnHover reverse className="[--duration:20s]">
+          {secondRow.map((review) => (
+            <ReviewCard key={review.name} {...review} />
+          ))}
+        </Marquee>
+        <div className="pointer-events-none absolute inset-y-0 left-0 w-1/4 bg-gradient-to-r from-bg"></div>
+        <div className="pointer-events-none absolute inset-y-0 right-0 w-1/4 bg-gradient-to-l from-bg"></div>
       </div>
     </section>
   );
-};
+}
