@@ -1,53 +1,36 @@
 import type { Metadata } from "next";
-import { Geist, Cormorant_Garamond, Cormorant } from "next/font/google";
 import localFont from 'next/font/local';
 import "./globals.css";
 import { StickyCTA } from "@/components/StickyCTA";
 import { StructuredData } from "@/components/StructuredData";
 import { Preloader } from "@/components/Preloader";
+import Script from "next/script";
 import { CustomCursor } from "@/components/CustomCursor";
 import { MessengerButton } from "@/components/MessengerButton";
 import { cn } from "@/lib/utils";
+import { Playfair_Display, Montserrat } from 'next/font/google';
 
-/* ── Fallback sans (system font for UI elements) ────────────────── */
-const geist = Geist({ subsets: ['latin', 'cyrillic'], variable: '--font-sans' });
-
-/* ── Cormorant Garamond — Hero headings (H1, H2) ────────────────── */
-const cormorantGaramond = Cormorant_Garamond({
-  subsets: ['latin', 'cyrillic'],
-  weight: ['300', '400', '500', '600', '700'],
-  style: ['normal', 'italic'],
-  variable: '--font-display',
+const playfair = Playfair_Display({
+  subsets: ['cyrillic', 'latin'],
+  variable: '--next-font-display',
   display: 'swap',
 });
 
-/* ── Cormorant — Subheadings, buttons, nav (H3–H6) ──────────────── */
-const cormorant = Cormorant({
-  subsets: ['latin', 'cyrillic'],
-  weight: ['300', '400', '500', '600', '700'],
-  style: ['normal', 'italic'],
-  variable: '--font-heading',
+const montserrat = Montserrat({
+  subsets: ['cyrillic', 'latin'],
+  variable: '--next-font-sans',
   display: 'swap',
 });
 
-/* ── Cormorant Garamond as body copy variable ────────────────────── */
-const cormorantBody = Cormorant_Garamond({
-  subsets: ['latin', 'cyrillic'],
-  weight: ['300', '400', '500', '600', '700'],
-  style: ['normal', 'italic'],
-  variable: '--font-body',
+const actay = localFont({
+  src: '../assets/fonts/Actay-Regular.otf',
+  variable: '--font-actay',
   display: 'swap',
 });
 
-/* ── Blacker Sans Pro Free — Accent use (Light, Medium-Italic) ───── */
-const blackerAccent = localFont({
-  src: [
-    { path: '../../public/fonts/Blacker-Sans-Pro-Light.ttf', weight: '300', style: 'normal' },
-    { path: '../../public/fonts/Blacker-Sans-Pro-Medium-Italic.ttf', weight: '500', style: 'italic' },
-    { path: '../../public/fonts/Blacker-Sans-Text-Heavy.ttf', weight: '900', style: 'normal' },
-    { path: '../../public/fonts/Blacker-Sans-Display-Book-Italic.ttf', weight: '400', style: 'italic' },
-  ],
-  variable: '--font-extralight',
+const trajan = localFont({
+  src: '../assets/fonts/Trajan_Pro_3_Regular.otf',
+  variable: '--font-trajan',
   display: 'swap',
 });
 
@@ -96,11 +79,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="ru" className={cn(
-      cormorantGaramond.variable,
-      cormorant.variable,
-      cormorantBody.variable,
-      blackerAccent.variable,
-      geist.variable,
+      playfair.variable,
+      montserrat.variable,
+      actay.variable,
+      trajan.variable,
       "font-sans"
     )}>
       <body className="antialiased bg-bg text-text font-body selection:bg-accent selection:text-text flex flex-col min-h-screen">
@@ -112,6 +94,24 @@ export default function RootLayout({
         </div>
         <StickyCTA />
         <MessengerButton />
+
+        {/* Yandex Metrica (Stand-in ID per Phase 5 Req) */}
+        <Script id="yandex-metrica" strategy="afterInteractive">
+          {`
+            (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+            m[i].l=1*new Date();
+            for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
+            k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
+            (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+
+            ym(99999999, "init", {
+                  clickmap:true,
+                  trackLinks:true,
+                  accurateTrackBounce:true,
+                  webvisor:true
+            });
+          `}
+        </Script>
       </body>
     </html>
   );
