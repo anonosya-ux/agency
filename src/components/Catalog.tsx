@@ -30,7 +30,7 @@ const topItems = [
     marginRight: '0px',
   },
   {
-    title: 'загородная недв.',
+    title: 'Загородная недвижимость',
     link: '/services/countryside',
     image: 'https://images.unsplash.com/photo-1512917774080-9991f1c4c750?q=80&w=800&auto=format&fit=crop',
     clip: 'polygon(0 0, 100% 0, 100% 100%, var(--dx) 100%)',
@@ -41,7 +41,7 @@ const topItems = [
 
 const bottomItems = [
   {
-    title: 'зарубежная недвижимость',
+    title: 'Зарубежная недвижимость',
     link: '/catalog?category=abroad',
     image: '/images/palm-villa.png',
     clip: 'polygon(0 0, 100% 0, 100% 100%, 0 calc(100% - var(--dy-b)))',
@@ -118,7 +118,7 @@ export const Catalog = () => {
               {/* Label button below - exact matching margins from SVG bounding boxes */}
               <Link
                 href={item.link}
-                className="py-3 px-3 text-center md:text-left text-[14px] md:text-[15px] font-light tracking-wide transition-colors duration-300 border border-[#C1A080] text-[#C1A080] hover:bg-[#C1A080] hover:text-white mt-1 md:mt-2"
+                className="py-3 px-3 text-center md:text-left text-[14px] md:text-[15px] font-normal tracking-wide transition-colors duration-300 border border-[#C1A080] text-[#1a1a1a] hover:bg-[#C1A080] hover:text-white mt-1 md:mt-2 uppercase bg-[#FAF9F7]"
                 style={{ 
                   marginRight: item.marginRight,
                   marginLeft: item.marginLeft,
@@ -144,7 +144,7 @@ export const Catalog = () => {
               {/* Label button ABOVE image - horizontal tops mean 100% wide text bounding box */}
               <Link
                 href={item.link}
-                className="py-3 px-3 text-center md:text-left text-[14px] lg:text-[15px] font-light tracking-wide transition-colors duration-300 border border-[#C1A080] text-[#C1A080] hover:bg-[#C1A080] hover:text-white mb-2 md:mb-3"
+                className="py-3 px-3 text-center md:text-left text-[14px] lg:text-[15px] font-normal tracking-wide transition-colors duration-300 border border-[#C1A080] text-[#1a1a1a] hover:bg-[#C1A080] hover:text-white mb-2 md:mb-3 uppercase bg-[#FAF9F7]"
                 style={{ 
                   marginRight: item.marginRight,
                   marginLeft: item.marginLeft,
