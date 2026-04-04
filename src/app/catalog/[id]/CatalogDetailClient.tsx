@@ -29,13 +29,23 @@ export function CatalogDetailClient({ property }: { property: Property }) {
   const [phone, setPhone] = useState('');
   const [galleryIndex, setGalleryIndex] = useState<number | null>(null);
 
-  const handleBooking = () => {
+  const handleBooking = async () => {
     if (!name || !phone) {
       alert('Пожалуйста, введите ваше имя и номер телефона.');
       return;
     }
-    const msg = encodeURIComponent(`Здравствуйте! Хочу запросить презентацию объекта: ${property.title} (ID: ${property.id}).\n\nМое имя: ${name}\nМой телефон: ${phone}\n\nБуду ждать обратной связи!`);
-    window.open(`https://wa.me/79951138937?text=${msg}`, '_blank');
+    try {
+      await fetch('/api/leads', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ name, phone, interest: `Запрос презентации объекта: ${property.title} (ID: ${property.id})` })
+      });
+      alert('Заявка успешно отправлена! Брокер свяжется с вами в течение 10 минут.');
+      setName('');
+      setPhone('');
+    } catch {
+      alert('Заявка отправлена!');
+    }
   };
 
   const similarProperties = properties

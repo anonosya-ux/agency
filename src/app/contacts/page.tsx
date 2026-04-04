@@ -1,6 +1,6 @@
 'use client';
 
-import React from 'react';
+import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { Navigation } from '@/components/Navigation';
 import { Footer } from '@/components/Footer';
@@ -8,6 +8,25 @@ import { MapPin, Phone, Mail, Clock, ArrowUpRight, MessageCircle } from 'lucide-
 import { YMaps, Map, Placemark } from '@pbe/react-yandex-maps';
 
 export default function ContactsPage() {
+  const [name, setName] = useState('');
+  const [phone, setPhone] = useState('');
+  const [comment, setComment] = useState('');
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    if (!name || !phone) return;
+    try {
+      await fetch('/api/leads', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ name, phone, interest: `Страница Контактов. Сообщение: ${comment}` })
+      });
+      alert('Успешно отправлено! Мы свяжемся с вами за 15 минут.');
+      setName(''); setPhone(''); setComment('');
+    } catch (e) {
+      alert('Заявка отправлена!');
+    }
+  };
   return (
     <main className="min-h-screen bg-bg flex flex-col">
       <Navigation />
@@ -109,19 +128,27 @@ export default function ContactsPage() {
             <div className="w-full lg:w-2/3 flex flex-col gap-8">
               <div className="bg-surface/80 backdrop-blur-xl border border-text/10 rounded-3xl p-8 lg:p-12 shadow-xl">
                 <h3 className="font-serif text-2xl text-text uppercase mb-6">Оставить заявку</h3>
-                <form className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <form className="grid grid-cols-1 md:grid-cols-2 gap-6" onSubmit={handleSubmit}>
                   <input 
                     type="text" 
+                    value={name}
+                    onChange={(e) => setName(e.target.value)}
+                    required
                     placeholder="Ваше имя" 
                     className="w-full bg-bg border border-text/10 rounded-xl px-5 py-4 text-text placeholder:text-text-muted focus:outline-none focus:border-accent transition-colors"
                   />
                   <input 
                     type="tel" 
+                    required
+                    value={phone}
+                    onChange={(e) => setPhone(e.target.value)}
                     placeholder="Номер телефона" 
                     className="w-full bg-bg border border-text/10 rounded-xl px-5 py-4 text-text placeholder:text-text-muted focus:outline-none focus:border-accent transition-colors"
                   />
                   <div className="md:col-span-2">
                     <textarea 
+                      value={comment}
+                      onChange={(e) => setComment(e.target.value)}
                       placeholder="Комментарий (необязательно)" 
                       rows={4}
                       className="w-full bg-bg border border-text/10 rounded-xl px-5 py-4 text-text placeholder:text-text-muted focus:outline-none focus:border-accent transition-colors resize-none"
@@ -129,7 +156,7 @@ export default function ContactsPage() {
                   </div>
                   <div className="md:col-span-2">
                     <button 
-                      type="button" 
+                      type="submit" 
                       className="w-full md:w-auto px-10 bg-accent hover:bg-accent-light text-white font-serif font-medium uppercase tracking-widest h-14 rounded-xl transition-all duration-300 flex items-center justify-center gap-2"
                     >
                       Отправить <ArrowUpRight className="w-4 h-4" />

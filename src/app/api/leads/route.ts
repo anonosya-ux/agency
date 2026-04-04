@@ -20,7 +20,7 @@ export async function POST(req: Request) {
       'other': '💬 Консультация'
     };
     
-    const intent = interest ? (interestLabels[interest] || 'Консультация') : 'Не указан';
+    const intent = interestLabels[interest] || interest || 'Не указан';
 
     // Telegram Bot Details
     const BOT_TOKEN = process.env.TELEGRAM_BOT_TOKEN;

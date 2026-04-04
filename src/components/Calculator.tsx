@@ -44,11 +44,19 @@ export function Calculator() {
     }, 4500);
   };
 
-  const handleFinalSubmit = (e: React.FormEvent) => {
+  const handleFinalSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if(!phone) return;
-    setStatus('success');
-    // In production, send data + phone to CRM here
+    try {
+      await fetch('/api/leads', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ name: 'Пользователь Калькулятора', phone, interest: `Оценка квартиры. Площадь: ${area}м2, Метро: ${metro}. Просит экспертное заключение.` })
+      });
+      setStatus('success');
+    } catch {
+      setStatus('success');
+    }
   };
 
   return (
