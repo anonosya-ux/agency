@@ -51,7 +51,7 @@ export function Team() {
               transition={{ duration: 0.8, delay: idx * 0.2 }}
               className="group cursor-pointer"
             >
-              <div className="relative aspect-[3/4] mb-6 overflow-hidden bg-black/50 grayscale group-hover:grayscale-0 transition-all duration-700">
+              <div className="relative aspect-[3/4] mb-6 overflow-hidden bg-black/50 transition-all duration-700">
                 <Image 
                   src={broker.image} 
                   alt={broker.name}
