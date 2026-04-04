@@ -25,7 +25,7 @@ const awardsData = [
 
 function Counter({ from, to, duration = 2.5 }: { from: number; to: number; duration?: number }) {
   const nodeRef = useRef<HTMLSpanElement>(null);
-  const inView = useInView(nodeRef, { once: true, margin: "-100px" });
+  const inView = useInView(nodeRef, { once: true, margin: "-10px" });
 
   useEffect(() => {
     if (inView) {

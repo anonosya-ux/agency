@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from "react";
 import { motion, useScroll } from "framer-motion";
-import { Menu, X, Search } from "lucide-react";
+import { Menu, X } from "lucide-react";
 import Link from "next/link";
 import { Logo } from "./Logo";
 import { FaTelegramPlane, FaWhatsapp } from "react-icons/fa";
@@ -84,11 +84,7 @@ export function Navigation() {
               </a>
             </div>
             
-            {/* Search Input Fake box */}
-            <div className="flex items-center justify-between w-[200px] border-b border-dark/20 pb-1 mt-1 cursor-text">
-               <span className="text-dark/30 text-[10px] uppercase tracking-wider">Поиск...</span>
-               <Search className="w-3 h-3 text-dark/30" />
-            </div>
+
           </div>
 
           {/* Mobile/Tablet Burger */}
@@ -144,6 +140,11 @@ export function Navigation() {
             </a>
             <a href="https://wa.me/79951138937" target="_blank" rel="noreferrer" onClick={() => setMenuOpen(false)} className="w-11 h-11 rounded-full bg-[#25D366] flex items-center justify-center text-white">
               <FaWhatsapp className="w-5 h-5" />
+            </a>
+            <a href="https://max.ru/+79951138937" target="_blank" rel="noreferrer" onClick={() => setMenuOpen(false)} className="w-11 h-11 rounded-full bg-white/10 border border-dark/10 flex items-center justify-center text-dark hover:bg-dark/20 transition-colors">
+              <svg viewBox="0 0 24 24" fill="currentColor" stroke="none" className="w-5 h-5">
+                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm3 13h-2v-3.5L11.5 14h-1L9 11.5V15H7V9h2l1.5 2.5L12 9h2v6z"/>
+              </svg>
             </a>
           </div>
         </motion.div>

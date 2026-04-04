@@ -24,7 +24,7 @@ export function FloatingTelegram() {
           initial={{ opacity: 0, y: 50 }}
           animate={{ opacity: 1, y: 0 }}
           exit={{ opacity: 0, y: 50 }}
-          className="fixed bottom-[76px] lg:bottom-6 right-4 lg:right-6 z-50"
+          className="hidden lg:block fixed bottom-6 right-6 z-50"
         >
           <a
             href="https://t.me/fatukhin"
