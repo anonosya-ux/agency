@@ -35,10 +35,10 @@ export const CTABanner = () => {
             {/* Left: Offer */}
             <div className="flex-1 text-center lg:text-left">
               <h2 className="font-serif text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-semibold text-white uppercase mb-4 sm:mb-5 leading-tight">
-                Получите подборку из <span className="text-accent">5 объектов</span> за 30 минут
+                Решите <span className="text-accent">квартирный вопрос</span> за один звонок
               </h2>
               <p className="text-white/60 text-sm sm:text-base md:text-lg font-light mb-6 sm:mb-8 leading-relaxed max-w-lg">
-                Оставьте номер — персональный брокер перезвонит и подберёт варианты под ваш бюджет и задачи. Бесплатно и без обязательств.
+                Расскажите о вашей ситуации — брокер перезвонит и предложит план действий. Бесплатно, конфиденциально, без обязательств.
               </p>
 
               <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 text-white/50 text-sm">
@@ -87,19 +87,19 @@ export const CTABanner = () => {
                     style={{ backgroundImage: `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%23C1A080' d='M6 8L1 3h10z'/%3E%3C/svg%3E")`, backgroundRepeat: 'no-repeat', backgroundPosition: 'right 16px center' }}
                   >
                     <option value="" className="bg-dark">Что вас интересует?</option>
-                    <option value="buy" className="bg-dark">Покупка недвижимости</option>
-                    <option value="sell" className="bg-dark">Продажа недвижимости</option>
-                    <option value="rent" className="bg-dark">Аренда</option>
-                    <option value="invest" className="bg-dark">Инвестиции (Дубай, Кипр)</option>
-                    <option value="fast-buy" className="bg-dark">Срочный выкуп</option>
-                    <option value="mortgage" className="bg-dark">Ипотека / Финансирование</option>
+                    <option value="buy" className="bg-dark">Хочу купить квартиру</option>
+                    <option value="sell" className="bg-dark">Нужно срочно продать</option>
+                    <option value="exchange" className="bg-dark">Обмен на большую / меньшую</option>
+                    <option value="fast-buy" className="bg-dark">Срочный выкуп за 3 дня</option>
+                    <option value="mortgage" className="bg-dark">Помощь с ипотекой</option>
+                    <option value="other" className="bg-dark">Другое</option>
                   </select>
 
                   <button 
                     type="submit" 
                     className="w-full bg-accent hover:bg-[#d4b896] text-dark font-semibold uppercase tracking-[0.12em] py-4 rounded-xl transition-all duration-300 text-base flex items-center justify-center gap-2 mt-1 focus-visible:ring-2 focus-visible:ring-accent/60 focus-visible:ring-offset-2 focus-visible:ring-offset-dark"
                   >
-                    Получить подборку <ArrowRight className="w-4 h-4" />
+                    Получить консультацию <ArrowRight className="w-4 h-4" />
                   </button>
                   <p className="text-xs text-white/25 font-light text-center mt-1">
                     Нажимая кнопку, вы соглашаетесь с политикой конфиденциальности

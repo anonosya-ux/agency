@@ -9,9 +9,9 @@ import { FaTelegramPlane, FaWhatsapp } from "react-icons/fa";
 
 const navLinks = [
   { label: "Каталог", href: "/catalog" },
-  { label: "Новостройки", href: "/new-buildings" },
-  { label: "Зарубежная", href: "/abroad" },
-  { label: "Аренда", href: "/rent" },
+  { label: "Купить", href: "/services/buy" },
+  { label: "Продать", href: "/services/sell" },
+  { label: "Обмен", href: "/services/exchange" },
   { label: "О компании", href: "/about" },
   { label: "Контакты", href: "/contacts" },
 ];

@@ -6,24 +6,21 @@ import Link from 'next/link';
 
 const directions = [
   {
-    title: 'Зарубежная недвижимость',
-    desc: 'Доходные объекты и получение ВНЖ в ОАЭ, Азии и Европе',
-    link: '/abroad',
-    image: '/images/abroad.jpg',
+    title: 'Срочная продажа и выкуп',
+    desc: 'Продадим вашу квартиру по максимальной цене за 14–30 дней. Выкуп — за 3 дня',
+    link: '/services/fast-buy',
     className: 'md:col-span-2 md:row-span-2 min-h-[400px]',
   },
   {
-    title: 'Подбор новостроек',
-    desc: 'Премиум-ЖК Москвы на старте продаж',
-    link: '/new-buildings',
-    image: '/images/new-builds.jpg',
+    title: 'Покупка квартиры',
+    desc: 'Подберём квартиру 10–50 млн ₽ под ваши задачи. Бизнес и премиум-класс',
+    link: '/services/buy',
     className: 'md:col-span-1 md:row-span-1 min-h-[250px]',
   },
   {
-    title: 'Аренда элитного жилья',
-    desc: 'Долгосрочная аренда премиум-класса и коммерческих площадей',
-    link: '/rent',
-    image: '/images/rent.jpg',
+    title: 'Обмен с доплатой',
+    desc: 'Поменяем на большую или меньшую. Оформим сделку в один день',
+    link: '/services/exchange',
     className: 'md:col-span-1 md:row-span-1 min-h-[250px]',
   },
 ];
@@ -39,9 +36,9 @@ export const DirectionsGrid = () => {
           transition={{ duration: 0.6 }}
           className="mb-12"
         >
-          <h2 className="font-serif text-2xl sm:text-3xl md:text-5xl font-semibold text-text uppercase mb-4">Направления</h2>
+          <h2 className="font-serif text-2xl sm:text-3xl md:text-5xl font-semibold text-text uppercase mb-4">Как мы помогаем</h2>
           <p className="text-text-muted text-base md:text-lg max-w-2xl font-light">
-            Мы подберём объект для инвестиций, жизни или бизнеса. Гарантируем конфиденциальность, юридическую чистоту и прозрачность сделки.
+            Покупка, продажа, обмен — решим любой квартирный вопрос в Москве и Подмосковье. Юридическая чистота, конфиденциальность и прозрачность каждой сделки.
           </p>
         </motion.div>
 
@@ -56,10 +53,9 @@ export const DirectionsGrid = () => {
               className={`group relative overflow-hidden rounded-xl border border-text/10 bg-surface fallback-bg hover:border-accent/50 transition-colors duration-500 ${item.className}`}
             >
               <Link href={item.link} className="absolute inset-0 z-20 flex flex-col justify-end p-4 sm:p-6 md:p-8">
-                {/* Background Image Placeholder */}
+                {/* Background */}
                 <div className="absolute inset-0 z-0 bg-secondary/20 transition-transform duration-700 group-hover:scale-105">
                   <div className="absolute inset-0 bg-gradient-to-t from-bg via-bg/80 to-transparent z-10" />
-                  {/* Ideally Next/Image here. We fallback to simple div if images don't exist yet */}
                 </div>
                 
                 <div className="relative z-20 flex items-center justify-between">

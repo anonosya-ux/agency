@@ -41,11 +41,17 @@ export default function SellPage() {
             <div>
               <span className="text-xs uppercase tracking-[0.2em] text-[#C1A080] block mb-4">Для Владельцев</span>
               <h1 className="font-serif text-4xl md:text-5xl lg:text-7xl text-[#1A1A1A] leading-[1.1] mb-8 font-semibold uppercase">
-                Продажа недвижимости <br/><span className="text-[#C1A080] font-light">без рисков.</span>
+                Продать квартиру <br/><span className="text-[#C1A080] font-light">быстро и выгодно.</span>
               </h1>
-              <p className="text-lg text-gray-500 font-light mb-12 max-w-lg leading-relaxed">
-                Применяем многоканальный маркетинг премиум-класса, профессиональный хоум-стейджинг и собственную базу лояльных инвесторов. Реализуем ваш актив по максимальной рыночной цене за 14–30 дней, соблюдая абсолютную конфиденциальность.
+              <p className="text-lg text-gray-500 font-light mb-6 max-w-lg leading-relaxed">
+                Продадим вашу квартиру по максимальной рыночной цене за 14–30 дней. Профессиональный маркетинг, хоум-стейджинг и собственная база покупателей.
               </p>
+              <div className="text-sm text-gray-400 font-light mb-12 space-y-1">
+                <p>✓ Продажа квартиры для покупки другой (альтернативная сделка)</p>
+                <p>✓ Продажа с долей несовершеннолетнего</p>
+                <p>✓ Продажа ипотечной квартиры</p>
+                <p>✓ Экспресс-оценка за 15 минут — бесплатно</p>
+              </div>
               
               <div className="flex flex-col sm:flex-row gap-4">
                 <a href="#calc" className="group flex items-center justify-center gap-3 bg-text text-white px-8 py-4 uppercase tracking-widest text-xs font-medium hover:bg-accent transition-all rounded-full">

@@ -42,11 +42,17 @@ export default function BuyPage() {
             <div>
               <span className="text-xs uppercase tracking-[0.2em] text-[#C1A080] block mb-4">Для Покупателей</span>
               <h1 className="font-serif text-4xl md:text-5xl lg:text-7xl text-[#1A1A1A] leading-[1.1] mb-8 font-semibold uppercase">
-                Подбор идеального <br/><span className="text-[#C1A080] font-light">актива.</span>
+                Купить квартиру <br/><span className="text-[#C1A080] font-light">от 10 до 50 млн ₽.</span>
               </h1>
-              <p className="text-lg text-gray-500 font-light mb-12 max-w-lg leading-relaxed">
-                Открываем доступ к закрытым пулам застройщиков (off-market) и ликвидным объектам Москвы с премиальным дисконтом. Мы не просто ищем квартиру — мы формируем ваш надежный инвестиционный портфель с юридической гарантией.
+              <p className="text-lg text-gray-500 font-light mb-6 max-w-lg leading-relaxed">
+                Подберём квартиру бизнес и премиум-класса в Москве под ваш бюджет и задачи. Доступ к закрытым предложениям застройщиков, дисконт до 15%.
               </p>
+              <div className="text-sm text-gray-400 font-light mb-12 space-y-1">
+                <p>✓ Trade-in: продадим старую и купим новую одновременно</p>
+                <p>✓ Помощь с ипотекой в 12+ банках</p>
+                <p>✓ Альтернативная сделка с цепочкой</p>
+                <p>✓ 0% комиссия для покупателя</p>
+              </div>
               
               <div className="flex flex-col sm:flex-row gap-4">
                 <button 

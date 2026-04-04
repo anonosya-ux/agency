@@ -8,41 +8,20 @@ import { CTABanner } from '@/components/CTABanner';
 import { SpotlightCard } from '@/components/ui/spotlight-card';
 import { ArrowUpRight, Globe2, TrendingUp, ShieldCheck, MapPin, Bed, Bath } from 'lucide-react';
 import Link from 'next/link';
+import { properties } from '@/data/properties';
 
 const countries = [
   { name: 'ОАЭ', cities: 'Дубай, Абу-Даби', image: 'https://images.unsplash.com/photo-1512453979798-5ea266f8880c?w=800&auto=format&fit=crop' },
-  { name: 'Кипр', cities: 'Лимассол, Пафос', image: 'https://images.unsplash.com/photo-1544085311-11a028465b03?w=800&auto=format&fit=crop' },
+  { name: 'Кипр', cities: 'Лимассол, Пафос, Искеле', image: 'https://images.unsplash.com/photo-1544085311-11a028465b03?w=800&auto=format&fit=crop' },
   { name: 'Таиланд', cities: 'Пхукет, Самуи', image: 'https://images.unsplash.com/photo-1589394815804-964ed0be2eb5?w=800&auto=format&fit=crop' },
   { name: 'Бали', cities: 'Чангу, Убуд', image: 'https://images.unsplash.com/photo-1537996194471-e657df975ab4?w=800&auto=format&fit=crop' },
   { name: 'Турция', cities: 'Стамбул, Бодрум', image: 'https://images.unsplash.com/photo-1524231757912-21f4fe3a7200?w=800&auto=format&fit=crop' },
   { name: 'Грузия', cities: 'Батуми, Тбилиси', image: 'https://images.unsplash.com/photo-1565011681734-78bb796791d3?w=800&auto=format&fit=crop' }
 ];
 
-const featuredProperties = [
-  {
-    id: 1,
-    title: 'Вилла на Palm Jumeirah',
-    location: 'Дубай, ОАЭ',
-    price: '$ 4,500,000',
-    specs: { beds: 5, baths: 6, area: '450 м²' },
-  },
-  {
-    id: 4,
-    title: 'Апартаменты Address Beach',
-    location: 'Дубай, ОАЭ',
-    price: '$ 1,200,000',
-    specs: { beds: 2, baths: 2, area: '120 м²' },
-  },
-  {
-    id: 7,
-    title: 'Резиденция в Лимассоле',
-    location: 'Кипр',
-    price: '€ 2,800,000',
-    specs: { beds: 4, baths: 4, area: '310 м²' },
-  }
-];
-
 export default function AbroadPage() {
+  const featuredProperties = properties.filter(p => p.category === 'abroad');
+
   return (
     <main className="min-h-screen bg-bg flex flex-col">
       <Navigation />

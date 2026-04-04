@@ -38,11 +38,17 @@ export default function FastBuyPage() {
             <div>
               <span className="text-xs uppercase tracking-[0.2em] text-[#C1A080] block mb-4">Для Владельцев</span>
               <h1 className="font-serif text-4xl md:text-5xl lg:text-7xl leading-[1.1] max-w-4xl mb-8 uppercase font-semibold text-[#1A1A1A]">
-                Срочный выкуп <br/><span className="text-[#C1A080] font-light">недвижимости.</span>
+                Срочный выкуп <br/><span className="text-[#C1A080] font-light">квартир в Москве.</span>
               </h1>
-              <p className="text-lg font-light text-[#7A7A7A] max-w-2xl leading-relaxed mb-12">
-                Выкупаем элитную недвижимость за счет собственных средств агентства в срок от 3 до 7 дней. Объективная оценка актива с дисконтом не более 10-15% от реальной рыночной цены. Аванс в день обращения.
+              <p className="text-lg font-light text-[#7A7A7A] max-w-2xl leading-relaxed mb-6">
+                Выкупаем квартиры стоимостью от 10 до 50 млн ₽ за собственные средства агентства за 3–7 дней. До 95% от рыночной стоимости. Аванс в день обращения.
               </p>
+              <div className="text-sm text-[#7A7A7A] font-light mb-12 space-y-1">
+                <p>✓ Квартира в ипотеке — поможем закрыть</p>
+                <p>✓ Долги за ЖКХ — решаем за вас</p>
+                <p>✓ Нужны деньги срочно — расчёт за 3 дня</p>
+                <p>✓ Совладельцы против продажи — найдём выход</p>
+              </div>
               
               <div className="flex flex-col sm:flex-row gap-4">
                 <a href={`https://wa.me/79951138937?text=${encodeURIComponent('Здравствуйте! Хочу получить онлайн оценку моей недвижимости для срочного выкупа.')}`} target="_blank" rel="noopener noreferrer" className="group flex items-center justify-center gap-3 bg-text text-white px-8 py-4 uppercase tracking-widest text-xs font-medium hover:bg-accent transition-all rounded-full">
