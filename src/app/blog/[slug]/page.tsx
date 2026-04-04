@@ -93,12 +93,14 @@ export default async function BlogPostPage({ params }: { params: Promise<{slug: 
           )}
         </header>
 
-        <div className="relative w-full aspect-[16/9] rounded-3xl overflow-hidden mb-12 bg-secondary">
-          <div className="absolute inset-0 bg-gradient-to-t from-bg/30 to-transparent" />
-          <div 
-            className="absolute inset-0 bg-cover bg-center"
-            style={{ backgroundImage: `url(https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=1600&auto=format&fit=crop)` }} 
-          />
+        <div className="relative w-full aspect-[16/9] rounded-3xl overflow-hidden mb-12 bg-secondary/30">
+          <div className="absolute inset-0 bg-gradient-to-t from-bg/90 pb-32 to-transparent z-10" />
+          {post.image && (
+            <div 
+              className="absolute inset-0 bg-cover bg-center mix-blend-overlay opacity-90"
+              style={{ backgroundImage: `url(${post.image})` }} 
+            />
+          )}
         </div>
 
         <div className="prose prose-lg max-w-none prose-invert text-text prose-p:font-light prose-p:leading-relaxed prose-h2:font-serif prose-h2:font-semibold prose-h2:mt-12 prose-h2:mb-6 prose-h2:text-text prose-h3:text-accent prose-li:font-light prose-strong:font-bold prose-strong:text-text mb-16">

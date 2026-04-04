@@ -52,6 +52,13 @@ export default function BlogPage() {
                 {/* Cover placeholder */}
                 <div className="relative aspect-[16/9] bg-secondary/30 overflow-hidden">
                   <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent z-10" />
+                  {post.image && (
+                    <img 
+                      src={post.image} 
+                      alt={post.title} 
+                      className="absolute inset-0 w-full h-full object-cover opacity-90 mix-blend-overlay group-hover:scale-105 transition-transform duration-700" 
+                    />
+                  )}
                   <div className="absolute top-4 left-4 z-20 px-3 py-1 bg-white/80 backdrop-blur-md border border-text/10 rounded-full text-[10px] text-text font-semibold uppercase tracking-widest">
                     {post.category}
                   </div>

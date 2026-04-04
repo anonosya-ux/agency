@@ -54,11 +54,7 @@ export const BlogPreview = () => {
                      <div className="absolute inset-0 transition-transform duration-700 group-hover:scale-105">
                        {/* Image Placeholder */}
                         <img 
-                          src={
-                            idx === 0 ? "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?q=80&w=800&auto=format&fit=crop" :
-                            idx === 1 ? "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?q=80&w=800&auto=format&fit=crop" :
-                            "https://images.unsplash.com/photo-1560518883-ce09059eeffa?q=80&w=800&auto=format&fit=crop"
-                          } 
+                          src={article.image || `/images/blog-${(idx % 3) + 1}.jpg`} 
                           alt={article.title} 
                           className="absolute inset-0 w-full h-full object-cover opacity-80 mix-blend-overlay" 
                         />

@@ -3,6 +3,7 @@ export const post2 = {
   slug: 'subsidized-mortgage-premium',
   title: 'Субсидированная ипотека в Москве: Гид для покупателей элитной недвижимости (Полный разбор)',
   category: 'Советы',
+  image: '/images/blog/moscow-mortgage.png',
   publishedAt: '2026-03-20',
   excerpt: 'Как легально снизить ставку до 4% при покупке пентхауса или элитной квартиры в новостройках премиум-класса? Подробный мануал от брокеров.',
   content: `
