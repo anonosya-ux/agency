@@ -11,6 +11,10 @@ import { Team } from "@/components/Team";
 import { BlogSnippet } from "@/components/BlogSnippet";
 import { motion } from "framer-motion";
 
+import Image from "next/image";
+
+// ... existing code ...
+
 const sellSteps = [
   { icon: BarChart3, title: "Оценка объекта", desc: "Бесплатная рыночная оценка на основе аналогов и экспертной методологии. Выезд в течение 24 часов." },
   { icon: Camera, title: "Хоум-стейджинг и съёмка", desc: "Профессиональная подготовка квартиры к продаже: стейджинг, фото, видео, 3D-тур." },
@@ -69,9 +73,13 @@ export default function SellPage() {
             </div>
             
             <div className="relative h-[600px] w-full bg-gray-100 overflow-hidden rounded-2xl">
-              <div 
-                className="absolute inset-0 bg-cover bg-center"
-                style={{ backgroundImage: 'url("https://images.unsplash.com/photo-1600607688969-a5bfcd64bd15?q=80&w=2000&auto=format&fit=crop")' }}
+              <Image 
+                src="https://images.unsplash.com/photo-1600607688969-a5bfcd64bd15?q=80&w=2000&auto=format&fit=crop"
+                alt="Продать квартиру в Москве: предпродажная подготовка, хоум-стейджинг и выгода"
+                fill
+                priority
+                className="object-cover"
+                sizes="(max-width: 1024px) 100vw, 50vw"
               />
             </div>
           </div>

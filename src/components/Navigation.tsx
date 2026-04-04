@@ -32,7 +32,7 @@ export function Navigation() {
       <motion.header
         className="fixed top-0 left-0 right-0 z-[100] transition-colors duration-500"
         style={{
-          backgroundColor: scrolled ? "rgba(255, 255, 255, 0.7)" : "rgba(255, 255, 255, 0.5)",
+          backgroundColor: scrolled ? "rgba(255, 255, 255, 0.55)" : "rgba(255, 255, 255, 0.35)",
           backdropFilter: "blur(12px)",
           borderBottom: "1px solid rgba(0,0,0,0.05)",
         }}

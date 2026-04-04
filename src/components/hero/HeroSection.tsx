@@ -32,7 +32,7 @@ export const HeroSection = () => {
           
           <ul className="flex flex-col text-sm sm:text-base md:text-xl lg:text-2xl font-light text-white/90 gap-2 sm:gap-3 drop-shadow-md text-center mt-2 lg:mt-4">
             <li>&bull; срочная продажа и выкуп квартир</li>
-            <li>&bull; покупка от 10 до 50 млн ₽</li>
+            <li>&bull; покупка от 10 млн ₽</li>
             <li>&bull; обмен с доплатой и без</li>
           </ul>
 

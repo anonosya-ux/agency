@@ -23,8 +23,36 @@ export const metadata: Metadata = {
 };
 
 export default function Home() {
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "RealEstateAgent",
+    "name": "Фатюхин и Ко — Агентство Недвижимости",
+    "image": "https://fatukhin.ru/logo.png",
+    "@id": "https://fatukhin.ru",
+    "url": "https://fatukhin.ru",
+    "telephone": "+79951138937",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Пресненская наб., 12",
+      "addressLocality": "Москва",
+      "postalCode": "123112",
+      "addressCountry": "RU"
+    },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": 55.749792,
+      "longitude": 37.537232
+    },
+    "areaServed": ["Москва", "Московская область"],
+    "priceRange": "₽₽₽"
+  };
+
   return (
     <main className="min-h-screen">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
       <Navigation />
       <HeroSection />
       <TrustBar />

@@ -267,23 +267,26 @@ export default function CatalogClient() {
                         <Placemark 
                           key={item.id} 
                           geometry={item.coordinates} 
+                          onClick={() => {
+                            setHoveredPropertyId(item.id);
+                            const el = document.getElementById(`property-${item.id}`);
+                            if (el) {
+                              el.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                              el.style.transition = 'box-shadow 0.3s ease';
+                              el.style.boxShadow = '0 0 0 2px #C1A080';
+                              setTimeout(() => {
+                                el.style.boxShadow = 'none';
+                                setHoveredPropertyId(null);
+                              }, 2500);
+                            }
+                          }}
                           options={{
                             preset: 'islands#circleDotIcon',
-                            iconColor: getMarkerColor(item.propertyClass)
+                            iconColor: hoveredPropertyId === item.id ? '#ffffff' : getMarkerColor(item.propertyClass),
+                            zIndex: hoveredPropertyId === item.id ? 1000 : 1
                           }}
                           properties={{
-                            hintContent: `${item.title} — ${item.price}`,
-                            balloonContent: `
-                              <div style="font-family: inherit; padding: 4px; max-width: 200px;">
-                                <img src="${item.image}" width="100%" height="100" style="object-fit: cover; border-radius: 8px; margin-bottom: 8px;" />
-                                <div style="font-size:10px; text-transform:uppercase; color:${getMarkerColor(item.propertyClass)}; font-weight:bold; margin-bottom:2px;">
-                                  ${getClassLabel(item.propertyClass)}
-                                </div>
-                                <h4 style="margin:0 0 4px 0; font-size: 14px; font-weight: 500; font-family:serif;">${item.title}</h4>
-                                <p style="margin:0; font-size: 14px; font-weight: bold; color: #1a1a1a;">${item.price}</p>
-                                <a href="/catalog/${item.id}" style="display: block; margin-top: 10px; background: #1a1a1a; color: #fff; text-decoration: none; padding: 6px; text-align: center; border-radius: 6px; font-size: 12px; text-transform: uppercase;">Детальнее</a>
-                              </div>
-                            `
+                            hintContent: `${item.title} — ${item.price}`
                           }}
                         />
                       )
@@ -311,6 +314,8 @@ export default function CatalogClient() {
               {filteredItems.map((item) => (
                 <motion.div
                   key={item.id}
+                  id={`property-${item.id}`}
+                  style={{ borderRadius: '16px' }}
                   layout
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}

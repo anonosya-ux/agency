@@ -5,31 +5,10 @@ import { Card } from './ui/card';
 import { ArrowUpRight } from 'lucide-react';
 import Link from 'next/link';
 
-const articles = [
-  {
-    id: 1,
-    category: 'Жилые комплексы',
-    title: 'Самые перспективные районы Москвы для инвестиций',
-    date: '25 Марта 2026',
-    image: '/images/blog-1.jpg',
-  },
-  {
-    id: 2,
-    category: 'Аналитика',
-    title: 'Рынок элитной недвижимости Дубая: итоги Q1 2026',
-    date: '18 Марта 2026',
-    image: '/images/blog-2.jpg',
-  },
-  {
-    id: 3,
-    category: 'Документы',
-    title: 'Понятие, виды и классификация сделок: полное руководство',
-    date: '10 Марта 2026',
-    image: '/images/blog-3.jpg',
-  },
-];
+import { FALLBACK_POSTS } from '@/data/blogPosts';
 
 export const BlogPreview = () => {
+  const articles = FALLBACK_POSTS.slice(0, 3);
   return (
     <section className="py-24 bg-bg w-full">
       <div className="container mx-auto px-4">
@@ -73,14 +52,15 @@ export const BlogPreview = () => {
                   <div className="relative aspect-[16/9] overflow-hidden bg-secondary/30">
                      <div className="absolute inset-0 bg-gradient-to-t from-surface via-transparent to-transparent z-10" />
                      <div className="absolute inset-0 transition-transform duration-700 group-hover:scale-105">
-                        {/* Image Placeholder */}
+                       {/* Image Placeholder */}
+                        <img src={`/images/blog-${(idx % 3) + 1}.jpg`} alt={article.title} className="absolute inset-0 w-full h-full object-cover opacity-80 mix-blend-overlay" />
                      </div>
                      <div className="absolute top-4 left-4 z-20 px-3 py-1 bg-black/40 backdrop-blur-md rounded border border-text/10 text-[10px] text-text uppercase tracking-widest">
                        {article.category}
                      </div>
                   </div>
                   <div className="p-6 relative z-20">
-                    <div className="text-text-muted text-sm mb-3 font-light tracking-wide">{article.date}</div>
+                    <div className="text-text-muted text-sm mb-3 font-light tracking-wide">{article.publishedAt}</div>
                     <h3 className="font-serif text-xl font-medium text-text mb-4 group-hover:text-accent transition-colors leading-snug line-clamp-2">
                        {article.title}
                     </h3>

@@ -8,6 +8,7 @@ import { FAQ } from "@/components/FAQ";
 import { Cases } from "@/components/Cases";
 import { Team } from "@/components/Team";
 import { motion } from "framer-motion";
+import Image from "next/image";
 
 const exchangeSteps = [
   { icon: Home, title: "Оценка вашей квартиры", desc: "Бесплатная рыночная оценка. Определяем реальную стоимость и размер доплаты." },
@@ -75,9 +76,13 @@ export default function ExchangePage() {
             </div>
             
             <div className="relative h-[600px] w-full bg-gray-100 overflow-hidden rounded-2xl">
-              <div 
-                className="absolute inset-0 bg-cover bg-center"
-                style={{ backgroundImage: 'url("https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?q=80&w=2000&auto=format&fit=crop")' }}
+              <Image 
+                src="https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?q=80&w=2000&auto=format&fit=crop"
+                alt="Обмен квартиры в Москве с доплатой: одновременная сделка"
+                fill
+                priority
+                className="object-cover"
+                sizes="(max-width: 1024px) 100vw, 50vw"
               />
             </div>
           </div>

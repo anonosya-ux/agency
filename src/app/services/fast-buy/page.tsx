@@ -10,6 +10,10 @@ import { FAQ } from "@/components/FAQ";
 import { BlogSnippet } from "@/components/BlogSnippet";
 import { motion } from "framer-motion";
 
+import Image from "next/image";
+
+// ... existing code ...
+
 const timeline = [
   { day: "День 1", icon: Zap, title: "Обращение и оценка", desc: "Вы звоните — мы выезжаем на объект в течение 2 часов. Проводим экспресс-оценку рыночной стоимости." },
   { day: "День 1-2", icon: Wallet, title: "Аванс", desc: "При согласии с ценой выплачиваем аванс наличными или безналично в день обращения." },
@@ -62,9 +66,13 @@ export default function FastBuyPage() {
             </div>
             
             <div className="relative h-[600px] w-full bg-gray-100 overflow-hidden rounded-2xl">
-              <div 
-                className="absolute inset-0 bg-cover bg-center"
-                style={{ backgroundImage: 'url("https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?q=80&w=2000&auto=format&fit=crop")' }}
+              <Image 
+                src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?q=80&w=2000&auto=format&fit=crop"
+                alt="Срочный выкуп квартир в Москве: быстрая оценка недвижимости и выкуп за 3 дня"
+                fill
+                priority
+                className="object-cover"
+                sizes="(max-width: 1024px) 100vw, 50vw"
               />
             </div>
           </div>

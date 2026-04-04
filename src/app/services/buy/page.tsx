@@ -12,6 +12,10 @@ import { BlogSnippet } from "@/components/BlogSnippet";
 import { MortgageCalculator } from "@/components/MortgageCalculator";
 import { motion } from "framer-motion";
 
+import Image from "next/image";
+
+// ... existing code ...
+
 const steps = [
   { icon: UserCheck, title: "Консультация", desc: "Определяем ваши потребности, бюджет и ключевые критерии. Бесплатно." },
   { icon: Search, title: "Подбор объектов", desc: "Предоставляем эксклюзивные off-market варианты и новостройки с дисконтом до 15%." },
@@ -72,9 +76,13 @@ export default function BuyPage() {
             </div>
             
             <div className="relative h-[600px] w-full bg-gray-100 overflow-hidden rounded-2xl">
-              <div 
-                className="absolute inset-0 bg-cover bg-center"
-                style={{ backgroundImage: 'url("https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?q=80&w=2000&auto=format&fit=crop")' }}
+              <Image 
+                src="https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?q=80&w=2000&auto=format&fit=crop"
+                alt="Купить квартиру в Москве: продажа элитных квартир, бизнес и премиум класс"
+                fill
+                priority
+                className="object-cover"
+                sizes="(max-width: 1024px) 100vw, 50vw"
               />
             </div>
           </div>

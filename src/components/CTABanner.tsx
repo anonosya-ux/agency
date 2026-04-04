@@ -13,8 +13,23 @@ export const CTABanner = () => {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     if (!name.trim() || !phone.trim()) return;
+    
     setSubmitted(true);
-    // TODO: Connect to CRM / Telegram bot / email
+    
+    // Redirect to WhatsApp with pre-filled CRM message
+    const interestLabels: Record<string, string> = {
+      'buy': 'Хочу купить квартиру',
+      'sell': 'Нужно срочно продать',
+      'exchange': 'Обмен на большую / меньшую',
+      'fast-buy': 'Срочный выкуп за 3 дня',
+      'mortgage': 'Помощь с ипотекой',
+      'other': 'Консультация'
+    };
+    
+    const intent = interest ? interestLabels[interest] : 'Консультация';
+    const text = `Здравствуйте! Меня зовут ${name}. Мой телефон: ${phone}. Вопрос: ${intent}.`;
+    
+    window.open(`https://wa.me/79951138937?text=${encodeURIComponent(text)}`, '_blank');
   };
 
   return (
@@ -35,10 +50,10 @@ export const CTABanner = () => {
             {/* Left: Offer */}
             <div className="flex-1 text-center lg:text-left">
               <h2 className="font-serif text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-semibold text-white uppercase mb-4 sm:mb-5 leading-tight">
-                Решите <span className="text-accent">квартирный вопрос</span> за один звонок
+                Получите <span className="text-accent">3 варианта решения</span> квартирного вопроса
               </h2>
               <p className="text-white/60 text-sm sm:text-base md:text-lg font-light mb-6 sm:mb-8 leading-relaxed max-w-lg">
-                Расскажите о вашей ситуации — брокер перезвонит и предложит план действий. Бесплатно, конфиденциально, без обязательств.
+                Расскажите о вашей ситуации — эксперт перезвонит за 15 минут, бесплатно оценит объект и предложит сценарии: от срочного выкупа до выгодного обмена с доплатой.
               </p>
 
               <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 text-white/50 text-sm">
