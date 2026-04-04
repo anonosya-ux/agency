@@ -32,6 +32,37 @@ export async function POST(req: Request) {
       return NextResponse.json({ success: true, warning: 'API keys missing' });
     }
 
+    // Cloudflare AI Enrichment
+    let aiTip = '';
+    const CF_ACCOUNT_ID = process.env.CLOUDFLARE_ACCOUNT_ID;
+    const CF_API_TOKEN = process.env.CLOUDFLARE_API_TOKEN;
+
+    if (CF_ACCOUNT_ID && CF_API_TOKEN) {
+      try {
+        const aiPrompt = `Поступила новая заявка в элитное агентство недвижимости. Имя клиента: ${name}. Цель: ${intent}. Напиши ТОЛЬКО ОДНО короткое предложение (совет брокеру) с какой фразы лучше начать звонок этому клиенту, чтобы с первых секунд установить доверие. Без приветствий и лишней воды, сразу суть.`;
+        
+        const cfResponse = await fetch(`https://api.cloudflare.com/client/v4/accounts/${CF_ACCOUNT_ID}/ai/run/@cf/meta/llama-3-8b-instruct`, {
+            method: 'POST',
+            headers: {
+              'Authorization': `Bearer ${CF_API_TOKEN}`,
+              'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+              messages: [{ role: 'user', content: aiPrompt }]
+            })
+        });
+
+        if (cfResponse.ok) {
+           const cfData = await cfResponse.json();
+           if (cfData?.result?.response) {
+              aiTip = `\n\n🤖 *AI Подсказка для брокера:*\n_${cfData.result.response.trim()}_`;
+           }
+        }
+      } catch (e) {
+        console.error("AI Enrichment Error:", e);
+      }
+    }
+
     // Construct Markdown Message
     const message = `
 🔥 *НОВАЯ ЗАЯВКА С САЙТА* 🔥
@@ -40,7 +71,7 @@ export async function POST(req: Request) {
 📞 *Телефон:* \`${phone}\`
 🎯 *Запрос:* ${intent}
 
-🕒 *Время:* ${new Date().toLocaleString('ru-RU', { timeZone: 'Europe/Moscow' })}
+🕒 *Время:* ${new Date().toLocaleString('ru-RU', { timeZone: 'Europe/Moscow' })}${aiTip}
     `;
 
     // Send to Telegram
