@@ -94,7 +94,7 @@ export const Catalog = () => {
                   <Link href={item.link}>
                     <Image
                       src={item.image}
-                      alt={item.title}
+                      alt={item.title + " в центре Москвы, Хамовники, Пресня, Арбат"}
                       fill
                       className="object-cover transition-transform duration-700 group-hover:scale-110"
                       sizes="(max-width: 768px) 50vw, 25vw"
@@ -106,7 +106,7 @@ export const Catalog = () => {
                   <Link href={item.link}>
                     <Image
                       src={item.image}
-                      alt={item.title}
+                      alt={`${item.title} — элитная недвижимость в Москве (Хамовники, Патриаршие, Арбат)`}
                       fill
                       className="object-cover transition-transform duration-700 group-hover:scale-105"
                       sizes="100vw"
@@ -161,7 +161,7 @@ export const Catalog = () => {
                   <Link href={item.link}>
                     <Image
                       src={item.image}
-                      alt={item.title}
+                      alt={`${item.title} — элитная недвижимость в Москве (Хамовники, Патриаршие, Арбат)`}
                       fill
                       className="object-cover transition-transform duration-700 group-hover:scale-110"
                       sizes="50vw"
@@ -173,7 +173,7 @@ export const Catalog = () => {
                   <Link href={item.link}>
                     <Image
                       src={item.image}
-                      alt={item.title}
+                      alt={`${item.title} — элитная недвижимость в Москве (Хамовники, Патриаршие, Арбат)`}
                       fill
                       className="object-cover transition-transform duration-700 group-hover:scale-105"
                       sizes="100vw"
