@@ -93,17 +93,17 @@ export const AwardStrip = () => {
         <div className="mt-20 flex overflow-hidden [mask-image:linear-gradient(to_right,transparent,black_20%,black_80%,transparent)]">
             <div className="flex w-max animate-marquee [--duration:50s] gap-6 px-3">
                 {awardsData.map((src, i) => (
-                    <div key={`cert-${i}`} className="w-64 h-80 rounded border border-text/10 bg-surface/50 backdrop-blur-md flex items-center justify-center relative overflow-hidden group">
-                        <Image src={src} alt="Награда агентства" fill className="object-cover" sizes="(max-width: 768px) 100vw, 33vw" />
-                        <div className="absolute inset-0 bg-accent/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                    <div key={`cert-${i}`} className="w-[320px] md:w-[400px] h-[240px] md:h-[280px] rounded border border-text/10 bg-surface/80 backdrop-blur-md flex items-center justify-center relative overflow-hidden group p-2">
+                        <Image src={src} alt="Награда агентства" fill className="object-contain p-4" sizes="(max-width: 768px) 100vw, 33vw" />
+                        <div className="absolute inset-0 bg-accent/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                     </div>
                 ))}
             </div>
             <div className="flex w-max animate-marquee [--duration:50s] gap-6 px-3" aria-hidden="true">
                 {awardsData.map((src, i) => (
-                    <div key={`cert-dup-${i}`} className="w-64 h-80 rounded border border-text/10 bg-surface/50 backdrop-blur-md flex items-center justify-center relative overflow-hidden group">
-                        <Image src={src} alt="Награда агентства" fill className="object-cover" sizes="(max-width: 768px) 100vw, 33vw" />
-                        <div className="absolute inset-0 bg-accent/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                    <div key={`cert-dup-${i}`} className="w-[320px] md:w-[400px] h-[240px] md:h-[280px] rounded border border-text/10 bg-surface/80 backdrop-blur-md flex items-center justify-center relative overflow-hidden group p-2">
+                        <Image src={src} alt="Награда агентства" fill className="object-contain p-4" sizes="(max-width: 768px) 100vw, 33vw" />
+                        <div className="absolute inset-0 bg-accent/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                     </div>
                 ))}
             </div>
