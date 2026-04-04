@@ -7,12 +7,6 @@ import Image from 'next/image';
 
 const team = [
   {
-    name: 'Виталий Фатюхин',
-    role: 'Основатель и руководитель',
-    experience: '15+ лет на рынке',
-    image: '/images/team/vitaly_f.jpeg',
-  },
-  {
     name: 'Александр Чернышев',
     role: 'Ведущий специалист по недвижимости',
     experience: 'Проверка и сопровождение сделок',
@@ -52,24 +46,24 @@ export const AboutTeam = () => {
             <h2 className="font-serif text-3xl md:text-5xl font-semibold text-text uppercase mb-6">
               Команда <span className="text-accent/80 font-light drop-shadow-md pb-[-1rem]">профессионалов</span>
             </h2>
-            <div className="relative mb-8 rounded-2xl overflow-hidden aspect-[4/5] max-w-sm border border-text/10 group">
+            <div className="relative mb-4 rounded-2xl overflow-hidden aspect-[4/5] max-w-sm border border-text/10 group">
 
               <div className="absolute inset-0 bg-secondary/40 z-0 transition-transform duration-700 group-hover:scale-105">
                 {/* Founder Image */}
                 <Image src="/images/team/vitaly_f.jpeg" alt="Основатель" fill className="object-cover" sizes="(max-width: 1024px) 100vw, 50vw" />
               </div>
-              
-              <div className="absolute inset-x-0 bottom-0 p-6 z-20">
-                <h3 className="font-serif text-2xl text-text mb-1 drop-shadow-md">Виталий Фатюхин</h3>
-                <p className="text-accent text-sm uppercase tracking-wider mb-4 drop-shadow-md">Основатель</p>
-                <div className="flex gap-3">
-                  <a href="#" className="w-8 h-8 rounded-full border border-text/20 bg-black/40 backdrop-blur-md flex items-center justify-center text-text/70 hover:bg-accent hover:text-primary transition-all">
-                    <Linkedin className="w-4 h-4" />
-                  </a>
-                  <a href="#" className="w-8 h-8 rounded-full border border-text/20 bg-black/40 backdrop-blur-md flex items-center justify-center text-text/70 hover:bg-accent hover:text-primary transition-all">
-                    <Mail className="w-4 h-4" />
-                  </a>
-                </div>
+            </div>
+            
+            <div className="mb-8 max-w-sm">
+              <h3 className="font-serif text-2xl text-text mb-1 drop-shadow-md">Виталий Фатюхин</h3>
+              <p className="text-accent text-sm uppercase tracking-wider mb-4 drop-shadow-md">Основатель</p>
+              <div className="flex gap-3">
+                <a href="#" className="w-8 h-8 rounded-full border border-text/20 bg-surface flex items-center justify-center text-text/70 hover:bg-accent hover:text-primary transition-all shadow-sm">
+                  <Linkedin className="w-4 h-4" />
+                </a>
+                <a href="#" className="w-8 h-8 rounded-full border border-text/20 bg-surface flex items-center justify-center text-text/70 hover:bg-accent hover:text-primary transition-all shadow-sm">
+                  <Mail className="w-4 h-4" />
+                </a>
               </div>
             </div>
             
