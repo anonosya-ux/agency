@@ -42,6 +42,7 @@ export default function RentPage() {
   const [address, setAddress] = useState('');
   const [area, setArea] = useState('');
   const [price, setPrice] = useState('');
+  const [isSubmitted, setIsSubmitted] = useState(false);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -52,10 +53,9 @@ export default function RentPage() {
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ name, phone, interest: `СДАЧА В АРЕНДУ. ЖК/Адрес: ${address}, Площадь: ${area}м2, Ставка: ${price}` })
       });
-      alert('Ваша заявка принята! Брокер свяжется с вами для оценки.');
-      setName(''); setPhone(''); setAddress(''); setArea(''); setPrice('');
+      setIsSubmitted(true);
     } catch {
-      alert('Заявка отправлена!');
+      setIsSubmitted(true);
     }
   };
 
@@ -239,56 +239,66 @@ export default function RentPage() {
              <h3 className="font-serif text-2xl font-medium text-text mb-2 text-center relative z-10">Оставить заявку на аренду</h3>
              <p className="text-text-muted font-light text-center mb-8 relative z-10 text-sm">Мы свяжемся с вами в течение 15 минут для обсуждения условий.</p>
              
-             <form className="flex flex-col gap-4 relative z-10" onSubmit={handleSubmit}>
-               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                 <input 
-                   type="text" 
-                   value={name}
-                   onChange={(e) => setName(e.target.value)}
-                   required
-                   placeholder="Ваше имя" 
-                   className="w-full bg-black/5 border border-text/10 rounded-xl px-5 py-3.5 text-text placeholder:text-text/40 focus:outline-none focus:border-accent transition-colors"
-                 />
-                 <input 
-                   type="tel" 
-                   value={phone}
-                   onChange={(e) => setPhone(e.target.value)}
-                   required
-                   placeholder="Номер телефона" 
-                   className="w-full bg-black/5 border border-text/10 rounded-xl px-5 py-3.5 text-text placeholder:text-text/40 focus:outline-none focus:border-accent transition-colors"
-                 />
+             {isSubmitted ? (
+               <div className="flex flex-col items-center justify-center py-12 text-center animate-in fade-in zoom-in duration-500 relative z-10">
+                 <div className="w-20 h-20 bg-[#21A038]/10 rounded-full flex items-center justify-center mb-6 border border-[#21A038]/20">
+                   <ShieldCheck className="w-10 h-10 text-[#21A038]" />
+                 </div>
+                 <h5 className="font-serif text-3xl text-text mb-4">Ждем вас в закрытом клубе!</h5>
+                 <p className="text-text-muted text-base font-light max-w-sm mx-auto">Брокер свяжется с вами в течение 15 минут для конфиденциального обсуждения условий аренды.</p>
                </div>
-               <input 
-                 type="text" 
-                 value={address}
-                 onChange={(e) => setAddress(e.target.value)}
-                 placeholder="Название ЖК / Адрес объекта" 
-                 className="w-full bg-black/5 border border-text/10 rounded-xl px-5 py-3.5 text-text placeholder:text-text/40 focus:outline-none focus:border-accent transition-colors"
-               />
-               <div className="grid grid-cols-2 gap-4">
+             ) : (
+               <form className="flex flex-col gap-4 relative z-10" onSubmit={handleSubmit}>
+                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                   <input 
+                     type="text" 
+                     value={name}
+                     onChange={(e) => setName(e.target.value)}
+                     required
+                     placeholder="Ваше имя" 
+                     className="w-full bg-black/5 border border-text/10 rounded-xl px-5 py-3.5 text-text placeholder:text-text/40 focus:outline-none focus:border-accent transition-colors"
+                   />
+                   <input 
+                     type="tel" 
+                     value={phone}
+                     onChange={(e) => setPhone(e.target.value)}
+                     required
+                     placeholder="Номер телефона" 
+                     className="w-full bg-black/5 border border-text/10 rounded-xl px-5 py-3.5 text-text placeholder:text-text/40 focus:outline-none focus:border-accent transition-colors"
+                   />
+                 </div>
                  <input 
                    type="text" 
-                   value={area}
-                   onChange={(e) => setArea(e.target.value)}
-                   placeholder="Площадь, м²" 
+                   value={address}
+                   onChange={(e) => setAddress(e.target.value)}
+                   placeholder="Название ЖК / Адрес объекта" 
                    className="w-full bg-black/5 border border-text/10 rounded-xl px-5 py-3.5 text-text placeholder:text-text/40 focus:outline-none focus:border-accent transition-colors"
                  />
-                 <input 
-                   type="text" 
-                   value={price}
-                   onChange={(e) => setPrice(e.target.value)}
-                   placeholder="Ожидаемая ставка" 
-                   className="w-full bg-black/5 border border-text/10 rounded-xl px-5 py-3.5 text-text placeholder:text-text/40 focus:outline-none focus:border-accent transition-colors"
-                 />
-               </div>
-               <button 
-                 type="submit" 
-                 className="w-full bg-accent hover:bg-accent-light text-primary font-serif font-medium uppercase tracking-widest h-14 rounded-xl transition-all duration-300 mt-4 shadow-lg hover:shadow-xl hover:shadow-accent/20 flex flex-col items-center justify-center"
-               >
-                 Сдать недвижимость
-               </button>
-               <p className="text-center text-xs text-text/40 mt-2 font-light">Нажимая на кнопку, вы соглашаетесь с политикой конфиденциальности</p>
-             </form>
+                 <div className="grid grid-cols-2 gap-4">
+                   <input 
+                     type="text" 
+                     value={area}
+                     onChange={(e) => setArea(e.target.value)}
+                     placeholder="Площадь, м²" 
+                     className="w-full bg-black/5 border border-text/10 rounded-xl px-5 py-3.5 text-text placeholder:text-text/40 focus:outline-none focus:border-accent transition-colors"
+                   />
+                   <input 
+                     type="text" 
+                     value={price}
+                     onChange={(e) => setPrice(e.target.value)}
+                     placeholder="Ожидаемая ставка" 
+                     className="w-full bg-black/5 border border-text/10 rounded-xl px-5 py-3.5 text-text placeholder:text-text/40 focus:outline-none focus:border-accent transition-colors"
+                   />
+                 </div>
+                 <button 
+                   type="submit" 
+                   className="w-full bg-accent hover:bg-accent-light text-primary font-serif font-medium uppercase tracking-widest h-14 rounded-xl transition-all duration-300 mt-4 shadow-lg hover:shadow-xl hover:shadow-accent/20 flex flex-col items-center justify-center"
+                 >
+                   Сдать недвижимость
+                 </button>
+                 <p className="text-center text-xs text-text/40 mt-2 font-light">Нажимая на кнопку, вы соглашаетесь с политикой конфиденциальности</p>
+               </form>
+             )}
           </div>
         </div>
       </section>

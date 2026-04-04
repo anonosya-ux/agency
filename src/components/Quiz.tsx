@@ -64,7 +64,7 @@ export function Quiz() {
                     <button 
                       key={g} 
                       onClick={() => handleGoal(g)}
-                      className="text-left px-6 py-4 border border-gray-200 hover:border-dark hover:bg-dark hover:text-text transition-all duration-300 group flex justify-between items-center"
+                      className="text-left px-6 py-4 border border-gray-200 hover:border-dark hover:bg-dark hover:text-white transition-all duration-300 group flex justify-between items-center"
                     >
                       <span className="font-light">{g}</span>
                       <ArrowRight className="w-4 h-4 opacity-0 group-hover:opacity-100 transition-opacity" />
@@ -92,7 +92,7 @@ export function Quiz() {
                     <button 
                       key={b} 
                       onClick={() => handleBudget(b)}
-                      className="text-left px-6 py-4 border border-gray-200 hover:border-dark hover:bg-dark hover:text-text transition-all duration-300 group flex justify-between items-center"
+                      className="text-left px-6 py-4 border border-gray-200 hover:border-dark hover:bg-dark hover:text-white transition-all duration-300 group flex justify-between items-center"
                     >
                       <span className="font-light">{b}</span>
                       <ArrowRight className="w-4 h-4 opacity-0 group-hover:opacity-100 transition-opacity" />

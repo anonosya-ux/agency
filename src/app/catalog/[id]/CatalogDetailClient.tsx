@@ -28,6 +28,7 @@ export function CatalogDetailClient({ property }: { property: Property }) {
   const [name, setName] = useState('');
   const [phone, setPhone] = useState('');
   const [galleryIndex, setGalleryIndex] = useState<number | null>(null);
+  const [isSubmitted, setIsSubmitted] = useState(false);
 
   const handleBooking = async () => {
     if (!name || !phone) {
@@ -40,11 +41,9 @@ export function CatalogDetailClient({ property }: { property: Property }) {
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ name, phone, interest: `Запрос презентации объекта: ${property.title} (ID: ${property.id})` })
       });
-      alert('Заявка успешно отправлена! Брокер свяжется с вами в течение 10 минут.');
-      setName('');
-      setPhone('');
+      setIsSubmitted(true);
     } catch {
-      alert('Заявка отправлена!');
+      setIsSubmitted(true);
     }
   };
 
@@ -254,31 +253,41 @@ export function CatalogDetailClient({ property }: { property: Property }) {
                  Оставьте заявку, персональный брокер пришлет планировки, актуальные цены и организует приватный показ.
                </p>
 
-               <form className="flex flex-col gap-4 mb-6 text-sm">
-                 <input 
-                   type="text" 
-                   required
-                   value={name}
-                   onChange={(e) => setName(e.target.value)}
-                   placeholder="Ваше имя" 
-                   className="w-full bg-bg/50 border border-text/10 rounded-xl px-4 py-3.5 text-text placeholder:text-text/40 focus:outline-none focus:border-accent transition-colors"
-                 />
-                 <input 
-                   type="tel" 
-                   required
-                   value={phone}
-                   onChange={(e) => setPhone(e.target.value)}
-                   placeholder="Номер телефона" 
-                   className="w-full bg-bg/50 border border-text/10 rounded-xl px-4 py-3.5 text-text placeholder:text-text/40 focus:outline-none focus:border-accent transition-colors"
-                 />
-                 <button 
-                   type="button" 
-                   onClick={handleBooking}
-                   className="w-full bg-text hover:bg-text/80 text-bg font-serif font-medium uppercase tracking-widest h-12 rounded-xl transition-all duration-300 mt-2 flex items-center justify-center gap-2 shadow-lg"
-                 >
-                   Запросить цены <ArrowUpRight className="w-4 h-4" />
-                 </button>
-               </form>
+               {isSubmitted ? (
+                 <div className="flex flex-col items-center justify-center py-8 text-center animate-in fade-in zoom-in duration-500">
+                   <div className="w-16 h-16 bg-[#21A038]/10 rounded-full flex items-center justify-center mb-4 border border-[#21A038]/20">
+                     <CheckCircle2 className="w-8 h-8 text-[#21A038]" />
+                   </div>
+                   <h5 className="font-serif text-2xl text-text mb-2">Запрос принят!</h5>
+                   <p className="text-text/60 text-sm font-light">Брокер пришлет презентацию в течение 10 минут.</p>
+                 </div>
+               ) : (
+                 <form className="flex flex-col gap-4 mb-6 text-sm">
+                   <input 
+                     type="text" 
+                     required
+                     value={name}
+                     onChange={(e) => setName(e.target.value)}
+                     placeholder="Ваше имя" 
+                     className="w-full bg-bg/50 border border-text/10 rounded-xl px-4 py-3.5 text-text placeholder:text-text/40 focus:outline-none focus:border-accent transition-colors"
+                   />
+                   <input 
+                     type="tel" 
+                     required
+                     value={phone}
+                     onChange={(e) => setPhone(e.target.value)}
+                     placeholder="Номер телефона" 
+                     className="w-full bg-bg/50 border border-text/10 rounded-xl px-4 py-3.5 text-text placeholder:text-text/40 focus:outline-none focus:border-accent transition-colors"
+                   />
+                   <button 
+                     type="button" 
+                     onClick={handleBooking}
+                     className="w-full bg-text hover:bg-text/80 text-bg font-serif font-medium uppercase tracking-widest h-12 rounded-xl transition-all duration-300 mt-2 flex items-center justify-center gap-2 shadow-lg"
+                   >
+                     Запросить цены <ArrowUpRight className="w-4 h-4" />
+                   </button>
+                 </form>
+               )}
             </div>
           </div>
         </div>
