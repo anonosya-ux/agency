@@ -56,7 +56,7 @@ export const HeroSection = () => {
             <li>&bull; зарубежная недвижимость</li>
             <li>&bull; подбор новостроек в Москве</li>
             <li>&bull; загородная недвижимость</li>
-            <li>&bull; рента</li>
+            <li>&bull; аренда</li>
           </ul>
 
           {/* Buttons - Right Aligned block */}
