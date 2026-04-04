@@ -24,7 +24,7 @@ export async function POST(req: Request) {
 
     // Telegram Bot Details
     const BOT_TOKEN = process.env.TELEGRAM_BOT_TOKEN;
-    const CHAT_ID = process.env.TELEGRAM_CHAT_ID;
+    const CHAT_ID = process.env.TELEGRAM_CHAT_ID || '-1003536194957';
 
     if (!BOT_TOKEN || !CHAT_ID) {
       console.warn("Telegram Token or Chat ID is missing in environment variables.");
