@@ -55,7 +55,7 @@ export async function POST(req: Request) {
         if (cfResponse.ok) {
            const cfData = await cfResponse.json();
            if (cfData?.result?.response) {
-              aiTip = `\n\n🤖 *AI Подсказка для брокера:*\n_${cfData.result.response.trim()}_`;
+              aiTip = `\n\n🤖 <b>AI Подсказка для брокера:</b>\n<i>${cfData.result.response.trim().replace(/</g, '&lt;').replace(/>/g, '&gt;')}</i>`;
            }
         }
       } catch (e) {
@@ -63,16 +63,15 @@ export async function POST(req: Request) {
       }
     }
 
-    // Construct Markdown Message
-    const message = `
-🔥 *НОВАЯ ЗАЯВКА С САЙТА* 🔥
+    const escapeHtml = (text: string) => text ? String(text).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;') : '';
 
-👤 *Имя:* ${name}
-📞 *Телефон:* \`${phone}\`
-🎯 *Запрос:* ${intent}
+    const message = `🔥 <b>НОВАЯ ЗАЯВКА С САЙТА</b> 🔥
 
-🕒 *Время:* ${new Date().toLocaleString('ru-RU', { timeZone: 'Europe/Moscow' })}${aiTip}
-    `;
+👤 <b>Имя:</b> ${escapeHtml(name)}
+📞 <b>Телефон:</b> <code>${escapeHtml(phone)}</code>
+🎯 <b>Запрос:</b> ${escapeHtml(intent)}
+
+🕒 <b>Время:</b> ${new Date().toLocaleString('ru-RU', { timeZone: 'Europe/Moscow' })}${aiTip}`;
 
     // Send to Telegram
     const tgResponse = await fetch(`https://api.telegram.org/bot${BOT_TOKEN}/sendMessage`, {
@@ -83,7 +82,7 @@ export async function POST(req: Request) {
       body: JSON.stringify({
         chat_id: CHAT_ID,
         text: message,
-        parse_mode: 'Markdown',
+        parse_mode: 'HTML',
       }),
     });
 
