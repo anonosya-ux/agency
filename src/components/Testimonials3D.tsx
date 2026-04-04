@@ -145,7 +145,7 @@ export function Testimonials3D() {
           Оцените качество нашей работы на основе реальных отзывов.
         </p>
         <a 
-          href="https://yandex.ru/maps/-/CDu~Y4Lp" 
+          href="https://yandex.com/maps/org/fatiukhin_co/54567120289/reviews/?ll=37.702292%2C55.784015&z=15" 
           target="_blank" 
           rel="noreferrer"
           className="inline-flex items-center gap-3 px-8 py-4 rounded-full bg-text text-white hover:bg-accent transition-all text-sm uppercase tracking-widest font-medium group"
