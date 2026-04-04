@@ -10,26 +10,21 @@ export const CTABanner = () => {
   const [interest, setInterest] = useState('');
   const [submitted, setSubmitted] = useState(false);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!name.trim() || !phone.trim()) return;
     
     setSubmitted(true);
     
-    // Redirect to WhatsApp with pre-filled CRM message
-    const interestLabels: Record<string, string> = {
-      'buy': 'Хочу купить квартиру',
-      'sell': 'Нужно срочно продать',
-      'exchange': 'Обмен на большую / меньшую',
-      'fast-buy': 'Срочный выкуп за 3 дня',
-      'mortgage': 'Помощь с ипотекой',
-      'other': 'Консультация'
-    };
-    
-    const intent = interest ? interestLabels[interest] : 'Консультация';
-    const text = `Здравствуйте! Меня зовут ${name}. Мой телефон: ${phone}. Вопрос: ${intent}.`;
-    
-    window.open(`https://wa.me/79951138937?text=${encodeURIComponent(text)}`, '_blank');
+    try {
+      await fetch('/api/leads', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ name, phone, interest })
+      });
+    } catch (error) {
+      console.error('Failed to submit lead', error);
+    }
   };
 
   return (
