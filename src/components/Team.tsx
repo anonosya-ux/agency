@@ -38,7 +38,7 @@ export function Team() {
           className="text-center mb-16"
         >
           <span className="text-xs uppercase tracking-[0.2em] text-accent block mb-4">Инсайдеры</span>
-          <h2 className="font-serif text-4xl lg:text-5xl">Команда Экспертов</h2>
+          <h2 className="font-serif text-4xl lg:text-5xl text-white">Команда Экспертов</h2>
         </motion.div>
 
         <div className="grid grid-cols-1 justify-center md:grid-cols-3 gap-8">
@@ -59,8 +59,8 @@ export function Team() {
                   className="object-cover group-hover:scale-105 transition-transform duration-700"
                 />
               </div>
-              <h3 className="font-serif text-2xl mb-1 group-hover:text-accent transition-colors">{broker.name}</h3>
-              <p className="text-xs uppercase tracking-widest text-text/50">{broker.role}</p>
+              <h3 className="font-serif text-2xl text-white mb-1 group-hover:text-accent transition-colors">{broker.name}</h3>
+              <p className="text-xs uppercase tracking-widest text-[#EAEAEA]/80 mb-2">{broker.role}</p>
             </motion.div>
           ))}
         </div>

@@ -144,10 +144,10 @@ export default function BuyPage() {
       <Team />
       <FAQ />
       <BlogPreview />
-      <Footer />
       <div id="quiz-section">
         <Quiz />
       </div>
+      <Footer />
     </main>
   );
 }
