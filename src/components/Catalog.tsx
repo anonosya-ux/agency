@@ -7,7 +7,7 @@ import Image from 'next/image';
 const topItems = [
   {
     title: 'Новостройки',
-    link: '/catalog?category=new',
+    link: '/new-buildings',
     image: '/images/capital-towers.png',
     clip: 'polygon(0 0, calc(100% - var(--dx)) 0, 100% 100%, 0 100%)',
     marginLeft: '0px',
@@ -15,7 +15,7 @@ const topItems = [
   },
   {
     title: 'Готовые квартиры',
-    link: '/catalog?category=ready',
+    link: '/catalog',
     image: '/images/patriarshie.png',
     clip: 'polygon(0 0, 100% 0, 100% 100%, var(--dx) 100%)',
     marginLeft: 'var(--dx)',
@@ -23,7 +23,7 @@ const topItems = [
   },
   {
     title: 'Аренда квартир',
-    link: '/catalog?category=rent',
+    link: '/rent',
     image: 'https://images.unsplash.com/photo-1560518883-ce09059eeffa?q=80&w=800&auto=format&fit=crop',
     clip: 'polygon(0 0, calc(100% - var(--dx)) 0, 100% 100%, 0 100%)',
     marginLeft: '0px',
@@ -42,7 +42,7 @@ const topItems = [
 const bottomItems = [
   {
     title: 'Зарубежная недвижимость',
-    link: '/catalog?category=abroad',
+    link: '/abroad',
     image: '/images/palm-villa.png',
     clip: 'polygon(0 0, 100% 0, 100% 100%, 0 calc(100% - var(--dy-b)))',
     marginLeft: '0px',
