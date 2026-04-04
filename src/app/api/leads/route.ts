@@ -48,7 +48,10 @@ export async function POST(req: Request) {
               'Content-Type': 'application/json'
             },
             body: JSON.stringify({
-              messages: [{ role: 'user', content: aiPrompt }]
+              messages: [
+                { role: 'system', content: 'You are a Russian real estate psychology expert. You EXACTLY output strictly in Russian language. Never use English. Твой ответ должен быть ТОЛЬКО на русском языке.' },
+                { role: 'user', content: aiPrompt }
+              ]
             })
         });
 
