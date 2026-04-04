@@ -24,8 +24,10 @@ export const Footer = () => {
               <a href="#" className="w-10 h-10 rounded-full bg-surface border border-text/10 flex items-center justify-center text-text/70 hover:bg-accent hover:text-primary transition-all">
                 <Linkedin className="w-4 h-4" />
               </a>
-              <a href="#" className="w-10 h-10 rounded-full bg-surface border border-text/10 flex items-center justify-center text-text/70 hover:bg-accent hover:text-primary transition-all">
-                <MessageCircle className="w-4 h-4" />
+              <a href="https://max.ru/+79951138937" target="_blank" rel="noreferrer" title="Написать в Max" className="w-10 h-10 rounded-full bg-surface border border-text/10 flex items-center justify-center text-text/70 hover:bg-accent hover:text-primary transition-all">
+                <svg viewBox="0 0 24 24" fill="currentColor" stroke="none" className="w-5 h-5">
+                  <path d="M7 9v6h2v-3.5L10.5 14h1L13 11.5V15h2V9h-2l-1.5 2.5L10 9H7z"/>
+                </svg>
               </a>
             </div>
           </div>
