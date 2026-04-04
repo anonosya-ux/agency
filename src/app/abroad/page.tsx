@@ -16,7 +16,7 @@ const countries = [
   { name: 'Таиланд', cities: 'Пхукет, Самуи', image: 'https://images.unsplash.com/photo-1589394815804-964ed0be2eb5?w=800&auto=format&fit=crop', hasCatalog: true },
   { name: 'Бали', cities: 'Чангу, Убуд', image: 'https://images.unsplash.com/photo-1537996194471-e657df975ab4?w=800&auto=format&fit=crop', hasCatalog: false },
   { name: 'Турция', cities: 'Стамбул, Бодрум', image: 'https://images.unsplash.com/photo-1524231757912-21f4fe3a7200?w=800&auto=format&fit=crop', hasCatalog: false },
-  { name: 'Грузия', cities: 'Батуми, Тбилиси', image: 'https://images.unsplash.com/photo-1583095304347-19ad0cb214d0?w=800&auto=format&fit=crop', hasCatalog: false }
+  { name: 'Грузия', cities: 'Батуми, Тбилиси', image: '/images/georgia-card.png', hasCatalog: false }
 ];
 
 export default function AbroadPage() {
