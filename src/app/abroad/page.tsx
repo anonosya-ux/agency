@@ -6,7 +6,7 @@ import { Navigation } from '@/components/Navigation';
 import { Footer } from '@/components/Footer';
 import { CTABanner } from '@/components/CTABanner';
 import { SpotlightCard } from '@/components/ui/spotlight-card';
-import { ArrowUpRight, Globe2, TrendingUp, ShieldCheck, MapPin, Bed, Bath } from 'lucide-react';
+import { ArrowUpRight, Globe2, TrendingUp, ShieldCheck, MapPin, Bed, Bath, Lock } from 'lucide-react';
 import Link from 'next/link';
 import { properties } from '@/data/properties';
 
