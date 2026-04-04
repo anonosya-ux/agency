@@ -45,7 +45,7 @@ export default function FastBuyPage() {
                 Срочный выкуп <br/><span className="text-[#C1A080] font-light">квартир в Москве.</span>
               </h1>
               <p className="text-lg font-light text-[#7A7A7A] max-w-2xl leading-relaxed mb-6">
-                Выкупаем квартиры стоимостью от 10 до 50 млн ₽ за собственные средства агентства за 3–7 дней. До 95% от рыночной стоимости. Аванс в день обращения.
+                Выкупаем квартиры за собственные средства агентства за 3–7 дней. До 95% от рыночной стоимости. Аванс в день обращения.
               </p>
               <div className="text-sm text-[#7A7A7A] font-light mb-12 space-y-1">
                 <p>✓ Квартира в ипотеке — поможем закрыть</p>

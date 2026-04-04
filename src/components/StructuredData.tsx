@@ -16,7 +16,7 @@ export const StructuredData = () => {
         "url": "https://fatukhin.ru",
         "logo": "https://fatukhin.ru/logo.svg",
         "image": "https://fatukhin.ru/images/founder.jpg",
-        "description": "Агентство недвижимости в Москве. Купля, продажа, срочный выкуп и обмен квартир от 10 млн ₽. Бесплатная консультация.",
+        "description": "Агентство недвижимости в Москве. Купля, продажа, срочный выкуп и обмен премиальных квартир. Бесплатная консультация.",
         "telephone": "+79951138937",
         "email": "info@fatukhin.ru",
         "address": {
