@@ -74,7 +74,7 @@ export default function SellPage() {
             
             <div className="relative h-[600px] w-full bg-gray-100 overflow-hidden rounded-2xl">
               <Image 
-                src="https://images.unsplash.com/photo-1600607688969-a5bfcd64bd15?q=80&w=2000&auto=format&fit=crop"
+                src="/images/sell-hero.png"
                 alt="Продать квартиру в Москве: предпродажная подготовка, хоум-стейджинг и выгода"
                 fill
                 priority

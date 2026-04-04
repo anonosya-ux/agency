@@ -123,7 +123,7 @@ export function Calculator() {
                   <div className="pt-8 flex items-center gap-8">
                     <button
                       type="submit"
-                      className="bg-dark text-text px-12 py-5 uppercase tracking-widest text-xs font-medium hover:bg-accent transition-colors duration-500"
+                      className="bg-dark text-white px-12 py-5 uppercase tracking-widest text-xs font-medium hover:bg-accent hover:text-white transition-colors duration-500"
                     >
                       Анализировать рынок
                     </button>
