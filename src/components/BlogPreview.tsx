@@ -56,7 +56,7 @@ export const BlogPreview = () => {
                         <img 
                           src={article.image || `/images/blog-${(idx % 3) + 1}.jpg`} 
                           alt={article.title} 
-                          className="absolute inset-0 w-full h-full object-cover opacity-80 mix-blend-overlay" 
+                          className="absolute inset-0 w-full h-full object-cover" 
                         />
                      </div>
                      <div className="absolute top-4 left-4 z-20 px-3 py-1 bg-black/40 backdrop-blur-md rounded border border-text/10 text-[10px] text-text uppercase tracking-widest">

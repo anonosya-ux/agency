@@ -97,7 +97,7 @@ export default async function BlogPostPage({ params }: { params: Promise<{slug: 
           <div className="absolute inset-0 bg-gradient-to-t from-bg/90 pb-32 to-transparent z-10" />
           {post.image && (
             <div 
-              className="absolute inset-0 bg-cover bg-center mix-blend-overlay opacity-90"
+              className="absolute inset-0 bg-cover bg-center"
               style={{ backgroundImage: `url(${post.image})` }} 
             />
           )}

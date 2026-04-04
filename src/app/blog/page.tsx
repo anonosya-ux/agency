@@ -56,7 +56,7 @@ export default function BlogPage() {
                     <img 
                       src={post.image} 
                       alt={post.title} 
-                      className="absolute inset-0 w-full h-full object-cover opacity-90 mix-blend-overlay group-hover:scale-105 transition-transform duration-700" 
+                      className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" 
                     />
                   )}
                   <div className="absolute top-4 left-4 z-20 px-3 py-1 bg-white/80 backdrop-blur-md border border-text/10 rounded-full text-[10px] text-text font-semibold uppercase tracking-widest">
