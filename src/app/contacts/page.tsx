@@ -44,7 +44,7 @@ export default function ContactsPage() {
                   <MapPin className="w-6 h-6 text-accent shrink-0 mt-1" />
                   <div>
                     <h4 className="text-text font-medium text-lg mb-1">Адрес</h4>
-                    <p className="text-text-muted font-light leading-relaxed">Москва, пл. Журавлёва<br />(м. Электрозаводская)<br />Деловой офис «Фатюхин и Ко»</p>
+                    <p className="text-text-muted font-light leading-relaxed">Москва, площадь Журавлёва, 2, стр. 2<br />Деловой офис «Фатюхин и Ко»</p>
                   </div>
                 </div>
 
@@ -76,11 +76,25 @@ export default function ContactsPage() {
               {/* Quick Contact Buttons */}
               <div className="space-y-3">
                 <a
+                  href="https://t.me/fatukhin"
+                  target="_blank" rel="noopener noreferrer"
+                  className="flex items-center justify-center gap-3 bg-[#0088cc] text-white px-6 py-3.5 uppercase tracking-widest text-xs font-medium hover:bg-[#007bb5] transition-all rounded-full w-full"
+                >
+                  <MessageCircle className="w-4 h-4" /> Написать в Telegram
+                </a>
+                <a
                   href={`https://wa.me/79951138937?text=${encodeURIComponent('Здравствуйте! Хотел бы обсудить вопрос по недвижимости.')}`}
                   target="_blank" rel="noopener noreferrer"
                   className="flex items-center justify-center gap-3 bg-[#25D366] text-white px-6 py-3.5 uppercase tracking-widest text-xs font-medium hover:bg-[#20BD5A] transition-all rounded-full w-full"
                 >
                   <MessageCircle className="w-4 h-4" /> Написать в WhatsApp
+                </a>
+                <a
+                  href="https://max.ru"
+                  target="_blank" rel="noopener noreferrer"
+                  className="flex items-center justify-center gap-3 bg-[#4F46E5] text-white px-6 py-3.5 uppercase tracking-widest text-xs font-medium hover:bg-[#4338CA] transition-all rounded-full w-full"
+                >
+                  <MessageCircle className="w-4 h-4" /> Написать в Max
                 </a>
                 <a
                   href="tel:+79951138937"
@@ -149,9 +163,9 @@ export default function ContactsPage() {
                         balloonContent: `
                           <div style="padding: 8px; font-family: system-ui;">
                             <h4 style="margin: 0 0 4px; font-size: 15px; font-weight: 600;">Фатюхин и Ко</h4>
-                            <p style="margin: 0 0 4px; font-size: 13px; color: #666;">пл. Журавлёва, м. Электрозаводская</p>
+                            <p style="margin: 0 0 4px; font-size: 13px; color: #666;">Москва, площадь Журавлёва, 2, стр. 2</p>
                             <p style="margin: 0 0 8px; font-size: 13px; color: #C1A080; font-weight: 500;">+7 (995) 113-89-37</p>
-                            <a href="https://yandex.ru/maps/org/fatiukhin_co/54567120289/" target="_blank" style="display: block; text-align: center; padding: 6px; border: 1px solid #C1A080; border-radius: 6px; color: #C1A080; text-decoration: none; font-size: 12px;">Открыть в Яндекс.Картах</a>
+                            <a href="https://yandex.com/maps/org/fatiukhin_co/54567120289/?ll=37.702292%2C55.784015&z=15" target="_blank" style="display: block; text-align: center; padding: 6px; border: 1px solid #C1A080; border-radius: 6px; color: #C1A080; text-decoration: none; font-size: 12px;">Открыть в Яндекс.Картах</a>
                           </div>
                         `,
                       }}
