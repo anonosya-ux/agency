@@ -12,15 +12,15 @@ const stats = [
 ];
 
 const awardsData = [
-  '/images/awards/award-26cap5ruo6gyc92z09t5iiazyx1g2f5q.webp',
-  '/images/awards/award-77s0bfgi4nqkf8sxp3d7o4netdymxjqu.webp',
-  '/images/awards/award-c7cgdj4nfnhk99uly3jypat6zhblgyw3.webp',
-  '/images/awards/award-m3jlxfowvzwlqyceead5mmcat0wfezpw.webp',
-  '/images/awards/award-photo_2026-03-28 19.20.14.webp',
-  '/images/awards/award-photo_2026-03-28 19.20.22.webp',
-  '/images/awards/award-photo_2026-03-28 19.20.27.webp',
-  '/images/awards/award-r5urwf243h17qguk8p3ccou4i5htgfdg.webp',
-  '/images/awards/award-tfas8d9h73z30nx9dnhclytyfsb3ngsw.webp'
+  '/images/awards/award_new_1.jpeg',
+  '/images/awards/award_new_2.jpeg',
+  '/images/awards/award_new_3.jpeg',
+  '/images/awards/award_new_4.jpeg',
+  '/images/awards/award_new_5.jpeg',
+  '/images/awards/award_new_6.jpeg',
+  '/images/awards/award_new_7.jpeg',
+  '/images/awards/award_new_8.jpeg',
+  '/images/awards/award_new_9.jpeg'
 ];
 
 function Counter({ from, to, duration = 2.5 }: { from: number; to: number; duration?: number }) {
