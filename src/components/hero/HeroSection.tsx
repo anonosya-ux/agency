@@ -30,7 +30,7 @@ export const HeroSection = () => {
             Агентство недвижимости полного цикла
           </h2>
           <h1 className="font-serif text-[28px] xs:text-[34px] sm:text-[44px] md:text-[54px] lg:text-[64px] xl:text-[76px] leading-[1.1] md:leading-[1.05] font-normal text-white text-left drop-shadow-xl uppercase" style={{ fontVariant: 'small-caps' }}>
-            Элитная недвижимость <br className="hidden sm:block" /> в Москве и за рубежом
+            Решим ваш квартирный <br className="hidden sm:block" /> вопрос за <span className="text-accent">14&nbsp;дней</span>
           </h1>
         </motion.div>
       </div>
