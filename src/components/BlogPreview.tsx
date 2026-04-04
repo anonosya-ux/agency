@@ -47,13 +47,21 @@ export const BlogPreview = () => {
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: idx * 0.15 }}
             >
-              <Link href={`/blog/${article.id}`} className="block group">
+              <Link href={`/blog/${article.slug}`} className="block group">
                 <Card className="h-full border-text/10 bg-surface/30 hover:bg-surface/60 transition-colors duration-500 overflow-hidden shadow-none rounded-xl">
                   <div className="relative aspect-[16/9] overflow-hidden bg-secondary/30">
                      <div className="absolute inset-0 bg-gradient-to-t from-surface via-transparent to-transparent z-10" />
                      <div className="absolute inset-0 transition-transform duration-700 group-hover:scale-105">
                        {/* Image Placeholder */}
-                        <img src={`/images/blog-${(idx % 3) + 1}.jpg`} alt={article.title} className="absolute inset-0 w-full h-full object-cover opacity-80 mix-blend-overlay" />
+                        <img 
+                          src={
+                            idx === 0 ? "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?q=80&w=800&auto=format&fit=crop" :
+                            idx === 1 ? "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?q=80&w=800&auto=format&fit=crop" :
+                            "https://images.unsplash.com/photo-1560518883-ce09059eeffa?q=80&w=800&auto=format&fit=crop"
+                          } 
+                          alt={article.title} 
+                          className="absolute inset-0 w-full h-full object-cover opacity-80 mix-blend-overlay" 
+                        />
                      </div>
                      <div className="absolute top-4 left-4 z-20 px-3 py-1 bg-black/40 backdrop-blur-md rounded border border-text/10 text-[10px] text-text uppercase tracking-widest">
                        {article.category}
