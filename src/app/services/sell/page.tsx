@@ -8,7 +8,7 @@ import { Footer } from "@/components/Footer";
 import { FAQ } from "@/components/FAQ";
 import { Cases } from "@/components/Cases";
 import { Team } from "@/components/Team";
-import { BlogSnippet } from "@/components/BlogSnippet";
+import { BlogPreview } from "@/components/BlogPreview";
 import { motion } from "framer-motion";
 
 import Image from "next/image";
@@ -147,7 +147,7 @@ export default function SellPage() {
       <Cases />
       <Team />
       <FAQ />
-      <BlogSnippet />
+      <BlogPreview />
       <Footer />
     </main>
   );

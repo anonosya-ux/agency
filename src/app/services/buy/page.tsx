@@ -8,7 +8,7 @@ import { Quiz } from "@/components/Quiz";
 import { FAQ } from "@/components/FAQ";
 import { Cases } from "@/components/Cases";
 import { Team } from "@/components/Team";
-import { BlogSnippet } from "@/components/BlogSnippet";
+import { BlogPreview } from "@/components/BlogPreview";
 import { MortgageCalculator } from "@/components/MortgageCalculator";
 import { motion } from "framer-motion";
 
@@ -143,7 +143,7 @@ export default function BuyPage() {
       <Cases />
       <Team />
       <FAQ />
-      <BlogSnippet />
+      <BlogPreview />
       <Footer />
       <div id="quiz-section">
         <Quiz />

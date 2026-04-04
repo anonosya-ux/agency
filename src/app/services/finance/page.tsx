@@ -7,7 +7,7 @@ import { Footer } from "@/components/Footer";
 import { Cases } from "@/components/Cases";
 import { Team } from "@/components/Team";
 import { FAQ } from "@/components/FAQ";
-import { BlogSnippet } from "@/components/BlogSnippet";
+import { BlogPreview } from "@/components/BlogPreview";
 import { MortgageCalculator } from "@/components/MortgageCalculator";
 import { motion } from "framer-motion";
 
@@ -136,7 +136,7 @@ export default function FinancePage() {
       <Cases />
       <Team />
       <FAQ />
-      <BlogSnippet />
+      <BlogPreview />
       <Footer />
     </main>
   );

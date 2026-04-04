@@ -7,7 +7,7 @@ import { Footer } from "@/components/Footer";
 import { Cases } from "@/components/Cases";
 import { Team } from "@/components/Team";
 import { FAQ } from "@/components/FAQ";
-import { BlogSnippet } from "@/components/BlogSnippet";
+import { BlogPreview } from "@/components/BlogPreview";
 import { motion } from "framer-motion";
 
 import Image from "next/image";
@@ -139,7 +139,7 @@ export default function FastBuyPage() {
       <Cases />
       <Team />
       <FAQ />
-      <BlogSnippet />
+      <BlogPreview />
       <Footer />
     </main>
   );
