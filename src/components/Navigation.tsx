@@ -69,10 +69,8 @@ export function Navigation() {
               <a href="https://wa.me/79951138937" target="_blank" rel="noreferrer" className="text-dark/60 hover:text-accent transition-colors">
                 <FaWhatsapp className="w-6 h-6 xl:w-7 xl:h-7" />
               </a>
-              <a href="https://max.ru/+79951138937" target="_blank" rel="noreferrer" title="Написать в Max" className="text-dark/60 hover:text-accent transition-colors mt-[1px]">
-                <svg viewBox="0 0 24 24" fill="currentColor" stroke="none" className="w-6 h-6 xl:w-7 xl:h-7">
-                  <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm3 13h-2v-3.5L11.5 14h-1L9 11.5V15H7V9h2l1.5 2.5L12 9h2v6z"/>
-                </svg>
+              <a href="https://max.ru/+79951138937" target="_blank" rel="noreferrer" title="Написать в Max" className="opacity-60 hover:opacity-100 transition-opacity mt-[1px]">
+                <img src="/max-icon.png" alt="Max" className="w-6 h-6 xl:w-7 xl:h-7 brightness-0" />
               </a>
               <div className="h-4 w-[1px] bg-dark/10 mx-2"></div>
               <a
@@ -141,10 +139,8 @@ export function Navigation() {
             <a href="https://wa.me/79951138937" target="_blank" rel="noreferrer" onClick={() => setMenuOpen(false)} className="w-11 h-11 rounded-full bg-[#25D366] flex items-center justify-center text-white">
               <FaWhatsapp className="w-5 h-5" />
             </a>
-            <a href="https://max.ru/+79951138937" target="_blank" rel="noreferrer" onClick={() => setMenuOpen(false)} className="w-11 h-11 rounded-full bg-white/10 border border-dark/10 flex items-center justify-center text-dark hover:bg-dark/20 transition-colors">
-              <svg viewBox="0 0 24 24" fill="currentColor" stroke="none" className="w-5 h-5">
-                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm3 13h-2v-3.5L11.5 14h-1L9 11.5V15H7V9h2l1.5 2.5L12 9h2v6z"/>
-              </svg>
+            <a href="https://max.ru/+79951138937" target="_blank" rel="noreferrer" onClick={() => setMenuOpen(false)} className="w-11 h-11 rounded-full bg-black flex items-center justify-center hover:bg-black/80 transition-colors">
+              <img src="/max-icon.png" alt="Max" className="w-5 h-5 flex-shrink-0" />
             </a>
           </div>
         </motion.div>
