@@ -71,7 +71,7 @@ export const HeroSection = () => {
               href="/contacts"
               className="bg-white hover:bg-gray-50 text-[#C1A080] font-medium uppercase tracking-[0.05em] md:tracking-[0.1em] px-4 md:px-6 py-3.5 md:py-4 transition-colors text-[11px] md:text-sm text-center shadow-lg"
             >
-              Консультация беспл.
+              Консультация бесплатно
             </Link>
           </div>
           
