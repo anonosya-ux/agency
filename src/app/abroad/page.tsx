@@ -103,6 +103,16 @@ export default function AbroadPage() {
                   className="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-105"
                   style={{ backgroundImage: `url(${country.image})` }}
                 />
+                
+                {/* Internal / External Linking & Lock State */}
+                {!country.hasCatalog ? (
+                  <div className="absolute top-4 right-4 z-20 px-3 py-1 bg-black/60 backdrop-blur-md border border-white/10 rounded-full text-[10px] text-white/80 font-medium uppercase tracking-widest flex items-center gap-1.5">
+                    <Lock className="w-3 h-3" /> Закрытая база
+                  </div>
+                ) : (
+                  <Link href={`/catalog?location=${encodeURIComponent(country.name)}`} className="absolute inset-0 z-30" aria-label={`Смотреть объекты в ${country.name}`} />
+                )}
+
                 <div className="absolute bottom-6 left-6 z-20 text-white">
                   <h3 className="font-serif text-2xl font-medium mb-1 drop-shadow-md">{country.name}</h3>
                   <p className="text-white/80 text-sm font-light flex items-center gap-1">
