@@ -11,12 +11,12 @@ import Link from 'next/link';
 import { properties } from '@/data/properties';
 
 const countries = [
-  { name: 'ОАЭ', cities: 'Дубай, Абу-Даби', image: 'https://images.unsplash.com/photo-1512453979798-5ea266f8880c?w=800&auto=format&fit=crop' },
-  { name: 'Кипр', cities: 'Лимассол, Пафос, Искеле', image: 'https://images.unsplash.com/photo-1544085311-11a028465b03?w=800&auto=format&fit=crop' },
-  { name: 'Таиланд', cities: 'Пхукет, Самуи', image: 'https://images.unsplash.com/photo-1589394815804-964ed0be2eb5?w=800&auto=format&fit=crop' },
-  { name: 'Бали', cities: 'Чангу, Убуд', image: 'https://images.unsplash.com/photo-1537996194471-e657df975ab4?w=800&auto=format&fit=crop' },
-  { name: 'Турция', cities: 'Стамбул, Бодрум', image: 'https://images.unsplash.com/photo-1524231757912-21f4fe3a7200?w=800&auto=format&fit=crop' },
-  { name: 'Грузия', cities: 'Батуми, Тбилиси', image: 'https://images.unsplash.com/photo-1565011681734-78bb796791d3?w=800&auto=format&fit=crop' }
+  { name: 'ОАЭ', cities: 'Дубай, Абу-Даби', image: 'https://images.unsplash.com/photo-1512453979798-5ea266f8880c?w=800&auto=format&fit=crop', hasCatalog: false },
+  { name: 'Кипр', cities: 'Лимассол, Пафос, Искеле', image: 'https://images.unsplash.com/photo-1544085311-11a028465b03?w=800&auto=format&fit=crop', hasCatalog: true },
+  { name: 'Таиланд', cities: 'Пхукет, Самуи', image: 'https://images.unsplash.com/photo-1589394815804-964ed0be2eb5?w=800&auto=format&fit=crop', hasCatalog: true },
+  { name: 'Бали', cities: 'Чангу, Убуд', image: 'https://images.unsplash.com/photo-1537996194471-e657df975ab4?w=800&auto=format&fit=crop', hasCatalog: false },
+  { name: 'Турция', cities: 'Стамбул, Бодрум', image: 'https://images.unsplash.com/photo-1524231757912-21f4fe3a7200?w=800&auto=format&fit=crop', hasCatalog: false },
+  { name: 'Грузия', cities: 'Батуми, Тбилиси', image: 'https://images.unsplash.com/photo-1565011681734-78bb796791d3?w=800&auto=format&fit=crop', hasCatalog: false }
 ];
 
 export default function AbroadPage() {
@@ -179,7 +179,8 @@ export default function AbroadPage() {
                   <div className="relative w-full aspect-[4/3] rounded-xl overflow-hidden mb-5 bg-secondary">
                     <div className="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-colors z-10" />
                     <div 
-                      className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=800&auto=format&fit=crop')] bg-cover bg-center transition-transform duration-700 group-hover:scale-105" 
+                      className="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-105" 
+                      style={{ backgroundImage: `url(${item.image})` }}
                     />
                     <div className="absolute top-4 right-4 z-20 w-8 h-8 flex items-center justify-center bg-white/60 backdrop-blur-md rounded-full border border-text/10 group-hover:bg-accent group-hover:text-white group-hover:border-transparent transition-colors text-text">
                       <ArrowUpRight className="w-4 h-4" />
