@@ -82,7 +82,7 @@ export const DirectionsGrid = () => {
                     </h3>
                     <p className={`text-xs sm:text-sm md:text-base ${item.bgImage ? 'text-white/80' : 'text-text-muted'}`}>{item.desc}</p>
                   </div>
-                  <div className={`w-10 h-10 sm:w-12 sm:h-12 rounded-full border flex items-center justify-center backdrop-blur-md group-hover:bg-[#1E3A8A] group-hover:text-white group-hover:border-[#1E3A8A] transition-all duration-300 shrink-0 ${item.bgImage ? 'border-white/20 bg-white/10 text-white' : 'border-text/20 bg-black/5 text-text'}`}>
+                  <div className={`w-10 h-10 sm:w-12 sm:h-12 rounded-full border flex items-center justify-center backdrop-blur-md group-hover:bg-accent group-hover:text-bg group-hover:border-accent transition-all duration-300 shrink-0 ${item.bgImage ? 'border-white/20 bg-white/10 text-white' : 'border-text/20 bg-black/5 text-text'}`}>
                     <ArrowUpRight className="w-5 h-5" />
                   </div>
                 </div>
