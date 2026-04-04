@@ -9,7 +9,7 @@ const directions = [
     title: 'Срочная продажа и выкуп',
     desc: 'Продадим вашу квартиру по максимальной цене за 14–30 дней. Выкуп — за 3 дня',
     link: '/services/fast-buy',
-    className: 'md:col-span-2 md:row-span-2 min-h-[400px]',
+    className: 'md:col-span-2 md:row-span-2 min-h-[280px] md:min-h-[400px]',
     bgImage: 'https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?q=80&w=1200&auto=format&fit=crop',
   },
   {

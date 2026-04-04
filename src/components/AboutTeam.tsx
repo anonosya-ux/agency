@@ -53,7 +53,7 @@ export const AboutTeam = () => {
               Команда <span className="text-accent/80 font-light drop-shadow-md pb-[-1rem]">профессионалов</span>
             </h2>
             <div className="relative mb-8 rounded-2xl overflow-hidden aspect-[4/5] max-w-sm border border-text/10 group">
-              <div className="absolute inset-0 bg-gradient-to-t from-bg via-transparent to-transparent z-10" />
+
               <div className="absolute inset-0 bg-secondary/40 z-0 transition-transform duration-700 group-hover:scale-105">
                 {/* Founder Image */}
                 <Image src="/images/team/vitaly_f.jpeg" alt="Основатель" fill className="object-cover" sizes="(max-width: 1024px) 100vw, 50vw" />
@@ -96,7 +96,7 @@ export const AboutTeam = () => {
                 >
                   <Card className="overflow-hidden border-text/10 bg-surface/50 backdrop-blur-md hover:border-accent/30 transition-all duration-300 group">
                     <div className="relative aspect-square overflow-hidden bg-secondary/30">
-                      <div className="absolute inset-0 bg-gradient-to-t from-surface via-transparent to-transparent z-10" />
+
                       <div className="absolute inset-0 transition-transform duration-700 group-hover:scale-110">
                          {/* Team Image */}
                          <Image src={member.image} alt={member.name} fill className="object-cover" sizes="(max-width: 768px) 100vw, 33vw" />

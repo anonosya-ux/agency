@@ -6,7 +6,7 @@ import { motion } from "framer-motion";
 export function Founder() {
   return (
     <section className="py-24 px-4 bg-light-gray">
-      <div className="max-w-7xl mx-auto flex flex-col lg:flex-row items-center gap-16 lg:gap-24">
+      <div className="max-w-7xl mx-auto flex flex-col lg:flex-row items-center gap-8 sm:gap-12 lg:gap-24">
         
         {/* Left: Founder Image */}
         <motion.div 
@@ -34,7 +34,7 @@ export function Founder() {
             <span className="w-8 h-[1px] bg-accent" /> Слово Основателя
           </span>
           
-          <h2 className="font-serif text-4xl leading-[1.2] text-dark">
+          <h2 className="font-serif text-2xl sm:text-3xl md:text-4xl leading-[1.2] text-dark">
             «Для нас хорошая сделка — это не подписанный договор. Это уверенность клиента, что его капитал находится в абсолютной безопасности.»
           </h2>
 

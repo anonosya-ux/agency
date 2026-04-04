@@ -62,7 +62,7 @@ export function Calculator() {
   return (
     <section id="calculator" className="py-24 px-4 bg-light-gray">
       <div className="max-w-4xl mx-auto">
-        <div className="bg-white border border-[#EAEAEA] p-8 md:p-16 relative overflow-hidden shadow-sm">
+        <div className="bg-white border border-[#EAEAEA] p-5 sm:p-8 md:p-16 relative overflow-hidden shadow-sm">
           {/* Decorative element */}
           <div className="absolute top-0 right-0 w-64 h-64 bg-gray-50 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2" />
 
@@ -128,10 +128,10 @@ export function Calculator() {
                     />
                   </div>
 
-                  <div className="pt-8 flex items-center gap-8">
+                  <div className="pt-6 sm:pt-8">
                     <button
                       type="submit"
-                      className="bg-dark text-white px-12 py-5 uppercase tracking-widest text-xs font-medium hover:bg-accent hover:text-white transition-colors duration-500"
+                      className="w-full sm:w-auto bg-dark text-white px-12 py-4 sm:py-5 uppercase tracking-widest text-xs font-medium hover:bg-accent hover:text-white transition-colors duration-500"
                     >
                       Анализировать рынок
                     </button>
@@ -175,8 +175,8 @@ export function Calculator() {
                     
                     <div className="mb-8">
                       <p className="text-gray-400 text-sm uppercase tracking-wider mb-2">Средняя цена конкурентов (базовое состояние):</p>
-                      <div className="font-serif text-5xl md:text-6xl text-white">
-                        {resultData.price} <span className="text-2xl text-gray-500">млн ₽</span>
+                      <div className="font-serif text-3xl sm:text-5xl md:text-6xl text-white">
+                        {resultData.price} <span className="text-lg sm:text-2xl text-gray-500">млн ₽</span>
                       </div>
                     </div>
 

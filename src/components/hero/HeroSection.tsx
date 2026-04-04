@@ -5,7 +5,7 @@ import Link from "next/link";
 
 export const HeroSection = () => {
   return (
-    <section className="relative w-full h-[600px] md:h-[700px] lg:h-[800px] mt-24 lg:mt-28 flex flex-col justify-center items-center overflow-hidden">
+    <section className="relative w-full h-[550px] md:h-[700px] lg:h-[800px] mt-20 md:mt-24 lg:mt-28 flex flex-col justify-center items-center overflow-hidden">
       {/* Background Video / Overlay */}
       <video
         autoPlay
@@ -27,7 +27,7 @@ export const HeroSection = () => {
           className="flex flex-col items-center w-full"
         >
           <h1 className="font-serif text-[32px] sm:text-[48px] md:text-[64px] lg:text-[80px] leading-[1.05] font-light text-white text-center drop-shadow-lg mb-4 lg:mb-6">
-            Решим ваш квартирный <br/> вопрос за <span className="text-accent">14&nbsp;дней</span>
+            Решим ваш квартирный <br className="hidden md:block" /> вопрос за <span className="text-accent">14&nbsp;дней</span>
           </h1>
           
           <ul className="flex flex-col text-sm sm:text-base md:text-xl lg:text-2xl font-light text-white/90 gap-2 sm:gap-3 drop-shadow-md text-center mt-2 lg:mt-4">

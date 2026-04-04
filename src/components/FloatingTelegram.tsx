@@ -24,10 +24,10 @@ export function FloatingTelegram() {
           initial={{ opacity: 0, y: 50 }}
           animate={{ opacity: 1, y: 0 }}
           exit={{ opacity: 0, y: 50 }}
-          className="fixed bottom-6 right-6 z-50"
+          className="fixed bottom-20 lg:bottom-6 right-4 lg:right-6 z-50"
         >
           <a
-            href="https://t.me/PlaceholderUsername" // REQUIRES CONFIRMATION
+            href="https://t.me/fatukhin"
             target="_blank"
             rel="noopener noreferrer"
             className="group flex items-center gap-0 bg-dark text-text rounded-full shadow-2xl hover:shadow-accent/20 transition-all duration-300 overflow-hidden"

@@ -40,7 +40,7 @@ export function Navigation() {
         animate={{ y: 0 }}
         transition={{ duration: 0.8, ease: [0.76, 0, 0.24, 1] }}
       >
-        <div className="max-w-[1440px] mx-auto px-4 lg:px-8 h-24 lg:h-28 flex items-center justify-between">
+        <div className="max-w-[1440px] mx-auto px-4 lg:px-8 h-20 md:h-24 lg:h-28 flex items-center justify-between">
 
           {/* Logo */}
           <Link href="/" className="flex items-center justify-center group w-28 md:w-40 py-2 hover:opacity-80 transition-opacity">
@@ -119,22 +119,34 @@ export function Navigation() {
             <Link
               href={link.href}
               onClick={() => setMenuOpen(false)}
-              className="text-4xl text-dark hover:text-accent transition-colors"
+              className="text-2xl md:text-3xl text-dark hover:text-accent transition-colors"
             >
               {link.label}
             </Link>
           </motion.div>
         ))}
-        <motion.a
-          href="tel:+79951138937"
-          onClick={() => setMenuOpen(false)}
+        <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: menuOpen ? 1 : 0 }}
           transition={{ delay: menuOpen ? 0.45 : 0 }}
-          className="text-accent text-2xl mt-6 border border-accent/50 px-6 py-2"
+          className="flex flex-col items-center gap-4 mt-6"
         >
-          +7 995 113 89 37
-        </motion.a>
+          <a
+            href="tel:+79951138937"
+            onClick={() => setMenuOpen(false)}
+            className="text-accent text-xl border border-accent/50 px-6 py-2"
+          >
+            +7 995 113 89 37
+          </a>
+          <div className="flex gap-5 mt-2">
+            <a href="https://t.me/fatukhin" target="_blank" rel="noreferrer" onClick={() => setMenuOpen(false)} className="w-11 h-11 rounded-full bg-[#0088cc] flex items-center justify-center text-white">
+              <FaTelegramPlane className="w-5 h-5" />
+            </a>
+            <a href="https://wa.me/79951138937" target="_blank" rel="noreferrer" onClick={() => setMenuOpen(false)} className="w-11 h-11 rounded-full bg-[#25D366] flex items-center justify-center text-white">
+              <FaWhatsapp className="w-5 h-5" />
+            </a>
+          </div>
+        </motion.div>
       </motion.div>
     </>
   );

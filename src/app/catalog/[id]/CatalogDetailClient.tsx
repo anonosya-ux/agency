@@ -245,7 +245,7 @@ export function CatalogDetailClient({ property }: { property: Property }) {
           </div>
 
           <div className="w-full lg:w-[35%] relative">
-             <div className="sticky top-[100px] rounded-3xl border border-text/10 bg-surface/60 backdrop-blur-xl p-6 xl:p-8 flex flex-col shadow-2xl overflow-hidden group/card z-10">
+             <div className="lg:sticky lg:top-[100px] rounded-3xl border border-text/10 bg-surface/60 backdrop-blur-xl p-6 xl:p-8 flex flex-col shadow-2xl overflow-hidden group/card z-10">
                <div className="absolute -top-[50px] -right-[50px] w-40 h-40 bg-accent/20 rounded-full blur-[60px] pointer-events-none group-hover/card:bg-accent/30 transition-colors" />
 
                <h4 className="font-serif text-xl border-l-2 border-accent pl-3 text-text mb-4">Получить презентацию ЖК</h4>
