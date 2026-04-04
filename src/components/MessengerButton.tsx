@@ -30,6 +30,15 @@ export function MessengerButton() {
             Telegram
           </a>
           <a
+            href="https://max.ru"
+            target="_blank"
+            rel="noreferrer"
+            className="flex items-center gap-3 bg-[#4F46E5] text-white pl-4 pr-5 py-3 rounded-full shadow-lg hover:shadow-xl hover:scale-105 transition-all text-sm font-medium"
+          >
+            <svg viewBox="0 0 24 24" className="w-5 h-5 fill-current"><path d="M7 9v6h2v-3.5L10.5 14h1L13 11.5V15h2V9h-2l-1.5 2.5L10 9H7z"/></svg>
+            Max
+          </a>
+          <a
             href="tel:+79951138937"
             className="flex items-center gap-3 bg-[#1A1A1A] text-white pl-4 pr-5 py-3 rounded-full shadow-lg hover:shadow-xl hover:scale-105 transition-all text-sm font-medium"
           >
