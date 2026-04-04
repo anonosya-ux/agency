@@ -28,7 +28,7 @@ export const CTABanner = () => {
   };
 
   return (
-    <section className="py-20 md:py-28 bg-bg w-full relative overflow-hidden">
+    <section id="cta-form" className="py-20 md:py-28 bg-bg w-full relative overflow-hidden">
       <div className="container mx-auto px-4 relative z-20">
         <motion.div 
           initial={{ opacity: 0, scale: 0.95 }}
