@@ -16,6 +16,7 @@ const featuredRent = [
     location: 'Москва, Сити',
     price: '₽ 800,000 / мес',
     specs: { beds: 3, baths: 3, area: '210 м²' },
+    image: 'https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?w=800&auto=format&fit=crop&q=80'
   },
   {
     id: 14,
@@ -23,6 +24,7 @@ const featuredRent = [
     location: 'Москва, Сити',
     price: '₽ 450,000 / мес',
     specs: { beds: 2, baths: 2, area: '105 м²' },
+    image: 'https://images.unsplash.com/photo-1502672260266-1c1e52b1f4c2?w=800&auto=format&fit=crop&q=80'
   },
   {
     id: 15,
@@ -30,6 +32,7 @@ const featuredRent = [
     location: 'МО, Рублево-успенское ш.',
     price: '₽ 1,500,000 / мес',
     specs: { beds: 5, baths: 4, area: '650 м²' },
+    image: 'https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=800&auto=format&fit=crop&q=80'
   }
 ];
 
@@ -112,8 +115,11 @@ export default function RentPage() {
               <Link href={`/catalog/${item.id}`} key={item.id} className="block group h-full">
                 <SpotlightCard className="h-full flex flex-col p-4 bg-surface backdrop-blur-md hover:bg-surface/80 transition-colors border-text/10 line-clamp-2">
                   <div className="relative w-full aspect-[4/3] rounded-xl overflow-hidden mb-5 bg-secondary">
-                    <div className="absolute inset-0 bg-black/10 group-hover:bg-black/0 transition-colors z-10" />
-                    <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1600607687644-c7171b42498f?w=800&auto=format&fit=crop')] bg-cover bg-center transition-transform duration-700 group-hover:scale-105" />
+                     <div className="absolute inset-0 bg-black/10 group-hover:bg-black/0 transition-colors z-10" />
+                     <div 
+                        className="absolute inset-0 transition-transform duration-700 group-hover:scale-105" 
+                        style={{ backgroundImage: `url(${item.image})`, backgroundSize: 'cover', backgroundPosition: 'center' }} 
+                     />
                     
                     {/* Status Badge */}
                     <div className="absolute top-4 left-4 z-20 px-3 py-1 bg-white/80 backdrop-blur-md border border-text/10 rounded-full text-[10px] text-text font-semibold uppercase tracking-widest flex items-center gap-1">
