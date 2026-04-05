@@ -6,6 +6,7 @@ import { StructuredData } from "@/components/StructuredData";
 import { Preloader } from "@/components/Preloader";
 import Script from "next/script";
 import { CustomCursor } from "@/components/CustomCursor";
+import { MessengerButton } from "@/components/MessengerButton";
 import { cn } from "@/lib/utils";
 import { Playfair_Display, Montserrat } from 'next/font/google';
 
@@ -91,7 +92,7 @@ export default function RootLayout({
         <div className="flex-1 w-full">
           {children}
         </div>
-        <StickyCTA />
+        <MessengerButton />
 
         {/* Yandex Metrica (Stand-in ID per Phase 5 Req) */}
         <Script id="yandex-metrica" strategy="afterInteractive">

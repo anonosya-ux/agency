@@ -69,7 +69,7 @@ export function Navigation() {
               <a href="https://wa.me/79951138937" target="_blank" rel="noreferrer" className="text-dark/60 hover:text-accent transition-colors">
                 <FaWhatsapp className="w-6 h-6 xl:w-7 xl:h-7" />
               </a>
-              <a href="https://max.ru/+79951138937" target="_blank" rel="noreferrer" title="Написать в Max" className="opacity-60 hover:opacity-100 transition-opacity mt-[1px]">
+              <a href="https://max.ru/u/f9LHodD0cOLl74KezdeYBu3fOVHAYqq3V3sIeBS8EAja_dROofdIIAV8or8" target="_blank" rel="noreferrer" title="Написать в Max" className="opacity-60 hover:opacity-100 transition-opacity mt-[1px]">
                 <img src="/max-icon.png" alt="Max" className="w-6 h-6 xl:w-7 xl:h-7 brightness-0" />
               </a>
               <div className="h-4 w-[1px] bg-dark/10 mx-2"></div>
@@ -139,7 +139,7 @@ export function Navigation() {
             <a href="https://wa.me/79951138937" target="_blank" rel="noreferrer" onClick={() => setMenuOpen(false)} className="w-11 h-11 rounded-full bg-[#25D366] flex items-center justify-center text-white">
               <FaWhatsapp className="w-5 h-5" />
             </a>
-            <a href="https://max.ru/+79951138937" target="_blank" rel="noreferrer" onClick={() => setMenuOpen(false)} className="w-11 h-11 rounded-full bg-black flex items-center justify-center hover:bg-black/80 transition-colors">
+            <a href="https://max.ru/u/f9LHodD0cOLl74KezdeYBu3fOVHAYqq3V3sIeBS8EAja_dROofdIIAV8or8" target="_blank" rel="noreferrer" onClick={() => setMenuOpen(false)} className="w-11 h-11 rounded-full bg-black flex items-center justify-center hover:bg-black/80 transition-colors">
               <img src="/max-icon.png" alt="Max" className="w-5 h-5 flex-shrink-0" />
             </a>
           </div>

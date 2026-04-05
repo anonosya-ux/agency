@@ -109,7 +109,7 @@ export default function ContactsPage() {
                   <MessageCircle className="w-4 h-4" /> Написать в WhatsApp
                 </a>
                 <a
-                  href="https://max.ru"
+                  href="https://max.ru/u/f9LHodD0cOLl74KezdeYBu3fOVHAYqq3V3sIeBS8EAja_dROofdIIAV8or8"
                   target="_blank" rel="noopener noreferrer"
                   className="flex items-center justify-center gap-3 bg-[#4F46E5] text-white px-6 py-3.5 uppercase tracking-widest text-xs font-medium hover:bg-[#4338CA] transition-all rounded-full w-full"
                 >

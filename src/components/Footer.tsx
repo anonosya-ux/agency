@@ -28,7 +28,7 @@ export const Footer = () => {
                   <path d="M12.031 0h-.01C5.396 0 0 5.394 0 12.018c0 2.122.553 4.195 1.6 6L.518 22l4.135-1.085A11.927 11.927 0 0 0 12.021 24c6.621 0 12.01-5.395 12.01-12.018S18.643 0 12.031 0zm0 21.986c-1.787 0-3.535-.48-5.068-1.385l-.36-.213-3.076.805.826-2.997-.236-.375A9.972 9.972 0 0 1 2.014 12c0-5.516 4.492-10 10.017-10s10 4.484 10 10a10.02 10.02 0 0 1-10 10zM17.5 14.5c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.17-.17.2-.34.22-.64.07-.3-.15-1.26-.46-2.4-1.48-.88-.79-1.48-1.77-1.65-2.07-.17-.3 0-.46.15-.61.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.03-.52-.07-.15-.67-1.62-.92-2.22-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.8.37s-1.04 1.02-1.04 2.49 1.07 2.9 1.22 3.1c.15.2 2.12 3.23 5.12 4.52.71.3 1.27.49 1.7.63.72.23 1.38.2 1.9.12.58-.09 1.76-.72 2.01-1.42.25-.7.25-1.3.17-1.42-.08-.12-.27-.19-.57-.34z"/>
                 </svg>
               </a>
-              <a href="https://max.ru" target="_blank" rel="noreferrer" title="Написать в Max" className="w-10 h-10 rounded-full bg-surface border border-text/10 flex items-center justify-center text-text/70 hover:bg-accent hover:text-primary transition-all">
+              <a href="https://max.ru/u/f9LHodD0cOLl74KezdeYBu3fOVHAYqq3V3sIeBS8EAja_dROofdIIAV8or8" target="_blank" rel="noreferrer" title="Написать в Max" className="w-10 h-10 rounded-full bg-surface border border-text/10 flex items-center justify-center text-text/70 hover:bg-accent hover:text-primary transition-all">
                 <svg viewBox="0 0 24 24" fill="currentColor" stroke="none" className="w-5 h-5">
                   <path d="M7 9v6h2v-3.5L10.5 14h1L13 11.5V15h2V9h-2l-1.5 2.5L10 9H7z"/>
                 </svg>
